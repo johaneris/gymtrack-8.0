@@ -101,11 +101,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\Form1.cs">
+    <Compile Include="Formularios\FrmCreateNewPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Formularios\FrmCreateNewPassword.Designer.cs">
+      <DependentUpon>FrmCreateNewPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmResetPassword.Designer.cs">
+      <DependentUpon>FrmResetPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmAccess.cs">
       <SubType>Form</SubType>
@@ -172,6 +178,9 @@
     <EmbeddedResource Include="Formularios\FrmAccess.resx">
       <DependentUpon>FrmAccess.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCreateNewPassword.resx">
+      <DependentUpon>FrmCreateNewPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLoginUser.resx">
       <DependentUpon>FrmLoginUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCambiarContra.resx">
       <DependentUpon>FrmCambiarContra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmResetPassword.resx">
+      <DependentUpon>FrmResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InterfazdeUsuario.Formularios
 {
-    public partial class Form1 : Form
+    public partial class FrmResetPassword : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public FrmResetPassword()
         {
             InitializeComponent();
         }

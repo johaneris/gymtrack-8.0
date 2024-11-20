@@ -40,7 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbContraseña = new System.Windows.Forms.Label();
             this.lnkCambiarcContra = new System.Windows.Forms.LinkLabel();
             this.rbtnUserType2 = new MetroFramework.Controls.MetroRadioButton();
             this.rbtnUserType = new MetroFramework.Controls.MetroRadioButton();
@@ -50,7 +50,7 @@
             this.tbEmail = new MetroFramework.Controls.MetroTextBox();
             this.tbNombre = new MetroFramework.Controls.MetroTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbCif = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,7 +68,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(164, 390);
+            this.panel1.Size = new System.Drawing.Size(164, 403);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -214,7 +214,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(51)))), ((int)(((byte)(59)))));
             this.panel4.Controls.Add(this.metroTextBox1);
-            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.lbContraseña);
             this.panel4.Controls.Add(this.lnkCambiarcContra);
             this.panel4.Controls.Add(this.rbtnUserType2);
             this.panel4.Controls.Add(this.rbtnUserType);
@@ -224,7 +224,7 @@
             this.panel4.Controls.Add(this.tbEmail);
             this.panel4.Controls.Add(this.tbNombre);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.lbCif);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(161, 24);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
@@ -248,7 +248,7 @@
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(152, 73);
+            this.metroTextBox1.Location = new System.Drawing.Point(253, 73);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -263,35 +263,35 @@
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // label7
+            // lbContraseña
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(94, 74);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 22);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Cif:";
+            this.lbContraseña.AutoSize = true;
+            this.lbContraseña.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lbContraseña.ForeColor = System.Drawing.Color.White;
+            this.lbContraseña.Location = new System.Drawing.Point(128, 74);
+            this.lbContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbContraseña.Name = "lbContraseña";
+            this.lbContraseña.Size = new System.Drawing.Size(120, 22);
+            this.lbContraseña.TabIndex = 15;
+            this.lbContraseña.Text = "Contraseña:";
             // 
             // lnkCambiarcContra
             // 
             this.lnkCambiarcContra.AutoSize = true;
             this.lnkCambiarcContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkCambiarcContra.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lnkCambiarcContra.Location = new System.Drawing.Point(122, 358);
+            this.lnkCambiarcContra.Location = new System.Drawing.Point(279, 359);
             this.lnkCambiarcContra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lnkCambiarcContra.Name = "lnkCambiarcContra";
-            this.lnkCambiarcContra.Size = new System.Drawing.Size(159, 15);
+            this.lnkCambiarcContra.Size = new System.Drawing.Size(135, 15);
             this.lnkCambiarcContra.TabIndex = 14;
             this.lnkCambiarcContra.TabStop = true;
-            this.lnkCambiarcContra.Text = "¿Ya tienes una contraseña?";
+            this.lnkCambiarcContra.Text = "¿Ya tienes una cuenta?";
             // 
             // rbtnUserType2
             // 
             this.rbtnUserType2.AutoSize = true;
-            this.rbtnUserType2.Location = new System.Drawing.Point(236, 126);
+            this.rbtnUserType2.Location = new System.Drawing.Point(337, 126);
             this.rbtnUserType2.Name = "rbtnUserType2";
             this.rbtnUserType2.Size = new System.Drawing.Size(107, 15);
             this.rbtnUserType2.TabIndex = 13;
@@ -301,7 +301,7 @@
             // rbtnUserType
             // 
             this.rbtnUserType.AutoSize = true;
-            this.rbtnUserType.Location = new System.Drawing.Point(152, 126);
+            this.rbtnUserType.Location = new System.Drawing.Point(253, 126);
             this.rbtnUserType.Name = "rbtnUserType";
             this.rbtnUserType.Size = new System.Drawing.Size(78, 15);
             this.rbtnUserType.TabIndex = 12;
@@ -313,7 +313,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(54, 119);
+            this.label6.Location = new System.Drawing.Point(155, 119);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 22);
@@ -322,6 +322,7 @@
             // 
             // iconButton3
             // 
+            this.iconButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.iconButton3.FlatAppearance.BorderSize = 0;
             this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -330,7 +331,7 @@
             this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(152)))), ((int)(((byte)(143)))));
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 38;
-            this.iconButton3.Location = new System.Drawing.Point(111, 273);
+            this.iconButton3.Location = new System.Drawing.Point(250, 270);
             this.iconButton3.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
@@ -338,7 +339,7 @@
             this.iconButton3.TabIndex = 9;
             this.iconButton3.Text = "Registrarse";
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.iconButton3.UseVisualStyleBackColor = false;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // tbCif
@@ -356,7 +357,7 @@
             this.tbCif.CustomButton.UseSelectable = true;
             this.tbCif.CustomButton.Visible = false;
             this.tbCif.Lines = new string[0];
-            this.tbCif.Location = new System.Drawing.Point(152, 215);
+            this.tbCif.Location = new System.Drawing.Point(253, 215);
             this.tbCif.MaxLength = 32767;
             this.tbCif.Name = "tbCif";
             this.tbCif.PasswordChar = '\0';
@@ -386,7 +387,7 @@
             this.tbEmail.CustomButton.UseSelectable = true;
             this.tbEmail.CustomButton.Visible = false;
             this.tbEmail.Lines = new string[0];
-            this.tbEmail.Location = new System.Drawing.Point(152, 168);
+            this.tbEmail.Location = new System.Drawing.Point(253, 168);
             this.tbEmail.MaxLength = 32767;
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
@@ -416,7 +417,7 @@
             this.tbNombre.CustomButton.UseSelectable = true;
             this.tbNombre.CustomButton.Visible = false;
             this.tbNombre.Lines = new string[0];
-            this.tbNombre.Location = new System.Drawing.Point(152, 24);
+            this.tbNombre.Location = new System.Drawing.Point(253, 24);
             this.tbNombre.MaxLength = 32767;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.PasswordChar = '\0';
@@ -436,31 +437,31 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(67, 168);
+            this.label5.Location = new System.Drawing.Point(168, 168);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 22);
             this.label5.TabIndex = 4;
             this.label5.Text = "Correo:";
             // 
-            // label4
+            // lbCif
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(27, 216);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 22);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Contraseña:";
+            this.lbCif.AutoSize = true;
+            this.lbCif.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lbCif.ForeColor = System.Drawing.Color.White;
+            this.lbCif.Location = new System.Drawing.Point(195, 216);
+            this.lbCif.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCif.Name = "lbCif";
+            this.lbCif.Size = new System.Drawing.Size(50, 22);
+            this.lbCif.TabIndex = 3;
+            this.lbCif.Text = "CIF:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(67, 25);
+            this.label3.Location = new System.Drawing.Point(168, 25);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 22);
@@ -509,7 +510,7 @@
         private MetroFramework.Controls.MetroTextBox tbEmail;
         private MetroFramework.Controls.MetroTextBox tbNombre;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbCif;
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton iconButton3;
         private MetroFramework.Controls.MetroRadioButton rbtnUserType;
@@ -517,6 +518,6 @@
         private MetroFramework.Controls.MetroRadioButton rbtnUserType2;
         private System.Windows.Forms.LinkLabel lnkCambiarcContra;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbContraseña;
     }
 }
