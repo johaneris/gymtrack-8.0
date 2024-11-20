@@ -115,7 +115,8 @@ namespace InterfazdeUsuario
 
         private void btnMiembros_Click(object sender, EventArgs e)
         {
-            
+            FrmLoginUser user = new FrmLoginUser();
+            user.ShowDialog();
         }
     }
 }
