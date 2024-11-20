@@ -101,11 +101,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\FrmCreateNewPassword.cs">
+    <Compile Include="Formularios\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmCreateNewPassword.Designer.cs">
-      <DependentUpon>FrmCreateNewPassword.cs</DependentUpon>
+    <Compile Include="Formularios\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmResetPassword.cs">
       <SubType>Form</SubType>
@@ -177,9 +177,6 @@
     <Compile Include="Service\MnualDeAyuda.cs" />
     <EmbeddedResource Include="Formularios\FrmAccess.resx">
       <DependentUpon>FrmAccess.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmCreateNewPassword.resx">
-      <DependentUpon>FrmCreateNewPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLoginUser.resx">
       <DependentUpon>FrmLoginUser.cs</DependentUpon>

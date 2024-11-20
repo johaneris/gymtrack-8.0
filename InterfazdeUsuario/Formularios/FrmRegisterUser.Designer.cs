@@ -52,6 +52,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbCif = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -68,13 +69,13 @@
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(164, 403);
+            this.panel1.Size = new System.Drawing.Size(164, 456);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::InterfazdeUsuario.Properties.Resources.x;
-            this.pictureBox1.Location = new System.Drawing.Point(-17, 106);
+            this.pictureBox1.Location = new System.Drawing.Point(-15, 126);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(186, 188);
@@ -213,6 +214,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(51)))), ((int)(((byte)(59)))));
+            this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.metroTextBox1);
             this.panel4.Controls.Add(this.lbContraseña);
             this.panel4.Controls.Add(this.lnkCambiarcContra);
@@ -229,7 +231,7 @@
             this.panel4.Location = new System.Drawing.Point(161, 24);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(617, 405);
+            this.panel4.Size = new System.Drawing.Size(617, 456);
             this.panel4.TabIndex = 1;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -248,7 +250,7 @@
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(253, 73);
+            this.metroTextBox1.Location = new System.Drawing.Point(236, 135);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -268,7 +270,7 @@
             this.lbContraseña.AutoSize = true;
             this.lbContraseña.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.lbContraseña.ForeColor = System.Drawing.Color.White;
-            this.lbContraseña.Location = new System.Drawing.Point(128, 74);
+            this.lbContraseña.Location = new System.Drawing.Point(111, 136);
             this.lbContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbContraseña.Name = "lbContraseña";
             this.lbContraseña.Size = new System.Drawing.Size(120, 22);
@@ -280,7 +282,7 @@
             this.lnkCambiarcContra.AutoSize = true;
             this.lnkCambiarcContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkCambiarcContra.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lnkCambiarcContra.Location = new System.Drawing.Point(279, 359);
+            this.lnkCambiarcContra.Location = new System.Drawing.Point(262, 421);
             this.lnkCambiarcContra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lnkCambiarcContra.Name = "lnkCambiarcContra";
             this.lnkCambiarcContra.Size = new System.Drawing.Size(135, 15);
@@ -291,7 +293,7 @@
             // rbtnUserType2
             // 
             this.rbtnUserType2.AutoSize = true;
-            this.rbtnUserType2.Location = new System.Drawing.Point(337, 126);
+            this.rbtnUserType2.Location = new System.Drawing.Point(320, 188);
             this.rbtnUserType2.Name = "rbtnUserType2";
             this.rbtnUserType2.Size = new System.Drawing.Size(107, 15);
             this.rbtnUserType2.TabIndex = 13;
@@ -301,7 +303,7 @@
             // rbtnUserType
             // 
             this.rbtnUserType.AutoSize = true;
-            this.rbtnUserType.Location = new System.Drawing.Point(253, 126);
+            this.rbtnUserType.Location = new System.Drawing.Point(236, 188);
             this.rbtnUserType.Name = "rbtnUserType";
             this.rbtnUserType.Size = new System.Drawing.Size(78, 15);
             this.rbtnUserType.TabIndex = 12;
@@ -313,7 +315,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(155, 119);
+            this.label6.Location = new System.Drawing.Point(138, 181);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 22);
@@ -331,7 +333,7 @@
             this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(152)))), ((int)(((byte)(143)))));
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 38;
-            this.iconButton3.Location = new System.Drawing.Point(250, 270);
+            this.iconButton3.Location = new System.Drawing.Point(233, 332);
             this.iconButton3.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
@@ -357,7 +359,7 @@
             this.tbCif.CustomButton.UseSelectable = true;
             this.tbCif.CustomButton.Visible = false;
             this.tbCif.Lines = new string[0];
-            this.tbCif.Location = new System.Drawing.Point(253, 215);
+            this.tbCif.Location = new System.Drawing.Point(236, 277);
             this.tbCif.MaxLength = 32767;
             this.tbCif.Name = "tbCif";
             this.tbCif.PasswordChar = '\0';
@@ -387,7 +389,7 @@
             this.tbEmail.CustomButton.UseSelectable = true;
             this.tbEmail.CustomButton.Visible = false;
             this.tbEmail.Lines = new string[0];
-            this.tbEmail.Location = new System.Drawing.Point(253, 168);
+            this.tbEmail.Location = new System.Drawing.Point(236, 230);
             this.tbEmail.MaxLength = 32767;
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
@@ -417,7 +419,7 @@
             this.tbNombre.CustomButton.UseSelectable = true;
             this.tbNombre.CustomButton.Visible = false;
             this.tbNombre.Lines = new string[0];
-            this.tbNombre.Location = new System.Drawing.Point(253, 24);
+            this.tbNombre.Location = new System.Drawing.Point(236, 86);
             this.tbNombre.MaxLength = 32767;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.PasswordChar = '\0';
@@ -437,7 +439,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(168, 168);
+            this.label5.Location = new System.Drawing.Point(151, 230);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 22);
@@ -449,7 +451,7 @@
             this.lbCif.AutoSize = true;
             this.lbCif.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.lbCif.ForeColor = System.Drawing.Color.White;
-            this.lbCif.Location = new System.Drawing.Point(195, 216);
+            this.lbCif.Location = new System.Drawing.Point(178, 278);
             this.lbCif.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCif.Name = "lbCif";
             this.lbCif.Size = new System.Drawing.Size(50, 22);
@@ -461,18 +463,30 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(168, 25);
+            this.label3.Location = new System.Drawing.Point(151, 87);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 22);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(231, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 28);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Registro";
+            // 
             // FrmRegisterUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 430);
+            this.ClientSize = new System.Drawing.Size(780, 483);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
@@ -519,5 +533,6 @@
         private System.Windows.Forms.LinkLabel lnkCambiarcContra;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private System.Windows.Forms.Label lbContraseña;
+        private System.Windows.Forms.Label label4;
     }
 }
