@@ -66,7 +66,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(51)))), ((int)(((byte)(59)))));
             this.panel2.Controls.Add(this.lnkCambiarcContra);
-            this.panel2.Controls.Add(this.btnCancelar);
             this.panel2.Controls.Add(this.TbPassword);
             this.panel2.Controls.Add(this.tbUser);
             this.panel2.Controls.Add(this.btnLogin);
@@ -88,7 +87,6 @@
             this.lnkCambiarcContra.TabIndex = 6;
             this.lnkCambiarcContra.TabStop = true;
             this.lnkCambiarcContra.Text = "¿Ha olvidado su contraseña?";
-            this.lnkCambiarcContra.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btnCancelar
             // 
@@ -96,16 +94,15 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.btnCancelar.IconColor = System.Drawing.Color.Firebrick;
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleLeft;
+            this.btnCancelar.IconColor = System.Drawing.Color.White;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 38;
-            this.btnCancelar.Location = new System.Drawing.Point(247, 171);
+            this.btnCancelar.Location = new System.Drawing.Point(-16, 6);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnCancelar.Size = new System.Drawing.Size(202, 70);
+            this.btnCancelar.Size = new System.Drawing.Size(98, 34);
             this.btnCancelar.TabIndex = 5;
-            this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -220,6 +217,7 @@
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(692, 327);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.panel1);
             this.DisplayHeader = false;
             this.ForeColor = System.Drawing.Color.CornflowerBlue;
