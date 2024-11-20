@@ -265,6 +265,15 @@
   <ItemGroup>
     <Folder Include="Dao\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\14183452-unscreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diseño sin título.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diseño sin título %281%29.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
