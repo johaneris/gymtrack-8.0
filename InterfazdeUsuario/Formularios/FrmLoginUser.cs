@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InterfazdeUsuario;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,5 +28,26 @@ namespace InterfazdeUsuario.Formularios
             FrmRegisterUser register = new FrmRegisterUser();
             register.ShowDialog();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal principal = new FrmPrincipal();
+            this.Close();
+            principal.Show();
+        }
+
+        private void lnkCambiarcContra2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmResetPassword resetpassword = new FrmResetPassword();
+            this.Hide();
+            resetpassword.ShowDialog(); 
+        }
+
+        private void btnLoginUser_Click(object sender, EventArgs e)
+        {
+         
+        }
     }
 }
+
+

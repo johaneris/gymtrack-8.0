@@ -34,5 +34,19 @@ namespace InterfazdeUsuario.Formularios
            FrmLoginUser user2 = new FrmLoginUser();
             user2.ShowDialog();
         }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal principal = new FrmPrincipal();
+            this.Close();
+            principal.Show();
+        }
+
+        private void lnkCambiarcContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmLoginUser login = new FrmLoginUser();
+            this.Hide();
+            login.ShowDialog();
+        }
     }
 }

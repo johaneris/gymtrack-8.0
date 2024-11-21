@@ -173,6 +173,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\MnualDeAyuda.cs" />
+    <EmbeddedResource Include="Formularios\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmAccess.resx">
       <DependentUpon>FrmAccess.cs</DependentUpon>
     </EmbeddedResource>
