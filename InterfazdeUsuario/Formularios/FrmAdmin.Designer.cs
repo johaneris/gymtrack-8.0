@@ -28,66 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msAdmin = new System.Windows.Forms.MenuStrip();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnMembresias = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.limToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // msAdmin
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
+            this.msAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.msAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.btnMembresias,
             this.opcionesToolStripMenuItem,
-            this.notificacionesToolStripMenuItem,
-            this.reportesToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1147, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.limToolStripMenuItem,
+            this.reportesToolStripMenuItem,
+            this.logOutToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.msAdmin.Location = new System.Drawing.Point(0, 0);
+            this.msAdmin.Name = "msAdmin";
+            this.msAdmin.Size = new System.Drawing.Size(1147, 93);
+            this.msAdmin.TabIndex = 0;
+            this.msAdmin.Text = "menuStrip1";
             // 
-            // archivoToolStripMenuItem
+            // exitToolStripMenuItem
             // 
-            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
-            this.archivoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
-            this.archivoToolStripMenuItem.Text = "Membresías";
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(14, 89);
             // 
-            // salirToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
-            this.salirToolStripMenuItem.Text = "Salir";
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(26, 89);
+            this.toolStripMenuItem1.Text = ".";
+            // 
+            // btnMembresias
+            // 
+            this.btnMembresias.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMembresias.ForeColor = System.Drawing.Color.White;
+            this.btnMembresias.Image = global::InterfazdeUsuario.Properties.Resources._2;
+            this.btnMembresias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMembresias.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnMembresias.Name = "btnMembresias";
+            this.btnMembresias.Size = new System.Drawing.Size(163, 89);
+            this.btnMembresias.Text = "Membresías";
+            this.btnMembresias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // opcionesToolStripMenuItem
             // 
+            this.opcionesToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.opcionesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.opcionesToolStripMenuItem.Image = global::InterfazdeUsuario.Properties.Resources.lupita;
+            this.opcionesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.opcionesToolStripMenuItem.Text = "Acceso al Gimnasio";
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(211, 89);
+            this.opcionesToolStripMenuItem.Text = "Buscar miembro";
             // 
-            // notificacionesToolStripMenuItem
+            // limToolStripMenuItem
             // 
-            this.notificacionesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.notificacionesToolStripMenuItem.Name = "notificacionesToolStripMenuItem";
-            this.notificacionesToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
-            this.notificacionesToolStripMenuItem.Text = "Notificaciones";
+            this.limToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.limToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.limToolStripMenuItem.Image = global::InterfazdeUsuario.Properties.Resources.basuritaaaaaaa;
+            this.limToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.limToolStripMenuItem.Name = "limToolStripMenuItem";
+            this.limToolStripMenuItem.Size = new System.Drawing.Size(222, 89);
+            this.limToolStripMenuItem.Text = "Eliminar miembro";
             // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.reportesToolStripMenuItem.Image = global::InterfazdeUsuario.Properties.Resources.reporte;
+            this.reportesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(138, 89);
             this.reportesToolStripMenuItem.Text = "Reportes";
             this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold);
+            this.logOutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.logOutToolStripMenuItem.Image = global::InterfazdeUsuario.Properties.Resources.Salida;
+            this.logOutToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(138, 89);
+            this.logOutToolStripMenuItem.Text = "Log Out";
             // 
             // FrmAdmin
             // 
@@ -95,12 +127,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(51)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1147, 638);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.msAdmin);
+            this.MainMenuStrip = this.msAdmin;
             this.Name = "FrmAdmin";
-            this.Text = "FrmAdmin";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.msAdmin.ResumeLayout(false);
+            this.msAdmin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,11 +139,13 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip msAdmin;
+        private System.Windows.Forms.ToolStripMenuItem btnMembresias;
         private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem notificacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem limToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

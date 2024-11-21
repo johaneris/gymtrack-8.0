@@ -39,6 +39,7 @@
             this.btnLogin = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.lbContraseña = new System.Windows.Forms.Label();
             this.lnkCambiarcContra = new System.Windows.Forms.LinkLabel();
@@ -52,7 +53,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbCif = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -69,20 +69,14 @@
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-
-
             this.panel1.Size = new System.Drawing.Size(219, 480);
-
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::InterfazdeUsuario.Properties.Resources.x;
-
-
             this.pictureBox1.Location = new System.Drawing.Point(-23, 130);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(248, 231);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -235,11 +229,21 @@
             this.panel4.Location = new System.Drawing.Point(215, 30);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-
             this.panel4.Size = new System.Drawing.Size(823, 498);
-
             this.panel4.TabIndex = 1;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(231, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(143, 36);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Registro";
             // 
             // metroTextBox1
             // 
@@ -247,20 +251,18 @@
             // 
             // 
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(297, 2);
-            this.metroTextBox1.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(223, 2);
+            this.metroTextBox1.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.CustomButton.TabIndex = 1;
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[0];
-
             this.metroTextBox1.Location = new System.Drawing.Point(340, 91);
-            this.metroTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.metroTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -277,14 +279,15 @@
             // 
             // lbContraseña
             // 
-            
-
+            this.lbContraseña.Location = new System.Drawing.Point(0, 0);
+            this.lbContraseña.Name = "lbContraseña";
+            this.lbContraseña.Size = new System.Drawing.Size(100, 23);
+            this.lbContraseña.TabIndex = 26;
             // 
             // lnkCambiarcContra
             // 
             this.lnkCambiarcContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkCambiarcContra.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-
             this.lnkCambiarcContra.Location = new System.Drawing.Point(312, 424);
             this.lnkCambiarcContra.Name = "lnkCambiarcContra";
             this.lnkCambiarcContra.Size = new System.Drawing.Size(253, 22);
@@ -292,15 +295,12 @@
             this.lnkCambiarcContra.TabStop = true;
             this.lnkCambiarcContra.Text = "¿Ya tienes una contraseña?";
             this.lnkCambiarcContra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
             // 
             // rbtnUserType2
             // 
             this.rbtnUserType2.AutoSize = true;
-
             this.rbtnUserType2.Location = new System.Drawing.Point(452, 156);
-            this.rbtnUserType2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.rbtnUserType2.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnUserType2.Name = "rbtnUserType2";
             this.rbtnUserType2.Size = new System.Drawing.Size(118, 17);
             this.rbtnUserType2.TabIndex = 13;
@@ -310,10 +310,8 @@
             // rbtnUserType
             // 
             this.rbtnUserType.AutoSize = true;
-
             this.rbtnUserType.Location = new System.Drawing.Point(340, 156);
-            this.rbtnUserType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.rbtnUserType.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnUserType.Name = "rbtnUserType";
             this.rbtnUserType.Size = new System.Drawing.Size(84, 17);
             this.rbtnUserType.TabIndex = 12;
@@ -325,9 +323,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-
             this.label6.Location = new System.Drawing.Point(209, 147);
-
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(116, 27);
             this.label6.TabIndex = 10;
@@ -344,10 +340,8 @@
             this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(152)))), ((int)(((byte)(143)))));
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 38;
-
             this.iconButton3.Location = new System.Drawing.Point(317, 329);
             this.iconButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
             this.iconButton3.Size = new System.Drawing.Size(253, 63);
@@ -363,20 +357,18 @@
             // 
             // 
             this.tbCif.CustomButton.Image = null;
-            this.tbCif.CustomButton.Location = new System.Drawing.Point(297, 2);
-            this.tbCif.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCif.CustomButton.Location = new System.Drawing.Point(223, 2);
+            this.tbCif.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.tbCif.CustomButton.Name = "";
-            this.tbCif.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.tbCif.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.tbCif.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tbCif.CustomButton.TabIndex = 1;
             this.tbCif.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbCif.CustomButton.UseSelectable = true;
             this.tbCif.CustomButton.Visible = false;
             this.tbCif.Lines = new string[0];
-
             this.tbCif.Location = new System.Drawing.Point(340, 266);
-            this.tbCif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.tbCif.Margin = new System.Windows.Forms.Padding(4);
             this.tbCif.MaxLength = 32767;
             this.tbCif.Name = "tbCif";
             this.tbCif.PasswordChar = '\0';
@@ -397,20 +389,18 @@
             // 
             // 
             this.tbEmail.CustomButton.Image = null;
-            this.tbEmail.CustomButton.Location = new System.Drawing.Point(297, 2);
-            this.tbEmail.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbEmail.CustomButton.Location = new System.Drawing.Point(223, 2);
+            this.tbEmail.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmail.CustomButton.Name = "";
-            this.tbEmail.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.tbEmail.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.tbEmail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tbEmail.CustomButton.TabIndex = 1;
             this.tbEmail.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbEmail.CustomButton.UseSelectable = true;
             this.tbEmail.CustomButton.Visible = false;
             this.tbEmail.Lines = new string[0];
-
             this.tbEmail.Location = new System.Drawing.Point(340, 208);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmail.MaxLength = 32767;
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
@@ -431,20 +421,18 @@
             // 
             // 
             this.tbNombre.CustomButton.Image = null;
-            this.tbNombre.CustomButton.Location = new System.Drawing.Point(297, 2);
-            this.tbNombre.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNombre.CustomButton.Location = new System.Drawing.Point(223, 2);
+            this.tbNombre.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.tbNombre.CustomButton.Name = "";
-            this.tbNombre.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.tbNombre.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.tbNombre.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tbNombre.CustomButton.TabIndex = 1;
             this.tbNombre.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbNombre.CustomButton.UseSelectable = true;
             this.tbNombre.CustomButton.Visible = false;
             this.tbNombre.Lines = new string[0];
-
             this.tbNombre.Location = new System.Drawing.Point(340, 31);
-            this.tbNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.tbNombre.Margin = new System.Windows.Forms.Padding(4);
             this.tbNombre.MaxLength = 32767;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.PasswordChar = '\0';
@@ -464,9 +452,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-
             this.label5.Location = new System.Drawing.Point(226, 208);
-
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 27);
             this.label5.TabIndex = 4;
@@ -474,52 +460,30 @@
             // 
             // lbCif
             // 
-
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(173, 267);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 27);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Contraseña:";
-
+            this.lbCif.Location = new System.Drawing.Point(0, 0);
+            this.lbCif.Name = "lbCif";
+            this.lbCif.Size = new System.Drawing.Size(100, 23);
+            this.lbCif.TabIndex = 27;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-
             this.label3.Location = new System.Drawing.Point(226, 32);
-
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 27);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(231, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 28);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Registro";
-            // 
             // FrmRegisterUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.ClientSize = new System.Drawing.Size(1040, 529);
-
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmRegisterUser";

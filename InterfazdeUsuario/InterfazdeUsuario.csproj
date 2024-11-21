@@ -168,8 +168,6 @@
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="models\Admin.cs" />
-    <Compile Include="models\LoginUser.cs" />
-    <Compile Include="models\RegisterUser.cs" />
     <Compile Include="Service\consejos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -273,6 +271,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Diseño sin título %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_2024-11-20_150244530-Photoroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_2024-11-20_150932597-Photoroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_2024-11-20_153838362-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2222.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8393838.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basurita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basuraaaaaaaaa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basuritaaaaaaa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cambiarElmenu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
