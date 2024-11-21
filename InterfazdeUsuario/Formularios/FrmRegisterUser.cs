@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using MetroFramework;
+using InterfazdeUsuario.Dao;
+using InterfazdeUsuario.Service;
 
 
 namespace InterfazdeUsuario.Formularios
@@ -19,34 +22,45 @@ namespace InterfazdeUsuario.Formularios
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void iconButton3_Click(object sender, EventArgs e)
-        {
-           FrmLoginUser user2 = new FrmLoginUser();
-            user2.ShowDialog();
-        }
-
-        private void iconButton4_Click(object sender, EventArgs e)
-        {
-            FrmPrincipal principal = new FrmPrincipal();
-            this.Close();
-            principal.Show();
-        }
-
         private void lnkCambiarcContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmLoginUser login = new FrmLoginUser();
             this.Hide();
             login.ShowDialog();
         }
+
+        private void btnRegisterUser_Click(object sender, EventArgs e)
+        {
+            FrmLoginUser user2 = new FrmLoginUser();
+            user2.ShowDialog();
+
+            string name = tbEmail.Text.Trim();
+            string lastname = tbApellido.Text.Trim();
+            string email = tbEmail.Text.Trim();
+            string password = tbPassword.Text.Trim();
+            string identify = tbIdentify.Text.Trim();
+            string usertype;
+
+            if (rbtnUserType.Checked)
+            {
+                usertype = "Estudiante";
+            }
+            else if (rbtnUserType.Checked)
+            {
+                usertype = "Persona Externa";
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un tipo de usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+            RegisterService service = new RegisterService(new RegistroMiembroDao(), new RegistroDeMiembroService());
+            string resultado = service.RegisterMember(name, lastname, email, password, usertype, identify);
+
+            MetroMessageBox.Show(this, resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
-}
+    }
+
