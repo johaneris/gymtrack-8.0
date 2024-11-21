@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InterfazdeUsuario.Formularios
 {
-    public partial class Form1 : Form
+    public partial class FrmInitialPageUser : Form
     {
-        public Form1()
+        public FrmInitialPageUser()
         {
             InitializeComponent();
         }

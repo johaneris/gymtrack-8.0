@@ -73,5 +73,18 @@ namespace InterfazdeUsuario.Dao
             }
             return false; // No se encontró el miembro
         }
+
+        public bool AutenticarUsuario(string email, string password)
+        {
+            foreach (RegistroMiembro miembro in miembros)
+            {
+                if (miembro.Email == email && miembro.Password == password)
+                {
+                    return true; // Credenciales correctas
+                }
+            }
+            return false; // Credenciales incorrectas
+        }
+
     }
 }

@@ -31,9 +31,6 @@ namespace InterfazdeUsuario.Formularios
 
         private void btnRegisterUser_Click(object sender, EventArgs e)
         {
-            FrmLoginUser user2 = new FrmLoginUser();
-            user2.ShowDialog();
-
             string name = tbEmail.Text.Trim();
             string lastname = tbApellido.Text.Trim();
             string email = tbEmail.Text.Trim();
@@ -61,6 +58,13 @@ namespace InterfazdeUsuario.Formularios
 
             MetroMessageBox.Show(this, resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            FrmLoginUser login = new FrmLoginUser();
+            this.Close();
+            login.Show();
+        }
     }
-    }
+}
 
