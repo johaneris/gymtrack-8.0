@@ -102,12 +102,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dao\RegistroMiembroDao.cs" />
-    <Compile Include="Formularios\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FrmResetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,9 +171,6 @@
     <Compile Include="Dao\MnualDeAyuda.cs" />
     <Compile Include="Service\RegisterService.cs" />
     <Compile Include="Service\RegistroDeMiembroService.cs" />
-    <EmbeddedResource Include="Formularios\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmAccess.resx">
       <DependentUpon>FrmAccess.cs</DependentUpon>
     </EmbeddedResource>
