@@ -22,16 +22,17 @@ namespace InterfazdeUsuario.Service
                 fs = new FileStream(filepath, FileMode.Create, FileAccess.Write);
                 bw = new BinaryWriter(fs);
 
-                foreach(RegistroMiembro m in miembros)
+                foreach (RegistroMiembro m in miembros)
                 {
                     bw.Write(m.ID);
                     bw.Write(m.Name);
                     bw.Write(m.LastName);
                     bw.Write(m.UserType);
                     bw.Write(m.Email);
-                    bw.Write(m.Identify);
+                    bw.Write(m.Cif);
+                    bw.Write(m.Cedula);
                     bw.Write(m.Password);
-                    
+
 
                 }
             }
@@ -57,28 +58,38 @@ namespace InterfazdeUsuario.Service
             try
             {
                 fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
-
                 br = new BinaryReader(fs);
 
-                while(fs.Position != fs.Length)
+                while (fs.Position < fs.Length) // Verifica si quedan datos por leer
                 {
-                    int id = br.ReadInt32();
-                    string name = br.ReadString();
-                    string lastname = br.ReadString();
-                    string usertype = br.ReadString();
-                    string email = br.ReadString();
-                    string identify = br.ReadString();
-                    string password = br.ReadString();  
-                    
+                    try
+                    {
+                        int id = br.ReadInt32();
+                        string name = br.ReadString();
+                        string lastname = br.ReadString();
+                        string usertype = br.ReadString();
+                        string email = br.ReadString();
+                        string cif = br.ReadString();
+                        string cedula = br.ReadString();
+                        string password = br.ReadString();
 
-                    miembros.Add(new RegistroMiembro(id, name, lastname, usertype, email, identify, password));
+                        miembros.Add(new RegistroMiembro(id, name, lastname, usertype, email, cif, cedula, password));
+                    }
+                    catch (EndOfStreamException)
+                    {
+                        // Maneja cualquier posible lectura incompleta
+                        break;
+                    }
                 }
-
-
+            }
+            catch (Exception ex)
+            {
+                // Loguea el error si es necesario
+                Console.WriteLine($"Error al leer el archivo: {ex.Message}");
             }
             finally
             {
-                if(fs != null) fs.Close();
+                if (fs != null) fs.Close();
                 if (br != null) br.Close();
             }
 

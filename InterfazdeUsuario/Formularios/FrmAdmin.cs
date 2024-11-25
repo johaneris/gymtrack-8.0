@@ -19,8 +19,10 @@ namespace InterfazdeUsuario.Formularios
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmReportes frm = new FrmReportes();    
-            frm.ShowDialog();
+            Reportes reportes = new Reportes();
+            pnl_admin.Controls.Clear();
+            reportes.Dock = DockStyle.Fill; 
+            pnl_admin.Controls.Add(reportes);
         }
     }
 }

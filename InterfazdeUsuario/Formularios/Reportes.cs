@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace InterfazdeUsuario.Formularios
 {
-    public partial class FrmReportes : Form
+    public partial class Reportes : UserControl
     {
-        public FrmReportes()
+        public Reportes()
         {
             InitializeComponent();
-        }
-
-        private void FrmReportes_Load(object sender, EventArgs e)
-        {
-
-            this.reportViewer1.RefreshReport();
         }
     }
 }

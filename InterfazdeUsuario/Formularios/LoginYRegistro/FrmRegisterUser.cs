@@ -31,32 +31,47 @@ namespace InterfazdeUsuario.Formularios
 
         private void btnRegisterUser_Click(object sender, EventArgs e)
         {
-            string name = tbEmail.Text.Trim();
+            string name = tbNombre.Text.Trim();
             string lastname = tbApellido.Text.Trim();
             string email = tbEmail.Text.Trim();
             string password = tbPassword.Text.Trim();
-            string identify = tbIdentify.Text.Trim();
-            string usertype;
+            string cif = string.Empty;    
+            string cedula = string.Empty; 
+            string userType;
 
+            // Determinar el tipo de usuario según los RadioButton
             if (rbtnUserType.Checked)
             {
-                usertype = "Estudiante";
+                userType = "Estudiante";
+                cif = tbIdentify.Text.Trim(); // CIF ingresado
             }
-            else if (rbtnUserType.Checked)
+            else if (rbtnUserType2.Checked)
             {
-                usertype = "Persona Externa";
+                userType = "Miembro Externo";
+                cedula = tbIdentify.Text.Trim(); // Cédula ingresada
             }
             else
             {
-                MessageBox.Show("Seleccione un tipo de usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroMessageBox.Show(this, "Seleccione un tipo de usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-
             }
 
+            // Llamar al servicio de registro
             RegisterService service = new RegisterService(new RegistroMiembroDao(), new RegistroDeMiembroService());
-            string resultado = service.RegisterMember(name, lastname, email, password, usertype, identify);
+            string resultado = service.RegisterMember(name, lastname, email, password, userType, cif, cedula);
 
-            MetroMessageBox.Show(this, resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Mostrar mensaje y actuar según el resultado
+            if (resultado == "Registro exitoso.")
+            {
+                MetroMessageBox.Show(this, resultado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FrmLoginUser login = new FrmLoginUser();
+                this.Close();
+                login.Show();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)

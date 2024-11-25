@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbConfirmPassword = new MetroFramework.Controls.MetroTextBox();
@@ -41,69 +38,30 @@
             this.tbCifUser = new MetroFramework.Controls.MetroTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnResetPassword = new FontAwesome.Sharp.IconButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnResetPassword = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.panel1.Controls.Add(this.iconButton4);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 30);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(219, 625);
-            this.panel1.TabIndex = 0;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.ForeColor = System.Drawing.Color.AliceBlue;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleLeft;
-            this.iconButton4.IconColor = System.Drawing.Color.White;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 38;
-            this.iconButton4.Location = new System.Drawing.Point(3, 2);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.iconButton4.Size = new System.Drawing.Size(99, 34);
-            this.iconButton4.TabIndex = 8;
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::InterfazdeUsuario.Properties.Resources.x;
-            this.pictureBox1.Location = new System.Drawing.Point(-29, 198);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 231);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(51)))), ((int)(((byte)(59)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(124)))), ((int)(((byte)(184)))));
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.btnResetPassword);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(216, 30);
+            this.panel2.Location = new System.Drawing.Point(245, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(831, 628);
+            this.panel2.Size = new System.Drawing.Size(802, 654);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -117,7 +75,7 @@
             this.panel3.Controls.Add(this.tbCifUser);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(56, 183);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(667, 261);
             this.panel3.TabIndex = 37;
@@ -128,10 +86,10 @@
             // 
             // 
             this.tbConfirmPassword.CustomButton.Image = null;
-            this.tbConfirmPassword.CustomButton.Location = new System.Drawing.Point(559, 2);
-            this.tbConfirmPassword.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbConfirmPassword.CustomButton.Location = new System.Drawing.Point(419, 2);
+            this.tbConfirmPassword.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.tbConfirmPassword.CustomButton.Name = "";
-            this.tbConfirmPassword.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.tbConfirmPassword.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.tbConfirmPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tbConfirmPassword.CustomButton.TabIndex = 1;
             this.tbConfirmPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -139,7 +97,7 @@
             this.tbConfirmPassword.CustomButton.Visible = false;
             this.tbConfirmPassword.Lines = new string[0];
             this.tbConfirmPassword.Location = new System.Drawing.Point(191, 212);
-            this.tbConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbConfirmPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbConfirmPassword.MaxLength = 32767;
             this.tbConfirmPassword.Name = "tbConfirmPassword";
             this.tbConfirmPassword.PasswordChar = '\0';
@@ -182,10 +140,10 @@
             // 
             // 
             this.tbReplacePassword.CustomButton.Image = null;
-            this.tbReplacePassword.CustomButton.Location = new System.Drawing.Point(559, 2);
-            this.tbReplacePassword.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbReplacePassword.CustomButton.Location = new System.Drawing.Point(419, 2);
+            this.tbReplacePassword.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.tbReplacePassword.CustomButton.Name = "";
-            this.tbReplacePassword.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.tbReplacePassword.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.tbReplacePassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tbReplacePassword.CustomButton.TabIndex = 1;
             this.tbReplacePassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -193,7 +151,7 @@
             this.tbReplacePassword.CustomButton.Visible = false;
             this.tbReplacePassword.Lines = new string[0];
             this.tbReplacePassword.Location = new System.Drawing.Point(191, 101);
-            this.tbReplacePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbReplacePassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbReplacePassword.MaxLength = 32767;
             this.tbReplacePassword.Name = "tbReplacePassword";
             this.tbReplacePassword.PasswordChar = '\0';
@@ -225,10 +183,10 @@
             // 
             // 
             this.tbCifUser.CustomButton.Image = null;
-            this.tbCifUser.CustomButton.Location = new System.Drawing.Point(559, 2);
-            this.tbCifUser.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCifUser.CustomButton.Location = new System.Drawing.Point(419, 2);
+            this.tbCifUser.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.tbCifUser.CustomButton.Name = "";
-            this.tbCifUser.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.tbCifUser.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.tbCifUser.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tbCifUser.CustomButton.TabIndex = 1;
             this.tbCifUser.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -236,7 +194,7 @@
             this.tbCifUser.CustomButton.Visible = false;
             this.tbCifUser.Lines = new string[0];
             this.tbCifUser.Location = new System.Drawing.Point(191, 12);
-            this.tbCifUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCifUser.Margin = new System.Windows.Forms.Padding(4);
             this.tbCifUser.MaxLength = 32767;
             this.tbCifUser.Name = "tbCifUser";
             this.tbCifUser.PasswordChar = '\0';
@@ -274,6 +232,17 @@
             this.label7.Text = "Tu nueva contraseña deberia ser diferente a las contraseñas recientemente usadas." +
     " ";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(235, 92);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(339, 16);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Ingrese el usuario o el cif para su cambio de contraseña";
+            // 
             // btnResetPassword
             // 
             this.btnResetPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -295,46 +264,86 @@
             this.btnResetPassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResetPassword.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // panel1
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(235, 92);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(339, 16);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Ingrese el usuario o el cif para su cambio de contraseña";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel1.BackgroundImage = global::InterfazdeUsuario.Properties.Resources.Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__2_;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.iconButton4);
+            this.panel1.Location = new System.Drawing.Point(0, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(244, 651);
+            this.panel1.TabIndex = 0;
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.FlatAppearance.BorderSize = 0;
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton4.ForeColor = System.Drawing.Color.AliceBlue;
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleLeft;
+            this.iconButton4.IconColor = System.Drawing.Color.White;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 38;
+            this.iconButton4.Location = new System.Drawing.Point(3, 2);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.iconButton4.Size = new System.Drawing.Size(99, 34);
+            this.iconButton4.TabIndex = 8;
+            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(245, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(799, 74);
+            this.panel4.TabIndex = 38;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Location = new System.Drawing.Point(245, 4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(802, 71);
+            this.panel5.TabIndex = 38;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 30);
+            this.label1.Location = new System.Drawing.Point(264, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(831, 44);
-            this.label1.TabIndex = 23;
+            this.label1.Size = new System.Drawing.Size(285, 33);
+            this.label1.TabIndex = 0;
             this.label1.Text = "Cambiar Contraseña";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmResetPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 656);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmResetPassword";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Form2";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -343,8 +352,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private MetroFramework.Controls.MetroTextBox tbCifUser;
@@ -357,5 +364,8 @@
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton iconButton4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label1;
     }
 }

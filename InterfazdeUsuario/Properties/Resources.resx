@@ -157,6 +157,12 @@
   <data name="lupita" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lupita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Red and Blue Vintage Modern minimal Gym and Fitness Logo (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Red and Blue Vintage Modern minimal Gym and Fitness Logo (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="reporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

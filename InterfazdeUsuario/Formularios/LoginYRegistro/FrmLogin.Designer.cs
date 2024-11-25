@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lnkCambiarcContra = new System.Windows.Forms.LinkLabel();
@@ -38,29 +37,22 @@
             this.btnLogin = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(4, 33);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel1.BackgroundImage = global::InterfazdeUsuario.Properties.Resources.Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__2_;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Location = new System.Drawing.Point(0, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(219, 298);
+            this.panel1.Size = new System.Drawing.Size(223, 326);
             this.panel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::InterfazdeUsuario.Properties.Resources.x;
-            this.pictureBox1.Location = new System.Drawing.Point(-32, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 232);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // btnCancelar
             // 
@@ -72,7 +64,7 @@
             this.btnCancelar.IconColor = System.Drawing.Color.White;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 38;
-            this.btnCancelar.Location = new System.Drawing.Point(4, 8);
+            this.btnCancelar.Location = new System.Drawing.Point(3, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnCancelar.Size = new System.Drawing.Size(98, 34);
@@ -83,16 +75,13 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(51)))), ((int)(((byte)(59)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(124)))), ((int)(((byte)(184)))));
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.lnkCambiarcContra);
-            this.panel2.Controls.Add(this.TbPassword);
-            this.panel2.Controls.Add(this.tbUser);
             this.panel2.Controls.Add(this.btnLogin);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(220, 33);
+            this.panel2.Location = new System.Drawing.Point(220, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(475, 295);
+            this.panel2.Size = new System.Drawing.Size(475, 323);
             this.panel2.TabIndex = 1;
             // 
             // lnkCambiarcContra
@@ -100,7 +89,7 @@
             this.lnkCambiarcContra.AutoSize = true;
             this.lnkCambiarcContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkCambiarcContra.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lnkCambiarcContra.Location = new System.Drawing.Point(137, 256);
+            this.lnkCambiarcContra.Location = new System.Drawing.Point(138, 277);
             this.lnkCambiarcContra.Name = "lnkCambiarcContra";
             this.lnkCambiarcContra.Size = new System.Drawing.Size(200, 18);
             this.lnkCambiarcContra.TabIndex = 6;
@@ -122,7 +111,7 @@
             this.TbPassword.CustomButton.UseSelectable = true;
             this.TbPassword.CustomButton.Visible = false;
             this.TbPassword.Lines = new string[0];
-            this.TbPassword.Location = new System.Drawing.Point(171, 97);
+            this.TbPassword.Location = new System.Drawing.Point(159, 69);
             this.TbPassword.MaxLength = 32767;
             this.TbPassword.Name = "TbPassword";
             this.TbPassword.PasswordChar = '*';
@@ -152,7 +141,7 @@
             this.tbUser.CustomButton.UseSelectable = true;
             this.tbUser.CustomButton.Visible = false;
             this.tbUser.Lines = new string[0];
-            this.tbUser.Location = new System.Drawing.Point(171, 43);
+            this.tbUser.Location = new System.Drawing.Point(159, 15);
             this.tbUser.MaxLength = 32767;
             this.tbUser.Name = "tbUser";
             this.tbUser.PasswordChar = '\0';
@@ -169,7 +158,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,7 +167,7 @@
             this.btnLogin.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(152)))), ((int)(((byte)(143)))));
             this.btnLogin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogin.IconSize = 38;
-            this.btnLogin.Location = new System.Drawing.Point(108, 167);
+            this.btnLogin.Location = new System.Drawing.Point(106, 202);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnLogin.Size = new System.Drawing.Size(256, 63);
@@ -193,7 +182,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(18, 94);
+            this.label2.Location = new System.Drawing.Point(3, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(155, 27);
             this.label2.TabIndex = 1;
@@ -204,11 +193,23 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 40);
+            this.label1.Location = new System.Drawing.Point(42, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.TbPassword);
+            this.panel3.Controls.Add(this.tbUser);
+            this.panel3.Location = new System.Drawing.Point(3, 79);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(472, 103);
+            this.panel3.TabIndex = 7;
             // 
             // FrmLogin
             // 
@@ -217,7 +218,6 @@
             this.BackImage = global::InterfazdeUsuario.Properties.Resources.Screenshot_2024_11_10_175550;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(692, 327);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.DisplayHeader = false;
@@ -230,9 +230,10 @@
             this.Text = "AdminForm";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -245,9 +246,9 @@
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroTextBox TbPassword;
         private MetroFramework.Controls.MetroTextBox tbUser;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.LinkLabel lnkCambiarcContra;
         private FontAwesome.Sharp.IconButton btnLogin;
+        private System.Windows.Forms.Panel panel3;
     }
 }

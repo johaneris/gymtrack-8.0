@@ -14,12 +14,13 @@ namespace InterfazdeUsuario.models
         public string UserType{ get; set; }
       
         public string Email {  get; set; }
-        public string Identify { get; set; }
-        public string Password { get; set; }    
+        public string Cif {  get; set; }
+        public string Cedula { get; set; }
+        public string Password { get; set; }
 
 
 
-        public RegistroMiembro(int iD, string name, string lastname, string usertipe, string email, string identify, string password)
+        public RegistroMiembro(int iD, string name, string lastname, string usertipe, string email, string password, string cif, string cedula)
         {
             ID = iD;
             Name = name;
@@ -27,7 +28,9 @@ namespace InterfazdeUsuario.models
             UserType = usertipe;
           
             Email = email;
-            Identify = identify;
+            Cif = cif; 
+            Cedula = cedula;
+            
             Password = password.Trim();
         }
     }

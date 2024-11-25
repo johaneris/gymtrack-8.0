@@ -253,6 +253,26 @@ namespace InterfazdeUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap reporte {
             get {
                 object obj = ResourceManager.GetObject("reporte", resourceCulture);

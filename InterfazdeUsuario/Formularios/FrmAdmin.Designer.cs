@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.msAdmin = new System.Windows.Forms.MenuStrip();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMembresias = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.limToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnl_admin = new System.Windows.Forms.Panel();
             this.msAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // msAdmin
             // 
-            this.msAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.msAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
             this.msAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.msAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
@@ -57,16 +58,16 @@
             this.msAdmin.TabIndex = 0;
             this.msAdmin.Text = "menuStrip1";
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(14, 89);
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(26, 89);
             this.toolStripMenuItem1.Text = ".";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(14, 89);
             // 
             // btnMembresias
             // 
@@ -121,12 +122,20 @@
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(138, 89);
             this.logOutToolStripMenuItem.Text = "Log Out";
             // 
+            // pnl_admin
+            // 
+            this.pnl_admin.Location = new System.Drawing.Point(0, 87);
+            this.pnl_admin.Name = "pnl_admin";
+            this.pnl_admin.Size = new System.Drawing.Size(1147, 551);
+            this.pnl_admin.TabIndex = 1;
+            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(51)))), ((int)(((byte)(59)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(124)))), ((int)(((byte)(184)))));
             this.ClientSize = new System.Drawing.Size(1147, 638);
+            this.Controls.Add(this.pnl_admin);
             this.Controls.Add(this.msAdmin);
             this.MainMenuStrip = this.msAdmin;
             this.Name = "FrmAdmin";
@@ -147,5 +156,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem limToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Panel pnl_admin;
     }
 }

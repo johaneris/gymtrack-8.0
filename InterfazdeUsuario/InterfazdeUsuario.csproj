@@ -101,6 +101,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\LoginMiembroDao.cs" />
     <Compile Include="Dao\RegistroMiembroDao.cs" />
     <Compile Include="Formularios\FrmInitialPageUser.cs">
       <SubType>Form</SubType>
@@ -114,41 +115,29 @@
     <Compile Include="Formularios\FrmResetPassword.Designer.cs">
       <DependentUpon>FrmResetPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmAccess.cs">
+    <Compile Include="Formularios\LoginYRegistro\FrmLoginUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmAccess.Designer.cs">
-      <DependentUpon>FrmAccess.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FrmLoginUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FrmLoginUser.Designer.cs">
+    <Compile Include="Formularios\LoginYRegistro\FrmLoginUser.Designer.cs">
       <DependentUpon>FrmLoginUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmReportes.cs">
+    <Compile Include="Formularios\LoginYRegistro\FrmRegisterUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmReportes.Designer.cs">
-      <DependentUpon>FrmReportes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FrmRegisterUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FrmRegisterUser.Designer.cs">
+    <Compile Include="Formularios\LoginYRegistro\FrmRegisterUser.Designer.cs">
       <DependentUpon>FrmRegisterUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmCambiarContra.cs">
+    <Compile Include="Formularios\LoginYRegistro\FrmCambiarContra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmCambiarContra.Designer.cs">
+    <Compile Include="Formularios\LoginYRegistro\FrmCambiarContra.Designer.cs">
       <DependentUpon>FrmCambiarContra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\UserControl1.cs">
+    <Compile Include="Formularios\Reportes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formularios\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="Formularios\Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -162,10 +151,10 @@
     <Compile Include="Formularios\AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmLogin.cs">
+    <Compile Include="Formularios\LoginYRegistro\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmLogin.Designer.cs">
+    <Compile Include="Formularios\LoginYRegistro\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmAdmin.cs">
@@ -185,32 +174,26 @@
     <Compile Include="Dao\MnualDeAyuda.cs" />
     <Compile Include="Service\RegisterService.cs" />
     <Compile Include="Service\RegistroDeMiembroService.cs" />
-    <EmbeddedResource Include="Formularios\FrmAccess.resx">
-      <DependentUpon>FrmAccess.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmInitialPageUser.resx">
       <DependentUpon>FrmInitialPageUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmLoginUser.resx">
+    <EmbeddedResource Include="Formularios\LoginYRegistro\FrmLoginUser.resx">
       <DependentUpon>FrmLoginUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmReportes.resx">
-      <DependentUpon>FrmReportes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmRegisterUser.resx">
+    <EmbeddedResource Include="Formularios\LoginYRegistro\FrmRegisterUser.resx">
       <DependentUpon>FrmRegisterUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmCambiarContra.resx">
+    <EmbeddedResource Include="Formularios\LoginYRegistro\FrmCambiarContra.resx">
       <DependentUpon>FrmCambiarContra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmResetPassword.resx">
       <DependentUpon>FrmResetPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -218,7 +201,7 @@
     <EmbeddedResource Include="Formularios\AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmLogin.resx">
+    <EmbeddedResource Include="Formularios\LoginYRegistro\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -337,6 +320,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cambiarElmenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red and Blue Vintage Modern minimal Gym and Fitness Logo %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red and Blue Vintage Modern minimal Gym and Fitness Logo %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

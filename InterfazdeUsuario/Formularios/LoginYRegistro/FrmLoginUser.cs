@@ -1,6 +1,7 @@
 ﻿using InterfazdeUsuario;
 using InterfazdeUsuario.Dao;
 using InterfazdeUsuario.Service;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,11 @@ namespace InterfazdeUsuario.Formularios
 {
     public partial class FrmLoginUser : MetroFramework.Forms.MetroForm
     {
+        LoginMiembroService loginMiembroService;
         public FrmLoginUser()
         {
             InitializeComponent();
+            loginMiembroService = new LoginMiembroService(new LoginMiembroDao());
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -54,16 +57,10 @@ namespace InterfazdeUsuario.Formularios
                 return;
             }
 
-            //Autenticar archivos
-            RegistroMiembroDao registroDao = new RegistroMiembroDao();
-
-            // Verificar las credenciales con el método AutenticarUsuario
-            bool isAuthenticated = registroDao.AutenticarUsuario(cifCedula, password); ;
-
             //validar el resultado
-            if(isAuthenticated)
+            if(loginMiembroService.AutenticarUsuario(cifCedula, password))
             {
-                MessageBox.Show("Inicio se sesion exitoso.", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
 
                 FrmInitialPageUser initialpage = new FrmInitialPageUser();
                 this.Hide();
@@ -72,7 +69,7 @@ namespace InterfazdeUsuario.Formularios
             }
             else
             {
-                MessageBox.Show("Cif/Cedula o contraseña son incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroMessageBox.Show(this, "Identificador o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
