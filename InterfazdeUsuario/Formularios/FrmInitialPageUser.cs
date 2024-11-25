@@ -16,5 +16,13 @@ namespace InterfazdeUsuario.Formularios
         {
             InitializeComponent();
         }
+
+        private void BtnRegistrarMebresia_Click(object sender, EventArgs e)
+        {
+            ValidarMembresia validarMembresia = new ValidarMembresia();
+            pnlContentUser.Controls.Clear();
+            validarMembresia.Dock = DockStyle.Fill;
+            pnlContentUser.Controls.Add(validarMembresia);
+        }
     }
 }

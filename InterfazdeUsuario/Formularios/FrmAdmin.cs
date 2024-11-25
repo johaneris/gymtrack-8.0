@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.RdlExpressions.ExpressionHostObjectModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,12 +18,22 @@ namespace InterfazdeUsuario.Formularios
             InitializeComponent();
         }
 
-        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        
+
+        private void btnReportes_Click(object sender, EventArgs e)
         {
             Reportes reportes = new Reportes();
-            pnl_admin.Controls.Clear();
-            reportes.Dock = DockStyle.Fill; 
-            pnl_admin.Controls.Add(reportes);
+            pnl_ContenidoAdmin.Controls.Clear();
+            reportes.Dock = DockStyle.Fill;
+
+            pnl_ContenidoAdmin.Controls.Add(reportes);
+
+
+        }
+
+        private void btnGestionarmemresias_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

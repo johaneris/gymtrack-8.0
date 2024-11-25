@@ -13,18 +13,41 @@ namespace InterfazdeUsuario.Service
     {
         private string filepath = "miembros.bin";
         private LoginMiembroDao loginDao;
+        private RegistroMiembro usuarioAutenticado;
 
         public LoginMiembroService(LoginMiembroDao dao)
         {
             this.loginDao = dao;
         }
 
+        public LoginMiembroService()
+        {
+
+        }
         public bool AutenticarUsuario(string identificador, string password)
         {
             CargarDatos();
-            return loginDao.AutenticarUsuario(identificador, password);
+            usuarioAutenticado = loginDao.GetMiembros()
+            .FirstOrDefault(m =>
+                (m.Cif == identificador || m.Cedula == identificador) &&
+                m.Password == password);
+
+            return usuarioAutenticado != null;
+        }
+        public bool EsEstudiante()
+        {
+            return usuarioAutenticado != null && !string.IsNullOrWhiteSpace(usuarioAutenticado.Cif);
         }
 
+        public bool EsMiembroExterno()
+        {
+            return usuarioAutenticado != null && !string.IsNullOrWhiteSpace(usuarioAutenticado.Cedula);
+        }
+
+        public RegistroMiembro ObtenerUsuarioAutenticado()
+        {
+            return usuarioAutenticado;
+        }
         public void CargarDatos()
         {
             if (!File.Exists(filepath)) return;
