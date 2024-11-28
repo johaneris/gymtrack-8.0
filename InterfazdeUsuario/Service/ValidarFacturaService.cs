@@ -44,27 +44,20 @@ namespace InterfazdeUsuario.Service
                 return "El monto debe ser de 15 o 3 dólares.";
 
             // Determinar reglas según el tipo de usuario autenticado
-            if (loginService.EsEstudiante())
+            // Validar tipo de usuario basado en el identificador
+            if (loginService.EsEstudiante(nuevaFactura.CifMembresia))
             {
-                // Usuario estudiante: solo puede usar CIF
-                if (string.IsNullOrWhiteSpace(nuevaFactura.CifMembresia) || nuevaFactura.CifMembresia.Length != 8 || !nuevaFactura.CifMembresia.All(char.IsDigit))
-                    return "El CIF debe contener exactamente 8 dígitos.";
-
                 if (!string.IsNullOrWhiteSpace(nuevaFactura.CedulaMembresia))
-                    return "Si es estudiante, no debe ingresar cédula.";
+                    return "Los estudiantes no deben ingresar Cédula.";
             }
-            else if (loginService.EsMiembroExterno())
+            else if (loginService.EsMiembroExterno(nuevaFactura.CedulaMembresia))
             {
-                // Usuario miembro externo: solo puede usar Cédula
-                if (string.IsNullOrWhiteSpace(nuevaFactura.CedulaMembresia) || !nuevaFactura.CedulaMembresia.All(char.IsDigit))
-                    return "La cédula debe ser un valor numérico.";
-
                 if (!string.IsNullOrWhiteSpace(nuevaFactura.CifMembresia))
-                    return "Si es miembro externo, no debe ingresar CIF.";
+                    return "Los miembros externos no deben ingresar CIF.";
             }
             else
             {
-                return "Usuario no autenticado o tipo de identificación desconocido.";
+                return "Tipo de identificación inválido.";
             }
 
             // Calcular duración de membresía y estado
@@ -81,35 +74,29 @@ namespace InterfazdeUsuario.Service
 
         private void GuardarFacturasEnArchivo()
         {
-            FileStream fs = null;
-            BinaryWriter bw = null;
-
             try
             {
-                fs = new FileStream(filepath, FileMode.Create, FileAccess.Write);
-                bw = new BinaryWriter(fs);
-
-                List<ValidarFactura> facturas = facturaDao.ObtenerTodasLasFacturas();
-
-                foreach (ValidarFactura factura in facturas)
+                using (var fs = new FileStream(filepath, FileMode.Create, FileAccess.Write))
+                using (var bw = new BinaryWriter(fs))
                 {
-                    bw.Write(factura.Id);
-                    bw.Write(factura.NameMembresia);
-                    bw.Write(factura.CifMembresia);
-                    bw.Write(factura.CedulaMembresia);
-                    bw.Write(factura.CelularMembresia);
-                    bw.Write(factura.NumeroFactura);
-                    bw.Write(factura.Referencia);
-                    bw.Write(factura.Fechapago.ToBinary());
-                    bw.Write(factura.Monto);
-                    bw.Write(factura.Duracionmembresia);
-                    bw.Write(factura.Estado);
+                    foreach (var factura in facturaDao.ObtenerTodasLasFacturas())
+                    {
+                        bw.Write(factura.Id);
+                        bw.Write(factura.NameMembresia);
+                        bw.Write(factura.CifMembresia ?? "");
+                        bw.Write(factura.CedulaMembresia ?? "");
+                        bw.Write(factura.CelularMembresia ?? "");
+                        bw.Write(factura.NumeroFactura);
+                        bw.Write(factura.Referencia);
+                        bw.Write(factura.Fechapago.ToBinary());
+                        bw.Write(factura.Monto);
+                        bw.Write(factura.Duracionmembresia);
+                    }
                 }
             }
-            finally
+            catch (IOException ex)
             {
-                if (fs != null) fs.Close();
-                if (bw != null) bw.Close();
+                Console.WriteLine("Error al guardar facturas: " + ex.Message);
             }
         }
 
@@ -152,6 +139,7 @@ namespace InterfazdeUsuario.Service
             }
         }
 
+
         public List<ValidarFactura> ObtenerHistorialDeMembresias(string identificador)
         {
             return facturaDao.ObtenerTodasLasFacturas()
@@ -166,4 +154,3 @@ namespace InterfazdeUsuario.Service
 
     }
 }
-

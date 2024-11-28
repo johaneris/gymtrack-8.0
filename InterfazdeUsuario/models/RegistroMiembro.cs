@@ -29,6 +29,7 @@ namespace InterfazdeUsuario.models
           
             Email = email;
             Cif = cif; 
+            Cedula = cedula;
             
             Password = password.Trim();
         }

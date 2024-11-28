@@ -39,12 +39,13 @@
             this.btnPerfil = new FontAwesome.Sharp.IconButton();
             this.Btn_LogOut = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblCifCedula = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.lblCifCedula = new System.Windows.Forms.Label();
             this.pnlContentUser = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -115,6 +116,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel2.Controls.Add(this.iconButton1);
             this.panel2.Controls.Add(this.Btno_Horarios);
             this.panel2.Controls.Add(this.btnMarcarEntrada);
             this.panel2.Controls.Add(this.BtnRegistrarMebresia);
@@ -146,7 +148,7 @@
             this.Btno_Horarios.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.Btno_Horarios.Size = new System.Drawing.Size(265, 81);
             this.Btno_Horarios.TabIndex = 5;
-            this.Btno_Horarios.Text = "Horarios";
+            this.Btno_Horarios.Text = "Historial de membresias";
             this.Btno_Horarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btno_Horarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btno_Horarios.UseVisualStyleBackColor = true;
@@ -259,6 +261,17 @@
             this.panel3.Size = new System.Drawing.Size(265, 100);
             this.panel3.TabIndex = 0;
             // 
+            // lblCifCedula
+            // 
+            this.lblCifCedula.AutoSize = true;
+            this.lblCifCedula.Font = new System.Drawing.Font("Consolas", 8F);
+            this.lblCifCedula.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblCifCedula.Location = new System.Drawing.Point(62, 66);
+            this.lblCifCedula.Name = "lblCifCedula";
+            this.lblCifCedula.Size = new System.Drawing.Size(88, 17);
+            this.lblCifCedula.TabIndex = 0;
+            this.lblCifCedula.Text = "Cif/Cédula";
+            // 
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
@@ -312,17 +325,6 @@
             this.iconPictureBox1.TabIndex = 0;
             this.iconPictureBox1.TabStop = false;
             // 
-            // lblCifCedula
-            // 
-            this.lblCifCedula.AutoSize = true;
-            this.lblCifCedula.Font = new System.Drawing.Font("Consolas", 8F);
-            this.lblCifCedula.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblCifCedula.Location = new System.Drawing.Point(62, 66);
-            this.lblCifCedula.Name = "lblCifCedula";
-            this.lblCifCedula.Size = new System.Drawing.Size(88, 17);
-            this.lblCifCedula.TabIndex = 0;
-            this.lblCifCedula.Text = "Cif/Cédula";
-            // 
             // pnlContentUser
             // 
             this.pnlContentUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(124)))), ((int)(((byte)(184)))));
@@ -333,6 +335,29 @@
             this.pnlContentUser.Name = "pnlContentUser";
             this.pnlContentUser.Size = new System.Drawing.Size(1277, 720);
             this.pnlContentUser.TabIndex = 3;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Consolas", 12F);
+            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
+            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 424);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.iconButton1.Size = new System.Drawing.Size(265, 81);
+            this.iconButton1.TabIndex = 6;
+            this.iconButton1.Text = "Horarios";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
             // 
             // FrmInitialPageUser
             // 
@@ -378,6 +403,7 @@
         private FontAwesome.Sharp.IconButton Btno_Horarios;
         private System.Windows.Forms.Label lblCifCedula;
         private System.Windows.Forms.Panel pnlContentUser;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 
 }

@@ -45,58 +45,60 @@ namespace InterfazdeUsuario.Formularios
 
         private void cmbMonto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbMonto.SelectedItem.ToString() == "15$")
+            // Validar que SelectedItem no sea null
+            if (cmbMonto.SelectedItem != null)
             {
-                cmbMonto.Items.Clear();
-                cmbDuracion.Items.Add("Un mes");
+                string valorSeleccionado = cmbMonto.SelectedItem.ToString();
 
+                // Limpiar el ComboBox de duraciones
+                cmbDuracion.Items.Clear();
+
+                if (valorSeleccionado == "15$")
+                {
+                    cmbDuracion.Items.Add("Un mes");
+                }
+                else if (valorSeleccionado == "3$")
+                {
+                    cmbDuracion.Items.Add("Un día");
+                }
             }
-            else if (cmbMonto.SelectedItem.ToString() == "3")
+            else
             {
-                cmbMonto.Items.Clear();
-                cmbMonto.Items.Add("Un día");
+                MessageBox.Show("Por favor, selecciona un monto válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void btnRegistarMembresia_Click(object sender, EventArgs e)
         {
-            string nameMembresia = tbNombreMembresia.Text.Trim();
-            string identificador = tbCif_cedula.Text.Trim(); // CIF o cédula
-            string celularMembresia = tbCelular.Text.Trim();
-            string numeroFactura = tbFactura.Text.Trim();
-            string referencia = tbReferencia.Text.Trim();
-            string monto = cmbMonto.SelectedItem?.ToString().Replace("$", "").Trim();
+            string identificador = tbCif_cedula.Text.Trim(); // CIF o Cédula
 
-            // Validar campos requeridos
-            if (string.IsNullOrWhiteSpace(nameMembresia) || string.IsNullOrWhiteSpace(identificador) ||
-                string.IsNullOrWhiteSpace(celularMembresia) || string.IsNullOrWhiteSpace(numeroFactura) ||
-                string.IsNullOrWhiteSpace(referencia) || string.IsNullOrWhiteSpace(monto))
+            // Validar el tipo de usuario automáticamente
+            bool esEstudiante = loginService2.EsEstudiante(identificador);
+            bool esMiembroExterno = loginService2.EsMiembroExterno(identificador);
+
+            if (!esEstudiante && !esMiembroExterno)
             {
-                MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El tipo de identificación no es válido. Ingrese un CIF o Cédula correctamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Crear la factura
             ValidarFactura nuevaFactura = new ValidarFactura
             {
-
                 Id = facturaService.ObtenerHistorialDeMembresias(identificador).Count + 1,
-                NameMembresia = nameMembresia,
-                CifMembresia = loginService2.EsEstudiante() ? identificador : "",
-                CedulaMembresia = loginService2.EsMiembroExterno() ? identificador : "",
-                CelularMembresia = celularMembresia,
-                NumeroFactura = numeroFactura,
-                Referencia = referencia,
+                NameMembresia = tbNombreMembresia.Text.Trim(),
+                CifMembresia = esEstudiante ? identificador : "",
+                CedulaMembresia = esMiembroExterno ? identificador : "",
+                CelularMembresia = tbCelular.Text.Trim(),
+                NumeroFactura = tbFactura.Text.Trim(),
+                Referencia = tbReferencia.Text.Trim(),
                 Fechapago = DateTime.Today,
-                Monto = monto,
-                Duracionmembresia = "",
+                Monto = cmbMonto.SelectedItem?.ToString().Replace("$", "").Trim(),
+                Duracionmembresia = cmbDuracion.SelectedItem?.ToString(),
                 Estado = false
             };
 
-            // Registrar factura
             string resultado = facturaService.AgregarFactura(nuevaFactura);
 
-            // Mostrar resultado
             if (resultado == "Factura registrada exitosamente.")
             {
                 MessageBox.Show(resultado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

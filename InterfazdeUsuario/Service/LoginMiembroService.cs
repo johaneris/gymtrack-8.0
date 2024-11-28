@@ -34,14 +34,16 @@ namespace InterfazdeUsuario.Service
 
             return usuarioAutenticado != null;
         }
-        public bool EsEstudiante()
+        public bool EsEstudiante(string identificador)
         {
-            return usuarioAutenticado != null && !string.IsNullOrWhiteSpace(usuarioAutenticado.Cif);
+            // Por ejemplo, si los CIF tienen un prefijo o cierta longitud específica.
+            return identificador.Length == 8 && identificador.StartsWith("C"); // Ajustar según reglas
         }
 
-        public bool EsMiembroExterno()
+        public bool EsMiembroExterno(string identificador)
         {
-            return usuarioAutenticado != null && !string.IsNullOrWhiteSpace(usuarioAutenticado.Cedula);
+            // Por ejemplo, si las cédulas tienen un formato numérico de 7 u 8 dígitos.
+            return identificador.Length == 7 || identificador.Length == 8; // Ajustar según reglas
         }
 
         public RegistroMiembro ObtenerUsuarioAutenticado()
@@ -52,34 +54,38 @@ namespace InterfazdeUsuario.Service
         {
             if (!File.Exists(filepath)) return;
 
-            FileStream fs = null;
-            BinaryReader br = null;
-
             try
             {
-                fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
-                br = new BinaryReader(fs);
-
-                loginDao.GetMiembros().Clear(); 
-
-                while (fs.Position < fs.Length)
+                using (var fs = new FileStream(filepath, FileMode.Open, FileAccess.Read))
+                using (var br = new BinaryReader(fs))
                 {
-                    int id = br.ReadInt32();
-                    string name = br.ReadString();
-                    string lastname = br.ReadString();
-                    string userType = br.ReadString();
-                    string email = br.ReadString();
-                    string cif = br.ReadString();
-                    string cedula = br.ReadString();
-                    string password = br.ReadString();
+                    loginDao.GetMiembros().Clear();
+                    while (fs.Position < fs.Length)
+                    {
+                        try
+                        {
+                            int id = br.ReadInt32();
+                            string name = br.ReadString();
+                            string lastname = br.ReadString();
+                            string userType = br.ReadString();
+                            string email = br.ReadString();
+                            string cif = br.ReadString();
+                            string cedula = br.ReadString();
+                            string password = br.ReadString();
 
-                    loginDao.AgregarMiembro(new RegistroMiembro(id, name, lastname, userType, email, password, cif, cedula));
+                            loginDao.AgregarMiembro(new RegistroMiembro(id, name, lastname, userType, email, password, cif, cedula));
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Error leyendo datos: " + ex.Message);
+                            break;
+                        }
+                    }
                 }
             }
-            finally
+            catch (IOException ex)
             {
-                if (fs != null) fs.Close();
-                if (br != null) br.Close();
+                Console.WriteLine("Error al cargar archivo: " + ex.Message);
             }
         }
 

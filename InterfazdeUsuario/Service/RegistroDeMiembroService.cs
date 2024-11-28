@@ -36,6 +36,10 @@ namespace InterfazdeUsuario.Service
 
                 }
             }
+            catch(Exception)
+            {
+               
+            }
             finally
             {
                 if (fs != null) fs.Close();
