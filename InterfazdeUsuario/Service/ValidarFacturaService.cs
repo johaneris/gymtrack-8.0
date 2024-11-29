@@ -23,56 +23,126 @@ namespace InterfazdeUsuario.Service
 
         public string AgregarFactura(ValidarFactura nuevaFactura)
         {
-            // Obtener todas las facturas existentes
-            List<ValidarFactura> facturasExistentes = facturaDao.ObtenerTodasLasFacturas();
-
-            // Generar un nuevo Id
-            nuevaFactura.Id = facturasExistentes.Count > 0
-                ? facturasExistentes.Max(f => f.Id) + 1
-                : 1;
-
-
-            // Validar referencia y número de factura
-            if (string.IsNullOrWhiteSpace(nuevaFactura.Referencia) || nuevaFactura.Referencia.Length != 8 || !nuevaFactura.Referencia.All(char.IsDigit))
-                return "La referencia debe contener exactamente 8 dígitos.";
-
-            if (string.IsNullOrWhiteSpace(nuevaFactura.NumeroFactura) || nuevaFactura.NumeroFactura.Length != 6 || !nuevaFactura.NumeroFactura.All(char.IsDigit))
-                return "El número de factura debe contener exactamente 6 dígitos.";
-
-            // Validar monto
-            if (nuevaFactura.Monto != "15" && nuevaFactura.Monto != "3")
-                return "El monto debe ser de 15 o 3 dólares.";
-
-            // Determinar reglas según el tipo de usuario autenticado
-            // Validar tipo de usuario basado en el identificador
-            if (loginService.EsEstudiante(nuevaFactura.CifMembresia))
+            try
             {
-                if (!string.IsNullOrWhiteSpace(nuevaFactura.CedulaMembresia))
-                    return "Los estudiantes no deben ingresar Cédula.";
+                // Validar los datos de la factura
+                if (!ValidarFacturaDatos(nuevaFactura, out string mensajeError))
+                    return mensajeError;
+
+                // Validar si el usuario es estudiante o miembro externo
+                if (!ValidarTipoDeUsuario(nuevaFactura, out mensajeError))
+                    return mensajeError;
+
+                // Verificar duplicados
+                if (FacturaDuplicada(nuevaFactura, out mensajeError))
+                    return mensajeError;
+
+                // Asignar ID único
+                nuevaFactura.Id = facturaDao.ObtenerTodasLasFacturas().Count > 0
+                    ? facturaDao.ObtenerTodasLasFacturas().Max(f => f.Id) + 1
+                    : 1;
+
+                // Calcular duración de membresía y estado inicial
+                CalcularDuracionMembresia(nuevaFactura);
+
+                // Registrar factura
+                facturaDao.AgregarFactura(nuevaFactura);
+                GuardarFacturasEnArchivo();
+
+                return "Factura registrada exitosamente.";
             }
-            else if (loginService.EsMiembroExterno(nuevaFactura.CedulaMembresia))
+            catch (Exception ex)
             {
-                if (!string.IsNullOrWhiteSpace(nuevaFactura.CifMembresia))
-                    return "Los miembros externos no deben ingresar CIF.";
+                return $"Error al agregar factura: {ex.Message}";
             }
-            else
-            {
-                return "Tipo de identificación inválido.";
-            }
-
-            // Calcular duración de membresía y estado
-            nuevaFactura.Duracionmembresia = nuevaFactura.Monto == "15" ? "30 días" : "1 día";
-            nuevaFactura.Fechapago = DateTime.Now.AddDays(nuevaFactura.Monto == "15" ? 30 : 1);
-            nuevaFactura.Estado = true;
-
-            // Registrar la factura
-            facturaDao.AgregarFactura(nuevaFactura);
-            GuardarFacturasEnArchivo();
-
-            return "Factura registrada exitosamente.";
         }
 
-        private void GuardarFacturasEnArchivo()
+        private bool ValidarFacturaDatos(ValidarFactura factura, out string mensajeError)
+        {
+            mensajeError = string.Empty;
+
+            if (string.IsNullOrWhiteSpace(factura.Referencia) || factura.Referencia.Length != 8 || !factura.Referencia.All(char.IsDigit))
+            {
+                mensajeError = "La referencia debe contener exactamente 8 dígitos numéricos.";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(factura.NumeroFactura) || factura.NumeroFactura.Length != 6 || !factura.NumeroFactura.All(char.IsDigit))
+            {
+                mensajeError = "El número de factura debe contener exactamente 6 dígitos numéricos.";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(factura.Monto) || (factura.Monto != "15" && factura.Monto != "3"))
+            {
+                mensajeError = "El monto debe ser de 15 o 3 dólares.";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(factura.Duracionmembresia))
+            {
+                mensajeError = "La duración de la membresía no ha sido seleccionada.";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(factura.NameMembresia) || factura.NameMembresia.Length < 3)
+            {
+                mensajeError = "El nombre de la membresía debe tener al menos 3 caracteres.";
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidarTipoDeUsuario(ValidarFactura factura, out string mensajeError)
+        {
+            mensajeError = string.Empty;
+
+            if (!string.IsNullOrWhiteSpace(factura.CifMembresia) && loginService.EsEstudiante(factura.CifMembresia))
+            {
+                // Es un estudiante
+                return true;
+            }
+
+            if (!string.IsNullOrWhiteSpace(factura.CedulaMembresia) && loginService.EsMiembroExterno(factura.CedulaMembresia))
+            {
+                // Es un miembro externo
+                return true;
+            }
+
+            mensajeError = "El CIF o cédula no corresponde a un estudiante o miembro externo registrado.";
+            return false;
+        }
+
+        private bool FacturaDuplicada(ValidarFactura nuevaFactura, out string mensajeError)
+        {
+            mensajeError = string.Empty;
+
+            var facturasExistentes = facturaDao.ObtenerTodasLasFacturas();
+
+            if (facturasExistentes.Any(f => f.NumeroFactura == nuevaFactura.NumeroFactura))
+            {
+                mensajeError = "Ya existe una factura con el mismo número.";
+                return true;
+            }
+
+            if (facturasExistentes.Any(f => f.Referencia == nuevaFactura.Referencia))
+            {
+                mensajeError = "Ya existe una factura con la misma referencia.";
+                return true;
+            }
+
+            return false;
+        }
+
+        private void CalcularDuracionMembresia(ValidarFactura factura)
+        {
+            factura.Duracionmembresia = factura.Monto == "15" ? "30 días" : "1 día";
+            factura.Fechapago = DateTime.Now.AddDays(factura.Monto == "15" ? 30 : 1);
+            factura.Estado = true; // Activa inicialmente
+        }
+
+        public void GuardarFacturasEnArchivo()
         {
             try
             {
@@ -91,66 +161,31 @@ namespace InterfazdeUsuario.Service
                         bw.Write(factura.Fechapago.ToBinary());
                         bw.Write(factura.Monto);
                         bw.Write(factura.Duracionmembresia);
+                        bw.Write(factura.Estado);
                     }
                 }
             }
             catch (IOException ex)
             {
-                Console.WriteLine("Error al guardar facturas: " + ex.Message);
+                throw new Exception("Error al guardar las facturas en archivo.", ex);
             }
         }
-
-        public void CargarFacturasDesdeArchivo()
-        {
-            if (!File.Exists(filepath)) return;
-
-            FileStream fs = null;
-            BinaryReader br = null;
-
-            try
-            {
-                fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
-                br = new BinaryReader(fs);
-
-                facturaDao.ObtenerTodasLasFacturas().Clear();
-
-                while (fs.Position < fs.Length)
-                {
-                    int id = br.ReadInt32();
-                    string nameMembresia = br.ReadString();
-                    string cifMembresia = br.ReadString();
-                    string cedulaMembresia = br.ReadString();
-                    string celularMembresia = br.ReadString();
-                    string numeroFactura = br.ReadString();
-                    string referencia = br.ReadString();
-                    DateTime fechapago = DateTime.FromBinary(br.ReadInt64());
-                    string monto = br.ReadString();
-                    string duracionmembresia = br.ReadString();
-                    bool estado = br.ReadBoolean();
-
-                    ValidarFactura factura = new ValidarFactura(id, nameMembresia, cifMembresia, cedulaMembresia, celularMembresia, numeroFactura, referencia, fechapago, monto, duracionmembresia, estado);
-                    facturaDao.AgregarFactura(factura);
-                }
-            }
-            finally
-            {
-                if (fs != null) fs.Close();
-                if (br != null) br.Close();
-            }
-        }
-
 
         public List<ValidarFactura> ObtenerHistorialDeMembresias(string identificador)
         {
-            return facturaDao.ObtenerTodasLasFacturas()
-                .Where(f => f.CifMembresia == identificador || f.CedulaMembresia == identificador)
-                .ToList();
-        }
+            try
+            {
+                var todasLasFacturas = facturaDao.ObtenerTodasLasFacturas();
 
-        public List<ValidarFactura> ConsultarFacturas()
-        {
-            return facturaDao.ObtenerTodasLasFacturas();
+                // Filtrar facturas según el identificador (CIF o Cédula)
+                return todasLasFacturas
+                    .Where(f => f.CifMembresia == identificador || f.CedulaMembresia == identificador)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el historial de membresías.", ex);
+            }
         }
-
     }
 }

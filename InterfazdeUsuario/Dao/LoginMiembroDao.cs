@@ -10,13 +10,13 @@ namespace InterfazdeUsuario.Dao
     public class LoginMiembroDao
     {
 
-        //estamos usando los atributos medelos de registro
         private List<RegistroMiembro> miembros;
 
         public LoginMiembroDao()
         {
             miembros = new List<RegistroMiembro>();
         }
+
         public List<RegistroMiembro> GetMiembros()
         {
             return miembros;
@@ -30,28 +30,15 @@ namespace InterfazdeUsuario.Dao
             }
         }
 
-        public RegistroMiembro BuscarPorCedulaOCif(string identificador)
+        public RegistroMiembro BuscarPorIdentificador(string identificador)
         {
-            foreach (RegistroMiembro miembro in miembros)
-            {
-                if (miembro.Cif == identificador || miembro.Cedula == identificador)
-                {
-                    return miembro;
-                }
-            }
-            return null;
+            return miembros.Find(m => m.Cif == identificador || m.Cedula == identificador);
         }
 
         public bool AutenticarUsuario(string identificador, string password)
         {
-            foreach (RegistroMiembro miembro in miembros)
-            {
-                if ((miembro.Cif == identificador || miembro.Cedula == identificador) && miembro.Password == password)
-                {
-                    return true;
-                }
-            }
-            return false;
+            var miembro = BuscarPorIdentificador(identificador);
+            return miembro != null && miembro.Password == password;
         }
     }
 }

@@ -17,9 +17,11 @@ namespace InterfazdeUsuario.Formularios
 {
     public partial class FrmRegisterUser : MetroFramework.Forms.MetroForm
     {
+        private RegisterService service;
         public FrmRegisterUser()
         {
             InitializeComponent();
+            service = new RegisterService(new RegistroDeMiembroService());
         }
 
         private void lnkCambiarcContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -31,24 +33,25 @@ namespace InterfazdeUsuario.Formularios
 
         private void btnRegisterUser_Click(object sender, EventArgs e)
         {
+            // Capturar valores del formulario
             string name = tbNombre.Text.Trim();
             string lastname = tbApellido.Text.Trim();
             string email = tbEmail.Text.Trim();
             string password = tbPassword.Text.Trim();
-            string cif = string.Empty;    
-            string cedula = string.Empty; 
-            string userType;
+            string userType = string.Empty;
+            string cif = string.Empty;
+            string cedula = string.Empty;
 
             // Determinar el tipo de usuario según los RadioButton
             if (rbtnUserType.Checked)
             {
                 userType = "Estudiante";
-                cif = tbIdentify.Text.Trim(); // CIF ingresado
+                cif = tbIdentify.Text.Trim();
             }
             else if (rbtnUserType2.Checked)
             {
                 userType = "Miembro Externo";
-                cedula = tbIdentify.Text.Trim(); // Cédula ingresada
+                cedula = tbIdentify.Text.Trim();
             }
             else
             {
@@ -56,17 +59,15 @@ namespace InterfazdeUsuario.Formularios
                 return;
             }
 
-            // Llamar al servicio de registro
-            RegisterService service = new RegisterService(new RegistroMiembroDao(), new RegistroDeMiembroService());
+            // Registrar miembro
             string resultado = service.RegisterMember(name, lastname, email, password, userType, cif, cedula);
 
-            // Mostrar mensaje y actuar según el resultado
+            // Mostrar mensaje según el resultado
             if (resultado == "Registro exitoso.")
             {
                 MetroMessageBox.Show(this, resultado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FrmLoginUser login = new FrmLoginUser();
                 this.Close();
-                login.Show();
+                new FrmLoginUser().Show();
             }
             else
             {

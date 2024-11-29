@@ -22,6 +22,7 @@ namespace InterfazdeUsuario.Formularios
         {
             InitializeComponent();
             loginMiembroService = new LoginMiembroService(new LoginMiembroDao());
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -33,9 +34,10 @@ namespace InterfazdeUsuario.Formularios
 
         private void lnkCambiarcContra2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FrmResetPassword resetpassword = new FrmResetPassword();
+            FrmResetPassword resetPassword = new FrmResetPassword();
             this.Hide();
-            resetpassword.ShowDialog(); 
+            resetPassword.ShowDialog();
+            this.Show();
         }       
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -43,33 +45,32 @@ namespace InterfazdeUsuario.Formularios
             FrmRegisterUser register = new FrmRegisterUser();
             this.Hide();
             register.ShowDialog();
+            this.Show();
         }
 
         private void btnLoginUser_Click(object sender, EventArgs e)
         {
-            string cifCedula = tbCifPasswordLogin.Text.Trim();
+            string identificador = tbCifPasswordLogin.Text.Trim();
             string password = tbPasswordLogin.Text.Trim();
 
-            //validar si los campos estan vacíos
-            if(string.IsNullOrEmpty(cifCedula) || string.IsNullOrEmpty(password) )
+            // Validar si los campos están vacíos
+            if (string.IsNullOrEmpty(identificador) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Por favor, complete los dos campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroMessageBox.Show(this, "Por favor, complete ambos campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            //validar el resultado
-            if(loginMiembroService.AutenticarUsuario(cifCedula, password))
+            // Validar las credenciales
+            if (loginMiembroService.AutenticarUsuario(identificador, password))
             {
-               
-
-                FrmInitialPageUser initialpage = new FrmInitialPageUser();
+                FrmInitialPageUser initialPage = new FrmInitialPageUser();
                 this.Hide();
-                initialpage.ShowDialog();
-                this.Close();
+                initialPage.ShowDialog();
+                this.Close(); // Cerrar la ventana de login.
             }
             else
             {
-                MetroMessageBox.Show(this, "Identificador o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroMessageBox.Show(this, "Identificador o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

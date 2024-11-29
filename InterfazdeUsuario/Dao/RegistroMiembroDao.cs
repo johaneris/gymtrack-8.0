@@ -18,6 +18,13 @@ namespace InterfazdeUsuario.Dao
             miembros = new List<RegistroMiembro>();
         }
 
+        // Método para cargar una lista inicial de miembros (útil para persistencia futura)
+        public void CargarMiembros(List<RegistroMiembro> miembrosIniciales)
+        {
+            if (miembrosIniciales != null)
+                miembros = miembrosIniciales;
+        }
+
         // Método para obtener la lista completa de miembros
         public List<RegistroMiembro> GetMiembros()
         {
@@ -28,62 +35,43 @@ namespace InterfazdeUsuario.Dao
         public void AgregarMiembro(RegistroMiembro nuevoMiembro)
         {
             if (nuevoMiembro != null)
-            {
                 miembros.Add(nuevoMiembro);
-            }
         }
 
         // Método para buscar un miembro por su correo
         public RegistroMiembro BuscarPorCorreo(string email)
         {
-            foreach (RegistroMiembro miembro in miembros)
-            {
-                if (miembro.Email == email)
-                {
-                    return miembro;
-                }
-            }
-            return null; // Si no se encuentra, retorna null
+            return miembros.FirstOrDefault(m => m.Email == email);
         }
 
         // Método para eliminar un miembro por su ID
         public bool EliminarMiembro(int id)
         {
-            foreach (RegistroMiembro miembro in miembros)
+            var miembro = miembros.FirstOrDefault(m => m.ID == id);
+            if (miembro != null)
             {
-                if (miembro.ID == id)
-                {
-                    miembros.Remove(miembro);
-                    return true; // Eliminación exitosa
-                }
+                miembros.Remove(miembro);
+                return true;
             }
-            return false; // No se encontró el miembro
+            return false;
         }
 
         // Método para actualizar los datos de un miembro
         public bool ActualizarMiembro(RegistroMiembro miembroActualizado)
         {
-            for (int i = 0; i < miembros.Count; i++)
+            var index = miembros.FindIndex(m => m.ID == miembroActualizado.ID);
+            if (index != -1)
             {
-                if (miembros[i].ID == miembroActualizado.ID)
-                {
-                    miembros[i] = miembroActualizado;
-                    return true; // Actualización exitosa
-                }
+                miembros[index] = miembroActualizado;
+                return true;
             }
-            return false; // No se encontró el miembro
+            return false;
         }
 
+        // Método para autenticar un usuario por correo y contraseña
         public bool AutenticarUsuario(string email, string password)
         {
-            foreach (RegistroMiembro miembro in miembros)
-            {
-                if (miembro.Email == email && miembro.Password == password)
-                {
-                    return true; // Credenciales correctas
-                }
-            }
-            return false; // Credenciales incorrectas
+            return miembros.Any(m => m.Email == email && m.Password == password);
         }
 
     }

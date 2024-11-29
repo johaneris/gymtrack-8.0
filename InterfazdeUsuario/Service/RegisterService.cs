@@ -15,85 +15,87 @@ namespace InterfazdeUsuario.Service
         private RegistroMiembroDao registroDao;
         private RegistroDeMiembroService registroService;
 
-        public RegisterService(RegistroMiembroDao dao, RegistroDeMiembroService service)
+        public RegisterService(RegistroDeMiembroService service)
         {
-            this.registroDao = dao;
             this.registroService = service;
         }
 
         public string RegisterMember(string name, string lastname, string email, string password, string userType, string cif, string cedula)
         {
-            if (string.IsNullOrWhiteSpace(name) || !name.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
-                return "El nombre solo puede contener letras y no puede estar vacío.";
-
-            if (string.IsNullOrWhiteSpace(lastname) || !lastname.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
-                return "El apellido solo puede contener letras y no puede estar vacío.";
-
-            if (string.IsNullOrWhiteSpace(email))
-                return "El correo no puede estar vacío.";
-            if (!IsValidEmail(email))
-                return "El correo electrónico no tiene un formato válido.";
-
-            if (string.IsNullOrWhiteSpace(password))
-                return "La contraseña no puede estar vacía.";
-            if (password.Length > 10)
-                password = password.Substring(0, 10);
+            // Validaciones iniciales
+            if (!IsValidName(name)) return "El nombre no es válido. Debe contener solo letras.";
+            if (!IsValidName(lastname)) return "El apellido no es válido. Debe contener solo letras.";
+            if (!IsValidEmail(email)) return "El correo electrónico no tiene un formato válido.";
+            if (string.IsNullOrWhiteSpace(password)) return "La contraseña no puede estar vacía.";
+            password = password.Trim().Substring(0, Math.Min(password.Length, 10)); // Máximo 10 caracteres
 
             if (userType == "Estudiante")
             {
-                if (!string.IsNullOrWhiteSpace(cedula))
-                    return "Los estudiantes no deben registrar una cédula.";
-                if (string.IsNullOrWhiteSpace(cif) || cif.Length != 8 || !cif.All(char.IsDigit))
-                    return "El CIF es obligatorio, debe tener exactamente 8 dígitos y solo números.";
-                if (!email.EndsWith("@uamv.edu.ni"))
-                    return "El correo de un estudiante debe terminar con '@uamv.edu.ni'.";
+                if (!IsValidCIF(cif)) return "El CIF debe tener exactamente 8 dígitos.";
+                if (!email.EndsWith("@uamv.edu.ni")) return "El correo debe terminar con '@uamv.edu.ni'.";
+                if (!string.IsNullOrEmpty(cedula)) return "Un estudiante no puede registrar una cédula.";
             }
             else if (userType == "Miembro Externo")
             {
-                if (!string.IsNullOrWhiteSpace(cif))
-                    return "Los miembros externos no deben registrar un CIF.";
-                if (string.IsNullOrWhiteSpace(cedula) || !cedula.All(char.IsDigit))
-                    return "La cédula es obligatoria y debe contener solo números.";
+                if (!IsValidCedula(cedula)) return "La cédula es inválida. Debe contener solo números.";
+                if (!string.IsNullOrEmpty(cif)) return "Un miembro externo no puede registrar un CIF.";
             }
             else
             {
                 return "El tipo de usuario no es válido.";
             }
 
-            List<RegistroMiembro> miembros = registroService.Load();
+            // Cargar lista de miembros
+            var miembros = registroService.Load();
 
-            if (miembros.Any(miembro => miembro.Email.Equals(email, StringComparison.OrdinalIgnoreCase)))
+            // Verificar duplicados
+            if (miembros.Any(m => m.Email.Equals(email, StringComparison.OrdinalIgnoreCase)))
                 return "El correo ya está registrado.";
-
-            if (userType == "Estudiante" && miembros.Any(miembro => !string.IsNullOrWhiteSpace(miembro.Cif) && miembro.Cif.Equals(cif, StringComparison.OrdinalIgnoreCase)))
+            if (userType == "Estudiante" && miembros.Any(m => m.Cif == cif))
                 return "El CIF ya está registrado.";
-
-            if (userType == "Miembro Externo" && miembros.Any(miembro => !string.IsNullOrWhiteSpace(miembro.Cedula) && miembro.Cedula.Equals(cedula, StringComparison.OrdinalIgnoreCase)))
+            if (userType == "Miembro Externo" && miembros.Any(m => m.Cedula == cedula))
                 return "La cédula ya está registrada.";
 
-            int newId = miembros.Count > 0 ? miembros.Max(miembro => miembro.ID) + 1 : 1;
-            RegistroMiembro nuevoMiembro = new RegistroMiembro(newId, name, lastname, userType, email, password, cif, cedula);
+            // Generar ID único
+            int newId = miembros.Count > 0 ? miembros.Max(m => m.ID) + 1 : 1;
 
+            // Crear nuevo miembro
+            var nuevoMiembro = new RegistroMiembro(newId, name, lastname, userType, email, password, cif, cedula);
             miembros.Add(nuevoMiembro);
+
+            // Guardar la lista actualizada
             registroService.SaveFile(miembros);
 
             return "Registro exitoso.";
         }
 
+        // Validaciones privadas
+        private bool IsValidName(string name)
+        {
+            return !string.IsNullOrWhiteSpace(name) && name.All(c => char.IsLetter(c) || char.IsWhiteSpace(c));
+        }
 
         private bool IsValidEmail(string email)
         {
             try
             {
-                System.Net.Mail.MailAddress addr = new System.Net.Mail.MailAddress(email);
+                var addr = new System.Net.Mail.MailAddress(email);
                 return addr.Address == email;
-
             }
             catch
             {
                 return false;
             }
-            
+        }
+
+        private bool IsValidCIF(string cif)
+        {
+            return !string.IsNullOrWhiteSpace(cif) && cif.Length == 8 && cif.All(char.IsDigit);
+        }
+
+        private bool IsValidCedula(string cedula)
+        {
+            return !string.IsNullOrWhiteSpace(cedula) && cedula.All(char.IsDigit);
         }
     }
 }

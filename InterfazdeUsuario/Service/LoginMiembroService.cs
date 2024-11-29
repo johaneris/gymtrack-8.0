@@ -11,44 +11,40 @@ namespace InterfazdeUsuario.Service
 {
     public class LoginMiembroService
     {
+
         private string filepath = "miembros.bin";
         private LoginMiembroDao loginDao;
-        private RegistroMiembro usuarioAutenticado;
 
         public LoginMiembroService(LoginMiembroDao dao)
         {
             this.loginDao = dao;
         }
 
+        // Constructor sin parámetros
         public LoginMiembroService()
         {
-
+            this.loginDao = new LoginMiembroDao(); // Inicializa un Dao predeterminado
         }
+
+
         public bool AutenticarUsuario(string identificador, string password)
         {
             CargarDatos();
-            usuarioAutenticado = loginDao.GetMiembros()
-            .FirstOrDefault(m =>
-                (m.Cif == identificador || m.Cedula == identificador) &&
-                m.Password == password);
-
-            return usuarioAutenticado != null;
-        }
-        public bool EsEstudiante(string identificador)
-        {
-            // Por ejemplo, si los CIF tienen un prefijo o cierta longitud específica.
-            return identificador.Length == 8 && identificador.StartsWith("C"); // Ajustar según reglas
+            return loginDao.AutenticarUsuario(identificador, password);
         }
 
-        public bool EsMiembroExterno(string identificador)
+        public bool EsEstudiante(string cif)
         {
-            // Por ejemplo, si las cédulas tienen un formato numérico de 7 u 8 dígitos.
-            return identificador.Length == 7 || identificador.Length == 8; // Ajustar según reglas
+            CargarDatos(); // Asegúrate de cargar los datos antes de validar
+            var miembro = loginDao.BuscarPorIdentificador(cif);
+            return miembro != null && !string.IsNullOrWhiteSpace(miembro.Cif); // Verifica si es un estudiante con CIF válido
         }
 
-        public RegistroMiembro ObtenerUsuarioAutenticado()
+        public bool EsMiembroExterno(string cedula)
         {
-            return usuarioAutenticado;
+            CargarDatos(); // Asegúrate de cargar los datos antes de validar
+            var miembro = loginDao.BuscarPorIdentificador(cedula);
+            return miembro != null && !string.IsNullOrWhiteSpace(miembro.Cedula); // Verifica si es un miembro externo con cédula válida
         }
         public void CargarDatos()
         {
@@ -60,6 +56,7 @@ namespace InterfazdeUsuario.Service
                 using (var br = new BinaryReader(fs))
                 {
                     loginDao.GetMiembros().Clear();
+
                     while (fs.Position < fs.Length)
                     {
                         try
@@ -75,20 +72,17 @@ namespace InterfazdeUsuario.Service
 
                             loginDao.AgregarMiembro(new RegistroMiembro(id, name, lastname, userType, email, password, cif, cedula));
                         }
-                        catch (Exception ex)
+                        catch
                         {
-                            Console.WriteLine("Error leyendo datos: " + ex.Message);
                             break;
                         }
                     }
                 }
             }
-            catch (IOException ex)
+            catch (Exception)
             {
-                Console.WriteLine("Error al cargar archivo: " + ex.Message);
+
             }
         }
-
-
     }
 }

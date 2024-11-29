@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_minisize = new FontAwesome.Sharp.IconButton();
-            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Btno_Horarios = new FontAwesome.Sharp.IconButton();
-            this.btnMarcarEntrada = new FontAwesome.Sharp.IconButton();
-            this.BtnRegistrarMebresia = new FontAwesome.Sharp.IconButton();
-            this.btnPerfil = new FontAwesome.Sharp.IconButton();
-            this.Btn_LogOut = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblCifCedula = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.pnlContentUser = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.Btno_Horarios = new FontAwesome.Sharp.IconButton();
+            this.btnMarcarEntrada = new FontAwesome.Sharp.IconButton();
+            this.BtnRegistrarMebresia = new FontAwesome.Sharp.IconButton();
+            this.btnPerfil = new FontAwesome.Sharp.IconButton();
+            this.Btn_LogOut = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.btn_minisize = new FontAwesome.Sharp.IconButton();
+            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -64,42 +64,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1542, 42);
             this.panel1.TabIndex = 1;
-            // 
-            // btn_minisize
-            // 
-            this.btn_minisize.BackColor = System.Drawing.Color.Transparent;
-            this.btn_minisize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_minisize.FlatAppearance.BorderSize = 0;
-            this.btn_minisize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minisize.IconChar = FontAwesome.Sharp.IconChar.Compress;
-            this.btn_minisize.IconColor = System.Drawing.Color.Gainsboro;
-            this.btn_minisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_minisize.IconSize = 20;
-            this.btn_minisize.Location = new System.Drawing.Point(1569, 4);
-            this.btn_minisize.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_minisize.Name = "btn_minisize";
-            this.btn_minisize.Size = new System.Drawing.Size(20, 18);
-            this.btn_minisize.TabIndex = 18;
-            this.btn_minisize.TabStop = false;
-            this.btn_minisize.UseVisualStyleBackColor = false;
-            // 
-            // Btn_Salir
-            // 
-            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_Salir.FlatAppearance.BorderSize = 0;
-            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
-            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_Salir.IconSize = 15;
-            this.Btn_Salir.Location = new System.Drawing.Point(1597, 4);
-            this.Btn_Salir.Margin = new System.Windows.Forms.Padding(4);
-            this.Btn_Salir.Name = "Btn_Salir";
-            this.Btn_Salir.Size = new System.Drawing.Size(20, 18);
-            this.Btn_Salir.TabIndex = 17;
-            this.Btn_Salir.TabStop = false;
-            this.Btn_Salir.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -130,6 +94,102 @@
             this.panel2.Size = new System.Drawing.Size(265, 724);
             this.panel2.TabIndex = 2;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel3.Controls.Add(this.lblCifCedula);
+            this.panel3.Controls.Add(this.lblCorreo);
+            this.panel3.Controls.Add(this.lblNombre);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.iconPictureBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(265, 100);
+            this.panel3.TabIndex = 0;
+            // 
+            // lblCifCedula
+            // 
+            this.lblCifCedula.AutoSize = true;
+            this.lblCifCedula.Font = new System.Drawing.Font("Consolas", 8F);
+            this.lblCifCedula.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblCifCedula.Location = new System.Drawing.Point(62, 66);
+            this.lblCifCedula.Name = "lblCifCedula";
+            this.lblCifCedula.Size = new System.Drawing.Size(88, 17);
+            this.lblCifCedula.TabIndex = 0;
+            this.lblCifCedula.Text = "Cif/Cédula";
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Font = new System.Drawing.Font("Consolas", 8F);
+            this.lblCorreo.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblCorreo.Location = new System.Drawing.Point(63, 49);
+            this.lblCorreo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(56, 17);
+            this.lblCorreo.TabIndex = 6;
+            this.lblCorreo.Text = "Correo";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Consolas", 8F);
+            this.lblNombre.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblNombre.Location = new System.Drawing.Point(63, 32);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(40, 17);
+            this.lblNombre.TabIndex = 5;
+            this.lblNombre.Text = "Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Consolas", 8F);
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.Location = new System.Drawing.Point(63, 14);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Paciente";
+            // 
+            // pnlContentUser
+            // 
+            this.pnlContentUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(124)))), ((int)(((byte)(184)))));
+            this.pnlContentUser.BackgroundImage = global::InterfazdeUsuario.Properties.Resources.Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__1_;
+            this.pnlContentUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlContentUser.Location = new System.Drawing.Point(265, 42);
+            this.pnlContentUser.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlContentUser.Name = "pnlContentUser";
+            this.pnlContentUser.Size = new System.Drawing.Size(1277, 720);
+            this.pnlContentUser.TabIndex = 3;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Consolas", 12F);
+            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
+            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 424);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.iconButton1.Size = new System.Drawing.Size(265, 81);
+            this.iconButton1.TabIndex = 6;
+            this.iconButton1.Text = "Horarios";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
             // Btno_Horarios
             // 
             this.Btno_Horarios.Dock = System.Windows.Forms.DockStyle.Top;
@@ -152,6 +212,7 @@
             this.Btno_Horarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btno_Horarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btno_Horarios.UseVisualStyleBackColor = true;
+            this.Btno_Horarios.Click += new System.EventHandler(this.Btno_Horarios_Click);
             // 
             // btnMarcarEntrada
             // 
@@ -246,68 +307,6 @@
             this.Btn_LogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_LogOut.UseVisualStyleBackColor = true;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel3.Controls.Add(this.lblCifCedula);
-            this.panel3.Controls.Add(this.lblCorreo);
-            this.panel3.Controls.Add(this.lblNombre);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.iconPictureBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(265, 100);
-            this.panel3.TabIndex = 0;
-            // 
-            // lblCifCedula
-            // 
-            this.lblCifCedula.AutoSize = true;
-            this.lblCifCedula.Font = new System.Drawing.Font("Consolas", 8F);
-            this.lblCifCedula.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblCifCedula.Location = new System.Drawing.Point(62, 66);
-            this.lblCifCedula.Name = "lblCifCedula";
-            this.lblCifCedula.Size = new System.Drawing.Size(88, 17);
-            this.lblCifCedula.TabIndex = 0;
-            this.lblCifCedula.Text = "Cif/Cédula";
-            // 
-            // lblCorreo
-            // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Font = new System.Drawing.Font("Consolas", 8F);
-            this.lblCorreo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblCorreo.Location = new System.Drawing.Point(63, 49);
-            this.lblCorreo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(56, 17);
-            this.lblCorreo.TabIndex = 6;
-            this.lblCorreo.Text = "Correo";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Consolas", 8F);
-            this.lblNombre.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblNombre.Location = new System.Drawing.Point(63, 32);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(40, 17);
-            this.lblNombre.TabIndex = 5;
-            this.lblNombre.Text = "Name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 8F);
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(63, 14);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Paciente";
-            // 
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
@@ -325,39 +324,41 @@
             this.iconPictureBox1.TabIndex = 0;
             this.iconPictureBox1.TabStop = false;
             // 
-            // pnlContentUser
+            // btn_minisize
             // 
-            this.pnlContentUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(124)))), ((int)(((byte)(184)))));
-            this.pnlContentUser.BackgroundImage = global::InterfazdeUsuario.Properties.Resources.Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__1_;
-            this.pnlContentUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnlContentUser.Location = new System.Drawing.Point(265, 42);
-            this.pnlContentUser.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlContentUser.Name = "pnlContentUser";
-            this.pnlContentUser.Size = new System.Drawing.Size(1277, 720);
-            this.pnlContentUser.TabIndex = 3;
+            this.btn_minisize.BackColor = System.Drawing.Color.Transparent;
+            this.btn_minisize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_minisize.FlatAppearance.BorderSize = 0;
+            this.btn_minisize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minisize.IconChar = FontAwesome.Sharp.IconChar.Compress;
+            this.btn_minisize.IconColor = System.Drawing.Color.Gainsboro;
+            this.btn_minisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_minisize.IconSize = 20;
+            this.btn_minisize.Location = new System.Drawing.Point(1569, 4);
+            this.btn_minisize.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_minisize.Name = "btn_minisize";
+            this.btn_minisize.Size = new System.Drawing.Size(20, 18);
+            this.btn_minisize.TabIndex = 18;
+            this.btn_minisize.TabStop = false;
+            this.btn_minisize.UseVisualStyleBackColor = false;
             // 
-            // iconButton1
+            // Btn_Salir
             // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Consolas", 12F);
-            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
-            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 424);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.iconButton1.Size = new System.Drawing.Size(265, 81);
-            this.iconButton1.TabIndex = 6;
-            this.iconButton1.Text = "Horarios";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_Salir.FlatAppearance.BorderSize = 0;
+            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Salir.IconSize = 15;
+            this.Btn_Salir.Location = new System.Drawing.Point(1597, 4);
+            this.Btn_Salir.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_Salir.Name = "Btn_Salir";
+            this.Btn_Salir.Size = new System.Drawing.Size(20, 18);
+            this.Btn_Salir.TabIndex = 17;
+            this.Btn_Salir.TabStop = false;
+            this.Btn_Salir.UseVisualStyleBackColor = false;
             // 
             // FrmInitialPageUser
             // 

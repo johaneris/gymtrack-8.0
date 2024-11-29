@@ -18,14 +18,14 @@ namespace InterfazdeUsuario.Formularios
         ValidarFacturaService facturaService;
         ValidarFacturaDao facturaDao = new ValidarFacturaDao();
         LoginMiembroDao loginMiembroDao = new LoginMiembroDao();
-        LoginMiembroService loginService2 = new LoginMiembroService();
+        LoginMiembroService loginService = new LoginMiembroService();
         
         public ValidarMembresia()
         {
             InitializeComponent();
             // Inicializa el DAO y el Servicio de Facturas
 
-            facturaService = new ValidarFacturaService(facturaDao, loginService2);
+            facturaService = new ValidarFacturaService(facturaDao, loginService);
 
 
             // Configuración inicial del formulario
@@ -70,32 +70,14 @@ namespace InterfazdeUsuario.Formularios
 
         private void btnRegistarMembresia_Click(object sender, EventArgs e)
         {
-            string identificador = tbCif_cedula.Text.Trim(); // CIF o Cédula
-
-            // Validar el tipo de usuario automáticamente
-            bool esEstudiante = loginService2.EsEstudiante(identificador);
-            bool esMiembroExterno = loginService2.EsMiembroExterno(identificador);
-
-            if (!esEstudiante && !esMiembroExterno)
+            string identificador = tbCif_cedula.Text.Trim();
+            if (!ValidarIdentificador(identificador, out string tipoUsuario))
             {
-                MessageBox.Show("El tipo de identificación no es válido. Ingrese un CIF o Cédula correctamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El identificador no es válido. Ingrese un CIF o Cédula correctamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            ValidarFactura nuevaFactura = new ValidarFactura
-            {
-                Id = facturaService.ObtenerHistorialDeMembresias(identificador).Count + 1,
-                NameMembresia = tbNombreMembresia.Text.Trim(),
-                CifMembresia = esEstudiante ? identificador : "",
-                CedulaMembresia = esMiembroExterno ? identificador : "",
-                CelularMembresia = tbCelular.Text.Trim(),
-                NumeroFactura = tbFactura.Text.Trim(),
-                Referencia = tbReferencia.Text.Trim(),
-                Fechapago = DateTime.Today,
-                Monto = cmbMonto.SelectedItem?.ToString().Replace("$", "").Trim(),
-                Duracionmembresia = cmbDuracion.SelectedItem?.ToString(),
-                Estado = false
-            };
+            ValidarFactura nuevaFactura = CrearFactura(identificador, tipoUsuario);
 
             string resultado = facturaService.AgregarFactura(nuevaFactura);
 
@@ -110,7 +92,41 @@ namespace InterfazdeUsuario.Formularios
             }
         }
 
-        // Método para limpiar el formulario después de un registro exitoso
+        private bool ValidarIdentificador(string identificador, out string tipoUsuario)
+        {
+            tipoUsuario = string.Empty;
+
+            if (loginService.EsEstudiante(identificador))
+            {
+                tipoUsuario = "CIF";
+                return true;
+            }
+            if (loginService.EsMiembroExterno(identificador))
+            {
+                tipoUsuario = "Cédula";
+                return true;
+            }
+
+            return false;
+        }
+        private ValidarFactura CrearFactura(string identificador, string tipoUsuario)
+        {
+            return new ValidarFactura
+            {
+                Id = facturaService.ObtenerHistorialDeMembresias(identificador).Count + 1,
+                NameMembresia = tbNombreMembresia.Text.Trim(),
+                CifMembresia = tipoUsuario == "CIF" ? identificador : "",
+                CedulaMembresia = tipoUsuario == "Cédula" ? identificador : "",
+                CelularMembresia = tbCelular.Text.Trim(),
+                NumeroFactura = tbFactura.Text.Trim(),
+                Referencia = tbReferencia.Text.Trim(),
+                Fechapago = dtpFechaPago.Value,
+                Monto = cmbMonto.SelectedItem?.ToString().Replace("$", "").Trim(),
+                Duracionmembresia = cmbDuracion.SelectedItem?.ToString(),
+                Estado = false
+            };
+        }
+
         private void LimpiarFormulario()
         {
             tbNombreMembresia.Clear();
@@ -123,5 +139,6 @@ namespace InterfazdeUsuario.Formularios
             dtpFechaPago.Value = DateTime.Today;
         }
     }
-    }
+}
+        
 
