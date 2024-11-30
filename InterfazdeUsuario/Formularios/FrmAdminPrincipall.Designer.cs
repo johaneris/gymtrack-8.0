@@ -1,6 +1,6 @@
 ﻿namespace InterfazdeUsuario.Formularios
 {
-    partial class FrmAdmin
+    partial class FrmPrincipalAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_minisize = new FontAwesome.Sharp.IconButton();
-            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblAdmin = new System.Windows.Forms.Label();
+            this.pnl_ContenidoAdmin = new System.Windows.Forms.Panel();
             this.btnReportes = new FontAwesome.Sharp.IconButton();
             this.btnEntradas = new FontAwesome.Sharp.IconButton();
             this.btnGestionarmemresias = new FontAwesome.Sharp.IconButton();
             this.Btn_PerfilAdmin = new FontAwesome.Sharp.IconButton();
             this.Btn_LogOut = new FontAwesome.Sharp.IconButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblCorreo = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblAdmin = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.pnl_ContenidoAdmin = new System.Windows.Forms.Panel();
+            this.btn_minisize = new FontAwesome.Sharp.IconButton();
+            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -58,46 +58,10 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1533, 42);
             this.panel1.TabIndex = 0;
-            // 
-            // btn_minisize
-            // 
-            this.btn_minisize.BackColor = System.Drawing.Color.Transparent;
-            this.btn_minisize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_minisize.FlatAppearance.BorderSize = 0;
-            this.btn_minisize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minisize.IconChar = FontAwesome.Sharp.IconChar.Compress;
-            this.btn_minisize.IconColor = System.Drawing.Color.Gainsboro;
-            this.btn_minisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_minisize.IconSize = 20;
-            this.btn_minisize.Location = new System.Drawing.Point(1616, 4);
-            this.btn_minisize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_minisize.Name = "btn_minisize";
-            this.btn_minisize.Size = new System.Drawing.Size(20, 18);
-            this.btn_minisize.TabIndex = 18;
-            this.btn_minisize.TabStop = false;
-            this.btn_minisize.UseVisualStyleBackColor = false;
-            // 
-            // Btn_Salir
-            // 
-            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_Salir.FlatAppearance.BorderSize = 0;
-            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
-            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_Salir.IconSize = 15;
-            this.Btn_Salir.Location = new System.Drawing.Point(1644, 4);
-            this.Btn_Salir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn_Salir.Name = "Btn_Salir";
-            this.Btn_Salir.Size = new System.Drawing.Size(20, 18);
-            this.Btn_Salir.TabIndex = 17;
-            this.Btn_Salir.TabStop = false;
-            this.Btn_Salir.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -122,127 +86,10 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 42);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 715);
             this.panel2.TabIndex = 1;
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Consolas", 12F);
-            this.btnReportes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReportes.IconChar = FontAwesome.Sharp.IconChar.BookMedical;
-            this.btnReportes.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnReportes.IconSize = 30;
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 356);
-            this.btnReportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnReportes.Size = new System.Drawing.Size(267, 91);
-            this.btnReportes.TabIndex = 6;
-            this.btnReportes.Text = "Generar Reportes";
-            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReportes.UseVisualStyleBackColor = true;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
-            // 
-            // btnEntradas
-            // 
-            this.btnEntradas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEntradas.FlatAppearance.BorderSize = 0;
-            this.btnEntradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntradas.Font = new System.Drawing.Font("Consolas", 12F);
-            this.btnEntradas.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnEntradas.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
-            this.btnEntradas.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnEntradas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEntradas.IconSize = 30;
-            this.btnEntradas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntradas.Location = new System.Drawing.Point(0, 268);
-            this.btnEntradas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEntradas.Name = "btnEntradas";
-            this.btnEntradas.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnEntradas.Size = new System.Drawing.Size(267, 88);
-            this.btnEntradas.TabIndex = 5;
-            this.btnEntradas.Text = "Gestionar Entradas";
-            this.btnEntradas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntradas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEntradas.UseVisualStyleBackColor = true;
-            // 
-            // btnGestionarmemresias
-            // 
-            this.btnGestionarmemresias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGestionarmemresias.FlatAppearance.BorderSize = 0;
-            this.btnGestionarmemresias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionarmemresias.Font = new System.Drawing.Font("Consolas", 12F);
-            this.btnGestionarmemresias.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnGestionarmemresias.IconChar = FontAwesome.Sharp.IconChar.UsersRectangle;
-            this.btnGestionarmemresias.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnGestionarmemresias.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGestionarmemresias.IconSize = 30;
-            this.btnGestionarmemresias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestionarmemresias.Location = new System.Drawing.Point(0, 180);
-            this.btnGestionarmemresias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnGestionarmemresias.Name = "btnGestionarmemresias";
-            this.btnGestionarmemresias.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnGestionarmemresias.Size = new System.Drawing.Size(267, 88);
-            this.btnGestionarmemresias.TabIndex = 3;
-            this.btnGestionarmemresias.Text = "Gestionar Membresías";
-            this.btnGestionarmemresias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestionarmemresias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGestionarmemresias.UseVisualStyleBackColor = true;
-            this.btnGestionarmemresias.Click += new System.EventHandler(this.btnGestionarmemresias_Click);
-            // 
-            // Btn_PerfilAdmin
-            // 
-            this.Btn_PerfilAdmin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_PerfilAdmin.FlatAppearance.BorderSize = 0;
-            this.Btn_PerfilAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_PerfilAdmin.Font = new System.Drawing.Font("Consolas", 12F);
-            this.Btn_PerfilAdmin.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Btn_PerfilAdmin.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.Btn_PerfilAdmin.IconColor = System.Drawing.Color.Gainsboro;
-            this.Btn_PerfilAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_PerfilAdmin.IconSize = 30;
-            this.Btn_PerfilAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_PerfilAdmin.Location = new System.Drawing.Point(0, 92);
-            this.Btn_PerfilAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn_PerfilAdmin.Name = "Btn_PerfilAdmin";
-            this.Btn_PerfilAdmin.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.Btn_PerfilAdmin.Size = new System.Drawing.Size(267, 88);
-            this.Btn_PerfilAdmin.TabIndex = 1;
-            this.Btn_PerfilAdmin.Text = "Perfil";
-            this.Btn_PerfilAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_PerfilAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_PerfilAdmin.UseVisualStyleBackColor = true;
-            // 
-            // Btn_LogOut
-            // 
-            this.Btn_LogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Btn_LogOut.FlatAppearance.BorderSize = 0;
-            this.Btn_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_LogOut.Font = new System.Drawing.Font("Consolas", 8F);
-            this.Btn_LogOut.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Btn_LogOut.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
-            this.Btn_LogOut.IconColor = System.Drawing.Color.Gainsboro;
-            this.Btn_LogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_LogOut.IconSize = 30;
-            this.Btn_LogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_LogOut.Location = new System.Drawing.Point(0, 671);
-            this.Btn_LogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn_LogOut.Name = "Btn_LogOut";
-            this.Btn_LogOut.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.Btn_LogOut.Size = new System.Drawing.Size(267, 44);
-            this.Btn_LogOut.TabIndex = 4;
-            this.Btn_LogOut.Text = "Log out";
-            this.Btn_LogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_LogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_LogOut.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -253,7 +100,7 @@
             this.panel3.Controls.Add(this.iconPictureBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(267, 92);
             this.panel3.TabIndex = 0;
@@ -294,6 +141,135 @@
             this.lblAdmin.TabIndex = 4;
             this.lblAdmin.Text = "Administrador";
             // 
+            // pnl_ContenidoAdmin
+            // 
+            this.pnl_ContenidoAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(124)))), ((int)(((byte)(184)))));
+            this.pnl_ContenidoAdmin.BackgroundImage = global::InterfazdeUsuario.Properties.Resources.Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__1_;
+            this.pnl_ContenidoAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnl_ContenidoAdmin.Location = new System.Drawing.Point(266, 42);
+            this.pnl_ContenidoAdmin.Margin = new System.Windows.Forms.Padding(4);
+            this.pnl_ContenidoAdmin.Name = "pnl_ContenidoAdmin";
+            this.pnl_ContenidoAdmin.Size = new System.Drawing.Size(1266, 715);
+            this.pnl_ContenidoAdmin.TabIndex = 2;
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Consolas", 12F);
+            this.btnReportes.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnReportes.IconChar = FontAwesome.Sharp.IconChar.BookMedical;
+            this.btnReportes.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReportes.IconSize = 30;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(0, 356);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnReportes.Size = new System.Drawing.Size(267, 91);
+            this.btnReportes.TabIndex = 6;
+            this.btnReportes.Text = "Generar Reportes";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            // 
+            // btnEntradas
+            // 
+            this.btnEntradas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEntradas.FlatAppearance.BorderSize = 0;
+            this.btnEntradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntradas.Font = new System.Drawing.Font("Consolas", 12F);
+            this.btnEntradas.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnEntradas.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnEntradas.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnEntradas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEntradas.IconSize = 30;
+            this.btnEntradas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEntradas.Location = new System.Drawing.Point(0, 268);
+            this.btnEntradas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEntradas.Name = "btnEntradas";
+            this.btnEntradas.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnEntradas.Size = new System.Drawing.Size(267, 88);
+            this.btnEntradas.TabIndex = 5;
+            this.btnEntradas.Text = "Gestionar Usuario";
+            this.btnEntradas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEntradas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEntradas.UseVisualStyleBackColor = true;
+            // 
+            // btnGestionarmemresias
+            // 
+            this.btnGestionarmemresias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionarmemresias.FlatAppearance.BorderSize = 0;
+            this.btnGestionarmemresias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionarmemresias.Font = new System.Drawing.Font("Consolas", 12F);
+            this.btnGestionarmemresias.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnGestionarmemresias.IconChar = FontAwesome.Sharp.IconChar.UsersRectangle;
+            this.btnGestionarmemresias.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnGestionarmemresias.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGestionarmemresias.IconSize = 30;
+            this.btnGestionarmemresias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionarmemresias.Location = new System.Drawing.Point(0, 180);
+            this.btnGestionarmemresias.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGestionarmemresias.Name = "btnGestionarmemresias";
+            this.btnGestionarmemresias.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnGestionarmemresias.Size = new System.Drawing.Size(267, 88);
+            this.btnGestionarmemresias.TabIndex = 3;
+            this.btnGestionarmemresias.Text = "Gestionar Membresías";
+            this.btnGestionarmemresias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionarmemresias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGestionarmemresias.UseVisualStyleBackColor = true;
+            this.btnGestionarmemresias.Click += new System.EventHandler(this.btnGestionarmemresias_Click);
+            // 
+            // Btn_PerfilAdmin
+            // 
+            this.Btn_PerfilAdmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_PerfilAdmin.FlatAppearance.BorderSize = 0;
+            this.Btn_PerfilAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_PerfilAdmin.Font = new System.Drawing.Font("Consolas", 12F);
+            this.Btn_PerfilAdmin.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Btn_PerfilAdmin.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.Btn_PerfilAdmin.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btn_PerfilAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_PerfilAdmin.IconSize = 30;
+            this.Btn_PerfilAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_PerfilAdmin.Location = new System.Drawing.Point(0, 92);
+            this.Btn_PerfilAdmin.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_PerfilAdmin.Name = "Btn_PerfilAdmin";
+            this.Btn_PerfilAdmin.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.Btn_PerfilAdmin.Size = new System.Drawing.Size(267, 88);
+            this.Btn_PerfilAdmin.TabIndex = 1;
+            this.Btn_PerfilAdmin.Text = "Perfil";
+            this.Btn_PerfilAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_PerfilAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_PerfilAdmin.UseVisualStyleBackColor = true;
+            this.Btn_PerfilAdmin.Click += new System.EventHandler(this.Btn_PerfilAdmin_Click);
+            // 
+            // Btn_LogOut
+            // 
+            this.Btn_LogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Btn_LogOut.FlatAppearance.BorderSize = 0;
+            this.Btn_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_LogOut.Font = new System.Drawing.Font("Consolas", 8F);
+            this.Btn_LogOut.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Btn_LogOut.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
+            this.Btn_LogOut.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btn_LogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_LogOut.IconSize = 30;
+            this.Btn_LogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_LogOut.Location = new System.Drawing.Point(0, 671);
+            this.Btn_LogOut.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_LogOut.Name = "Btn_LogOut";
+            this.Btn_LogOut.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.Btn_LogOut.Size = new System.Drawing.Size(267, 44);
+            this.Btn_LogOut.TabIndex = 4;
+            this.Btn_LogOut.Text = "Log out";
+            this.Btn_LogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_LogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_LogOut.UseVisualStyleBackColor = true;
+            // 
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
@@ -304,25 +280,50 @@
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 55;
             this.iconPictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(55, 92);
             this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPictureBox1.TabIndex = 0;
             this.iconPictureBox1.TabStop = false;
             // 
-            // pnl_ContenidoAdmin
+            // btn_minisize
             // 
-            this.pnl_ContenidoAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(124)))), ((int)(((byte)(184)))));
-            this.pnl_ContenidoAdmin.BackgroundImage = global::InterfazdeUsuario.Properties.Resources.Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__1_;
-            this.pnl_ContenidoAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_ContenidoAdmin.Location = new System.Drawing.Point(263, 42);
-            this.pnl_ContenidoAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnl_ContenidoAdmin.Name = "pnl_ContenidoAdmin";
-            this.pnl_ContenidoAdmin.Size = new System.Drawing.Size(1269, 711);
-            this.pnl_ContenidoAdmin.TabIndex = 2;
+            this.btn_minisize.BackColor = System.Drawing.Color.Transparent;
+            this.btn_minisize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_minisize.FlatAppearance.BorderSize = 0;
+            this.btn_minisize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minisize.IconChar = FontAwesome.Sharp.IconChar.Compress;
+            this.btn_minisize.IconColor = System.Drawing.Color.Gainsboro;
+            this.btn_minisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_minisize.IconSize = 20;
+            this.btn_minisize.Location = new System.Drawing.Point(1616, 4);
+            this.btn_minisize.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_minisize.Name = "btn_minisize";
+            this.btn_minisize.Size = new System.Drawing.Size(20, 18);
+            this.btn_minisize.TabIndex = 18;
+            this.btn_minisize.TabStop = false;
+            this.btn_minisize.UseVisualStyleBackColor = false;
             // 
-            // FrmAdmin
+            // Btn_Salir
+            // 
+            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_Salir.FlatAppearance.BorderSize = 0;
+            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Salir.IconSize = 15;
+            this.Btn_Salir.Location = new System.Drawing.Point(1644, 4);
+            this.Btn_Salir.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_Salir.Name = "Btn_Salir";
+            this.Btn_Salir.Size = new System.Drawing.Size(20, 18);
+            this.Btn_Salir.TabIndex = 17;
+            this.Btn_Salir.TabStop = false;
+            this.Btn_Salir.UseVisualStyleBackColor = false;
+            // 
+            // FrmPrincipalAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -332,8 +333,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "FrmAdmin";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FrmPrincipalAdmin";
             this.Opacity = 0.99D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrincipalAdmin";

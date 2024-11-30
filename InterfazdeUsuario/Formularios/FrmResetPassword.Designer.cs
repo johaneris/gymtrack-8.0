@@ -38,11 +38,11 @@
             this.tbCifUser = new MetroFramework.Controls.MetroTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnResetPassword = new FontAwesome.Sharp.IconButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -232,17 +232,6 @@
             this.label7.Text = "Tu nueva contraseña deberia ser diferente a las contraseñas recientemente usadas." +
     " ";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(235, 92);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(339, 16);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Ingrese el usuario o el cif para su cambio de contraseña";
-            // 
             // btnResetPassword
             // 
             this.btnResetPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -251,7 +240,7 @@
             this.btnResetPassword.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetPassword.ForeColor = System.Drawing.Color.AliceBlue;
             this.btnResetPassword.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.btnResetPassword.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(152)))), ((int)(((byte)(143)))));
+            this.btnResetPassword.IconColor = System.Drawing.Color.White;
             this.btnResetPassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnResetPassword.IconSize = 38;
             this.btnResetPassword.Location = new System.Drawing.Point(238, 487);
@@ -263,6 +252,17 @@
             this.btnResetPassword.Text = "Cambiar Contraseña";
             this.btnResetPassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResetPassword.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(235, 92);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(339, 16);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Ingrese el usuario o el cif para su cambio de contraseña";
             // 
             // panel1
             // 
@@ -276,6 +276,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(244, 651);
             this.panel1.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(245, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(799, 74);
+            this.panel4.TabIndex = 38;
             // 
             // iconButton4
             // 
@@ -296,13 +303,6 @@
             this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton4.UseVisualStyleBackColor = true;
             this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(245, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(799, 74);
-            this.panel4.TabIndex = 38;
             // 
             // panel5
             // 

@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbCifPasswordLogin = new MetroFramework.Controls.MetroTextBox();
             this.tbPasswordLogin = new MetroFramework.Controls.MetroTextBox();
             this.lbCif = new System.Windows.Forms.Label();
             this.lbPassword = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lnkCambiarcContra2 = new System.Windows.Forms.LinkLabel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.btnLoginUser = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,8 +58,28 @@
             this.panel2.Location = new System.Drawing.Point(333, 6);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(807, 500);
+            this.panel2.Size = new System.Drawing.Size(807, 560);
             this.panel2.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(807, 92);
+            this.panel4.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(341, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 36);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Log In";
             // 
             // panel3
             // 
@@ -161,17 +181,6 @@
             this.lbPassword.TabIndex = 15;
             this.lbPassword.Text = "Contraseña:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(341, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 36);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Log In";
-            // 
             // lnkCambiarcContra2
             // 
             this.lnkCambiarcContra2.AutoSize = true;
@@ -184,15 +193,6 @@
             this.lnkCambiarcContra2.TabStop = true;
             this.lnkCambiarcContra2.Text = "¿Haz olvidado la contraseña?";
             this.lnkCambiarcContra2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkCambiarcContra2_LinkClicked);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(807, 92);
-            this.panel4.TabIndex = 24;
             // 
             // btnLoginUser
             // 
@@ -227,7 +227,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 6);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(335, 500);
+            this.panel1.Size = new System.Drawing.Size(335, 560);
             this.panel1.TabIndex = 0;
             // 
             // linkLabel1
@@ -290,10 +290,10 @@
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

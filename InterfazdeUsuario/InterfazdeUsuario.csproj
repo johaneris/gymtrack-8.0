@@ -159,6 +159,18 @@
     <Compile Include="Formularios\Reportes.Designer.cs">
       <DependentUpon>Reportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\EditProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\EditProfile.Designer.cs">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ValidarMembresia.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,17 +189,11 @@
     <Compile Include="Formularios\AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\LoginYRegistro\FrmLogin.cs">
+    <Compile Include="Formularios\FrmAdminPrincipall.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\LoginYRegistro\FrmLogin.Designer.cs">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FrmAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FrmAdmin.Designer.cs">
-      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    <Compile Include="Formularios\FrmAdminPrincipall.Designer.cs">
+      <DependentUpon>FrmAdminPrincipall.cs</DependentUpon>
     </Compile>
     <Compile Include="models\Admin.cs" />
     <Compile Include="models\LoginMiembro.cs" />
@@ -214,8 +220,8 @@
     <EmbeddedResource Include="Formularios\LoginYRegistro\FrmRegisterUser.resx">
       <DependentUpon>FrmRegisterUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmAdmin.resx">
-      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmAdminPrincipall.resx">
+      <DependentUpon>FrmAdminPrincipall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\LoginYRegistro\FrmCambiarContra.resx">
       <DependentUpon>FrmCambiarContra.cs</DependentUpon>
@@ -226,6 +232,9 @@
     <EmbeddedResource Include="Formularios\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ValidarMembresia.resx">
       <DependentUpon>ValidarMembresia.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,9 +243,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\LoginYRegistro\FrmLogin.resx">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

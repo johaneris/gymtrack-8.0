@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace InterfazdeUsuario.Formularios
 {
-    public partial class FrmAdmin : Form
+    public partial class FrmPrincipalAdmin : Form
     {
-        public FrmAdmin()
+        public FrmPrincipalAdmin()
         {
             InitializeComponent();
         }
@@ -34,6 +34,13 @@ namespace InterfazdeUsuario.Formularios
         private void btnGestionarmemresias_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void Btn_PerfilAdmin_Click(object sender, EventArgs e)
+        {
+            EditProfile edit = new EditProfile();
+            this.Hide();
+            edit.Show(); 
         }
     }
 }

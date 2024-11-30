@@ -57,9 +57,7 @@ namespace InterfazdeUsuario
 
         private void btnAdministrador_Click(object sender, EventArgs e)
         {
-            FrmLogin admin = new FrmLogin();
-            this.Hide();
-            admin.ShowDialog();
+            
             
         }
 
@@ -68,6 +66,13 @@ namespace InterfazdeUsuario
             FrmLoginUser user = new FrmLoginUser();
             this.Hide();
             user.ShowDialog();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            FrmPrincipalAdmin admin = new FrmPrincipalAdmin();
+            this.Hide(); 
+            admin.ShowDialog();
         }
     }
 }
