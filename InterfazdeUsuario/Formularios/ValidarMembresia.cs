@@ -15,17 +15,18 @@ namespace InterfazdeUsuario.Formularios
 {
     public partial class ValidarMembresia : UserControl
     {
-        ValidarFacturaService facturaService;
-        ValidarFacturaDao facturaDao = new ValidarFacturaDao();
-        LoginMiembroDao loginMiembroDao = new LoginMiembroDao();
-        LoginMiembroService loginService = new LoginMiembroService();
-        
+
+        // Variables DAO y Service
+        private ValidarFacturaDao facturaDao;
+        private ValidarFacturaService facturaService;
         public ValidarMembresia()
         {
             InitializeComponent();
             // Inicializa el DAO y el Servicio de Facturas
 
-            facturaService = new ValidarFacturaService(facturaDao, loginService);
+            // Inicializar las instancias de DAO y Service
+            facturaDao = new ValidarFacturaDao();
+            facturaService = new ValidarFacturaService(new RegistroMiembroDao());
 
 
             // Configuración inicial del formulario
@@ -40,11 +41,6 @@ namespace InterfazdeUsuario.Formularios
             dtpFechaPago.MinDate = new DateTime(2024, 11, 1);
             dtpFechaPago.MaxDate = new DateTime(2025, 12, 31);
 
-            
-        }
-
-        private void cmbMonto_SelectedIndexChanged(object sender, EventArgs e)
-        {
             // Validar que SelectedItem no sea null
             if (cmbMonto.SelectedItem != null)
             {
@@ -66,25 +62,81 @@ namespace InterfazdeUsuario.Formularios
             {
                 MessageBox.Show("Por favor, selecciona un monto válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+
+        }
+
+        private void cmbMonto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Validar que SelectedItem no sea null
+            if (cmbMonto.SelectedItem != null)
+            {
+                string valorSeleccionado = cmbMonto.SelectedItem.ToString();
+
+                // Limpiar el ComboBox de duraciones
+                cmbDuracion.Items.Clear();
+
+                if (valorSeleccionado == "15$")
+                {
+                    cmbDuracion.Items.Add("Un mes");
+                }
+                else if (valorSeleccionado == "3$")
+                {
+                    cmbDuracion.Items.Add("Un día");
+                }
+            }
+            //else
+            //{
+            //    MessageBox.Show("Por favor, selecciona un monto válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
         }
 
         private void btnRegistarMembresia_Click(object sender, EventArgs e)
         {
-            string identificador = tbCif_cedula.Text.Trim();
-            if (!ValidarIdentificador(identificador, out string tipoUsuario))
+
+            // Validación de campos vacíos
+            if (string.IsNullOrWhiteSpace(tbFactura.Text) ||
+                string.IsNullOrWhiteSpace(tbReferencia.Text) ||
+                cmbMonto.SelectedItem == null)
             {
-                MessageBox.Show("El identificador no es válido. Ingrese un CIF o Cédula correctamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, completa todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            ValidarFactura nuevaFactura = CrearFactura(identificador, tipoUsuario);
+            // Validación del número de factura: debe ser numérico y tener 6 dígitos
+            if (!EsNumeroValido(tbFactura.Text, 6))
+            {
+                MessageBox.Show("El número de factura debe contener exactamente 6 dígitos numéricos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Validación del número de referencia: debe ser numérico y tener 8 dígitos
+            if (!EsNumeroValido(tbReferencia.Text, 8))
+            {
+                MessageBox.Show("La referencia debe contener exactamente 8 dígitos numéricos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Crear nueva instancia de ValidarFactura
+            ValidarFactura nuevaFactura = new ValidarFactura(
+                id: 0, // Será generado automáticamente
+                numeroFactura: tbFactura.Text,
+                referencia: tbReferencia.Text,
+                fechapago: dtpFechaPago.Value,
+                monto: ObtenerMonto(),
+                duracion: string.Empty, // Se calculará en el servicio
+                estado: false, // Se actualizará según la lógica del servicio
+                miembroid: ObtenerMiembroId()
+            );
+
+            // Intentar registrar la factura a través del servicio
             string resultado = facturaService.AgregarFactura(nuevaFactura);
 
-            if (resultado == "Factura registrada exitosamente.")
+            // Mostrar el resultado al usuario
+            if (resultado.Contains("registrada exitosamente"))
             {
                 MessageBox.Show(resultado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarFormulario();
+                LimpiarFormulario(); // Limpia el formulario tras un registro exitoso
             }
             else
             {
@@ -92,46 +144,37 @@ namespace InterfazdeUsuario.Formularios
             }
         }
 
-        private bool ValidarIdentificador(string identificador, out string tipoUsuario)
+        private bool EsNumeroValido(string valor, int longitud)
         {
-            tipoUsuario = string.Empty;
-
-            if (loginService.EsEstudiante(identificador))
-            {
-                tipoUsuario = "CIF";
-                return true;
-            }
-            if (loginService.EsMiembroExterno(identificador))
-            {
-                tipoUsuario = "Cédula";
-                return true;
-            }
-
-            return false;
+            return valor.Length == longitud && valor.All(char.IsDigit);
         }
-        private ValidarFactura CrearFactura(string identificador, string tipoUsuario)
+
+        private string ObtenerMonto()
         {
-            return new ValidarFactura
+            return cmbMonto.SelectedItem.ToString() == "15$" ? "15" : "3";
+        }
+
+        private int ObtenerMiembroId()
+        {
+            try
             {
-                Id = facturaService.ObtenerHistorialDeMembresias(identificador).Count + 1,
-                NameMembresia = tbNombreMembresia.Text.Trim(),
-                CifMembresia = tipoUsuario == "CIF" ? identificador : "",
-                CedulaMembresia = tipoUsuario == "Cédula" ? identificador : "",
-                CelularMembresia = tbCelular.Text.Trim(),
-                NumeroFactura = tbFactura.Text.Trim(),
-                Referencia = tbReferencia.Text.Trim(),
-                Fechapago = dtpFechaPago.Value,
-                Monto = cmbMonto.SelectedItem?.ToString().Replace("$", "").Trim(),
-                Duracionmembresia = cmbDuracion.SelectedItem?.ToString(),
-                Estado = false
-            };
+                int idMiembro = LoginMiembroService.ObtenerMiembroId(); // Supuesta autenticación
+                if (idMiembro > 0)
+                {
+                    return idMiembro;
+                }
+                throw new Exception("No se encontró un miembro autenticado.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener ID de miembro: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
         }
 
         private void LimpiarFormulario()
         {
-            tbNombreMembresia.Clear();
-            tbCif_cedula.Clear();
-            tbCelular.Clear();
+            
             tbFactura.Clear();
             tbReferencia.Clear();
             cmbMonto.SelectedIndex = -1;

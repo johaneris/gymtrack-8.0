@@ -17,6 +17,7 @@ namespace InterfazdeUsuario.models
         public string Cif {  get; set; }
         public string Cedula { get; set; }
         public string Password { get; set; }
+        
 
 
 
@@ -32,6 +33,7 @@ namespace InterfazdeUsuario.models
             Cedula = cedula;
             
             Password = password.Trim();
+            
         }
     }
 }

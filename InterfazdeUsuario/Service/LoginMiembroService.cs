@@ -11,41 +11,52 @@ namespace InterfazdeUsuario.Service
 {
     public class LoginMiembroService
     {
-
         private string filepath = "miembros.bin";
         private LoginMiembroDao loginDao;
+
+        // Variable estática para rastrear al miembro autenticado
+        private static RegistroMiembro miembroAutenticado;
 
         public LoginMiembroService(LoginMiembroDao dao)
         {
             this.loginDao = dao;
         }
 
-        // Constructor sin parámetros
         public LoginMiembroService()
         {
-            this.loginDao = new LoginMiembroDao(); // Inicializa un Dao predeterminado
+            this.loginDao = new LoginMiembroDao();
         }
-
 
         public bool AutenticarUsuario(string identificador, string password)
         {
             CargarDatos();
-            return loginDao.AutenticarUsuario(identificador, password);
+            bool autenticado = loginDao.AutenticarUsuario(identificador, password);
+
+            if (autenticado)
+            {
+                // Establecer el miembro autenticado
+                miembroAutenticado = loginDao.BuscarPorIdentificador(identificador);
+            }
+            else
+            {
+                miembroAutenticado = null; // Limpiar si falla la autenticación
+            }
+
+            return autenticado;
         }
 
-        public bool EsEstudiante(string cif)
+        public static int ObtenerMiembroId()
         {
-            CargarDatos(); // Asegúrate de cargar los datos antes de validar
-            var miembro = loginDao.BuscarPorIdentificador(cif);
-            return miembro != null && !string.IsNullOrWhiteSpace(miembro.Cif); // Verifica si es un estudiante con CIF válido
+            if (miembroAutenticado != null)
+            {
+                return miembroAutenticado.ID;
+            }
+            else
+            {
+                throw new Exception("No hay ningún miembro autenticado.");
+            }
         }
 
-        public bool EsMiembroExterno(string cedula)
-        {
-            CargarDatos(); // Asegúrate de cargar los datos antes de validar
-            var miembro = loginDao.BuscarPorIdentificador(cedula);
-            return miembro != null && !string.IsNullOrWhiteSpace(miembro.Cedula); // Verifica si es un miembro externo con cédula válida
-        }
         public void CargarDatos()
         {
             if (!File.Exists(filepath)) return;
@@ -81,7 +92,6 @@ namespace InterfazdeUsuario.Service
             }
             catch (Exception)
             {
-
             }
         }
     }

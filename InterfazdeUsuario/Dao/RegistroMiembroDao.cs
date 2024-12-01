@@ -22,11 +22,13 @@ namespace InterfazdeUsuario.Dao
         public void CargarMiembros(List<RegistroMiembro> miembrosIniciales)
         {
             if (miembrosIniciales != null)
+            {
                 miembros = miembrosIniciales;
+            }
         }
 
         // Método para obtener la lista completa de miembros
-        public List<RegistroMiembro> GetMiembros()
+        public List<RegistroMiembro> ObtenerMiembros()
         {
             return miembros;
         }
@@ -35,7 +37,9 @@ namespace InterfazdeUsuario.Dao
         public void AgregarMiembro(RegistroMiembro nuevoMiembro)
         {
             if (nuevoMiembro != null)
+            {
                 miembros.Add(nuevoMiembro);
+            }
         }
 
         // Método para buscar un miembro por su correo
@@ -44,10 +48,22 @@ namespace InterfazdeUsuario.Dao
             return miembros.FirstOrDefault(m => m.Email == email);
         }
 
+        // Método para buscar un miembro por su ID
+        public RegistroMiembro ObtenerMiembroPorId(int id)
+        {
+            return miembros.FirstOrDefault(m => m.ID == id);
+        }
+
+        // Método para buscar un miembro por su identificador (CIF o cédula)
+        public RegistroMiembro ObtenerMiembroPorIdentificador(string identificador)
+        {
+            return miembros.FirstOrDefault(m => m.Cif == identificador || m.Cedula == identificador);
+        }
+
         // Método para eliminar un miembro por su ID
         public bool EliminarMiembro(int id)
         {
-            var miembro = miembros.FirstOrDefault(m => m.ID == id);
+            var miembro = ObtenerMiembroPorId(id);
             if (miembro != null)
             {
                 miembros.Remove(miembro);
@@ -73,6 +89,5 @@ namespace InterfazdeUsuario.Dao
         {
             return miembros.Any(m => m.Email == email && m.Password == password);
         }
-
     }
 }

@@ -52,7 +52,7 @@ namespace InterfazdeUsuario.Formularios
 
             // Filtrar las facturas por el identificador
             //var historial = validar.ObtenerHistorialDeMembresias(identificador);
-            ValidarFacturaService validar = new ValidarFacturaService(new ValidarFacturaDao(), new LoginMiembroService());
+            //ValidarFacturaService validar = new ValidarFacturaService(new ValidarFacturaDao(), new LoginMiembroService());
             //validar.CargarFacturasDesdeArchivo();
             //validar.EstadoFactura();
 
