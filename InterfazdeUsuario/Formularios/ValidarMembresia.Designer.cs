@@ -63,10 +63,10 @@
             this.panelMain.Controls.Add(this.label3);
             this.panelMain.Controls.Add(this.label2);
             this.panelMain.Controls.Add(this.btnRegistarMembresia);
-            this.panelMain.Location = new System.Drawing.Point(329, 74);
+            this.panelMain.Location = new System.Drawing.Point(329, 76);
             this.panelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(800, 632);
+            this.panelMain.Size = new System.Drawing.Size(861, 630);
             this.panelMain.TabIndex = 1;
             // 
             // cmbMonto
@@ -75,7 +75,7 @@
             this.cmbMonto.Location = new System.Drawing.Point(412, 160);
             this.cmbMonto.Name = "cmbMonto";
             this.cmbMonto.Size = new System.Drawing.Size(324, 24);
-            this.cmbMonto.TabIndex = 64;
+            this.cmbMonto.TabIndex = 1;
             this.cmbMonto.SelectedIndexChanged += new System.EventHandler(this.cmbMonto_SelectedIndexChanged);
             // 
             // cmbDuracion
@@ -84,7 +84,7 @@
             this.cmbDuracion.Location = new System.Drawing.Point(412, 232);
             this.cmbDuracion.Name = "cmbDuracion";
             this.cmbDuracion.Size = new System.Drawing.Size(324, 24);
-            this.cmbDuracion.TabIndex = 63;
+            this.cmbDuracion.TabIndex = 3;
             // 
             // label10
             // 
@@ -122,7 +122,7 @@
             this.tbReferencia.Margin = new System.Windows.Forms.Padding(4);
             this.tbReferencia.Name = "tbReferencia";
             this.tbReferencia.Size = new System.Drawing.Size(325, 32);
-            this.tbReferencia.TabIndex = 59;
+            this.tbReferencia.TabIndex = 2;
             // 
             // label9
             // 
@@ -142,7 +142,7 @@
             this.dtpFechaPago.Location = new System.Drawing.Point(46, 287);
             this.dtpFechaPago.Name = "dtpFechaPago";
             this.dtpFechaPago.Size = new System.Drawing.Size(326, 22);
-            this.dtpFechaPago.TabIndex = 57;
+            this.dtpFechaPago.TabIndex = 4;
             // 
             // tbFactura
             // 
@@ -154,7 +154,7 @@
             this.tbFactura.Margin = new System.Windows.Forms.Padding(4);
             this.tbFactura.Name = "tbFactura";
             this.tbFactura.Size = new System.Drawing.Size(325, 32);
-            this.tbFactura.TabIndex = 56;
+            this.tbFactura.TabIndex = 0;
             // 
             // label8
             // 
@@ -211,7 +211,7 @@
             this.btnRegistarMembresia.Name = "btnRegistarMembresia";
             this.btnRegistarMembresia.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.btnRegistarMembresia.Size = new System.Drawing.Size(326, 45);
-            this.btnRegistarMembresia.TabIndex = 7;
+            this.btnRegistarMembresia.TabIndex = 5;
             this.btnRegistarMembresia.Text = "Registrar Membresía";
             this.btnRegistarMembresia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistarMembresia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -237,7 +237,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1129, 76);
+            this.panel2.Size = new System.Drawing.Size(1190, 76);
             this.panel2.TabIndex = 3;
             // 
             // label1
@@ -261,7 +261,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ValidarMembresia";
-            this.Size = new System.Drawing.Size(1129, 706);
+            this.Size = new System.Drawing.Size(1190, 706);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.panel2.ResumeLayout(false);

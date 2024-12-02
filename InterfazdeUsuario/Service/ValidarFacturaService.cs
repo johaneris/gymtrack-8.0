@@ -6,189 +6,204 @@ using System.Linq;
 using InterfazdeUsuario.Dao;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace InterfazdeUsuario.Service
 {
+
     public class ValidarFacturaService
     {
+
         private string filepath = "facturas.bin";
         private RegistroMiembroDao miembroDao;
         private List<ValidarFactura> facturas;
+        private RegistroDeMiembroService miembroService;
 
         public ValidarFacturaService(RegistroMiembroDao miembroDao)
         {
+            if(miembroDao == null)
+        throw new ArgumentNullException("El DAO de miembros no puede ser nulo.");
+
             this.miembroDao = miembroDao;
-            facturas = new List<ValidarFactura>();
+            this.miembroService = new RegistroDeMiembroService(); // Inicialización correcta
+            this.facturas = new List<ValidarFactura>();
+
+            miembroService.Load(); // Ahora no debería causar una excepción
+
             CargarFacturasDesdeArchivo();
         }
 
-        // Método para generar un nuevo ID único
-        private int GenerarNuevoIdFactura()
-        {
-            return facturas.Any() ? facturas.Max(f => f.Id) + 1 : 1;
-        }
-
-        // Método para agregar una factura con validaciones completas
         public string AgregarFactura(ValidarFactura nuevaFactura)
         {
-           
-                try
-                {
-                    nuevaFactura.Id = GenerarNuevoIdFactura();
-
-                    var miembro = miembroDao.ObtenerMiembroPorId(nuevaFactura.MiembroId);
-                    if (miembro == null)
-                    {
-                        return "El miembro asociado a la factura no existe.";
-                    }
-
-                    if (!EsNumeroValido(nuevaFactura.Referencia, 8))
-                    {
-                        return "La referencia debe contener exactamente 8 dígitos numéricos.";
-                    }
-
-                    if (!EsNumeroValido(nuevaFactura.NumeroFactura, 6))
-                    {
-                        return "El número de factura debe contener exactamente 6 dígitos numéricos.";
-                    }
-
-                    if (FacturaDuplicada(nuevaFactura, out string mensajeError))
-                    {
-                        return mensajeError;
-                    }
-
-                    CalcularDuracionMembresia(nuevaFactura);
-
-                    facturas.Add(nuevaFactura);
-                    GuardarFacturasEnArchivo();
-                    return $"Factura registrada exitosamente con ID: {nuevaFactura.Id}.";
-                }
-                catch (Exception ex)
-                {
-                    return $"Error al agregar factura: {ex.Message}";
-                }
-            }
-
-            private bool FacturaDuplicada(ValidarFactura nuevaFactura, out string mensajeError)
+            try
             {
-                mensajeError = string.Empty;
-                var facturaExistente = facturas.FirstOrDefault(f =>
-                    f.NumeroFactura == nuevaFactura.NumeroFactura &&
-                    f.Referencia == nuevaFactura.Referencia);
 
-                if (facturaExistente != null)
+                if (nuevaFactura == null) return "La factura no puede ser nula.";
+
+                nuevaFactura.Id = facturas.Count > 0 ? facturas.Max(f => f.Id) + 1 : 1; // Generar un nuevo ID único
+
+                //RegistroMiembro miembro = //miembroDao.ObtenerMiembroPorIdentificador(nuevaFactura.MiembroId.ToString());
+                // if (miembro == null) return "El miembro asociado a la factura no existe.";
+
+                // Validar y agregar factura '
+                if (facturas.Any(f => f.NumeroFactura == nuevaFactura.NumeroFactura && f.Referencia == nuevaFactura.Referencia))
+                    return "Ya existe una factura con el mismo número y referencia.";
+                if (!EsNumeroValido(nuevaFactura.Referencia, 8))
+                    return "La referencia debe contener exactamente 8 dígitos numéricos.";
+
+                if (!EsNumeroValido(nuevaFactura.NumeroFactura, 6))
+                    return "El número de factura debe contener exactamente 6 dígitos numéricos.";
+
+                if (FacturaDuplicada(nuevaFactura, out string mensajeError))
+                    return mensajeError;
+
+
+
+                facturas.Add(nuevaFactura);
+                GuardarFacturasEnArchivo();
+
+                return "Factura registrada exitosamente.";
+            }
+            catch (Exception ex)
+            {
+                return "Error al agregar factura: " + ex.Message;
+            }
+        }
+        public List<ValidarFactura> ObtenerHistorialFacturas() => new List<ValidarFactura>(facturas);
+
+        public ValidarFactura BuscarFacturaPorId(int id) =>
+            facturas.FirstOrDefault(f => f.Id == id);
+        private int ObtenerMiembroId()
+        {
+            try
+            {
+                RegistroMiembro miembro = LoginMiembroService.ObtenerMiembroAutenticado();
+                return miembro.ID;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener ID de miembro: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0; // ID inválido
+            }
+        }
+
+        private bool FacturaDuplicada(ValidarFactura nuevaFactura, out string mensajeError)
+        {
+            mensajeError = string.Empty;
+            foreach (ValidarFactura factura in facturas)
+            {
+                if (factura.NumeroFactura == nuevaFactura.NumeroFactura &&
+                    factura.Referencia == nuevaFactura.Referencia)
                 {
                     mensajeError = "Ya existe una factura con el mismo número y referencia.";
                     return true;
                 }
+            }
+            return false;
+        }
 
+
+
+
+        private bool EsNumeroValido(string valor, int longitud)
+        {
+            if (string.IsNullOrWhiteSpace(valor) || valor.Length != longitud)
                 return false;
-            }
 
-            private void CalcularDuracionMembresia(ValidarFactura factura)
+            foreach (char c in valor)
             {
-                switch (factura.Monto)
+                if (!char.IsDigit(c)) return false;
+            }
+            return true;
+        }
+
+        public List<ValidarFactura> ObtenerHistorialDeMembresias(string identificador)
+        {
+            List<ValidarFactura> historial = new List<ValidarFactura>();
+            try
+            {
+                //RegistroMiembro miembro = //miembroDao.ObtenerMiembroPorIdentificador(identificador);
+                // if (miembro == null)
+                throw new Exception("No se encontró un miembro con el identificador proporcionado.");
+
+                //foreach (ValidarFactura factura in facturas)
                 {
-                    case "15":
-                        factura.Duracionmembresia = "1 mes";
-                        factura.Estado = true;
-                        break;
-                    case "3":
-                        factura.Duracionmembresia = "1 día";
-                        factura.Estado = true;
-                        break;
-                    default:
-                        factura.Duracionmembresia = "Invalida";
-                        factura.Estado = false;
-                        break;
+                    //if (factura.MiembroId == miembro.ID)
+                    //historial.Add(factura);
                 }
+                return historial;
             }
-
-            private bool EsNumeroValido(string valor, int longitud)
+            catch (Exception ex)
             {
-                return valor.Length == longitud && valor.All(char.IsDigit);
+                throw new Exception("Error al obtener el historial: " + ex.Message);
             }
+        }
 
-            public string ImprimirFactura(int facturaId)
+        private void CargarFacturasDesdeArchivo()
+        {
+            if (!File.Exists(filepath)) return;
+
+            try
             {
-                var factura = facturas.FirstOrDefault(f => f.Id == facturaId);
-                if (factura == null)
-                {
-                    return "Factura no encontrada.";
-                }
-
-                return $"Factura ID: {factura.Id}\n" +
-                       $"Número: {factura.NumeroFactura}\n" +
-                       $"Referencia: {factura.Referencia}\n" +
-                       $"Fecha de Pago: {factura.Fechapago.ToShortDateString()}\n" +
-                       $"Monto: ${factura.Monto}\n" +
-                       $"Duración: {factura.Duracionmembresia}\n" +
-                       $"Estado: {(factura.Estado ? "Activa" : "Inactiva")}\n" +
-                       $"Miembro ID: {factura.MiembroId}";
-            }
-
-            public void EliminarFactura(int facturaId)
-            {
-                var factura = facturas.FirstOrDefault(f => f.Id == facturaId);
-                if (factura != null)
-                {
-                    facturas.Remove(factura);
-                    GuardarFacturasEnArchivo();
-                }
-                else
-                {
-                    throw new Exception("La factura no existe.");
-                }
-            }
-
-            private void CargarFacturasDesdeArchivo()
-            {
-                if (!File.Exists(filepath)) return;
-
                 using (var fs = new FileStream(filepath, FileMode.Open, FileAccess.Read))
                 using (var br = new BinaryReader(fs))
                 {
                     while (fs.Position < fs.Length)
                     {
-                        var id = br.ReadInt32();
-                        var numeroFactura = br.ReadString();
-                        var referencia = br.ReadString();
-                        var fechapago = DateTime.FromBinary(br.ReadInt64());
-                        var monto = br.ReadString();
-                        var duracion = br.ReadString();
-                        var estado = br.ReadBoolean();
-                        var miembroId = br.ReadInt32();
+                        try
+                        {
+                            int id = br.ReadInt32();
+                            string numeroFactura = br.ReadString();
+                            string referencia = br.ReadString();
+                            long fechaTicks = br.ReadInt64();
 
-                        facturas.Add(new ValidarFactura(id, numeroFactura, referencia, fechapago, monto, duracion, estado, miembroId));
+                            // Validar que la fecha sea válida
+                            if (fechaTicks < DateTime.MinValue.Ticks || fechaTicks > DateTime.MaxValue.Ticks)
+                                throw new InvalidDataException($"Fecha inválida en el archivo: {fechaTicks}");
+
+                            DateTime fechaPago = DateTime.FromBinary(fechaTicks);
+                            decimal monto = br.ReadDecimal();
+                            int miembroId = br.ReadInt32();
+
+                            var factura = new ValidarFactura(id, numeroFactura, referencia, fechaPago, monto, miembroId);
+                            facturas.Add(factura);
+                        }
+                        catch (Exception ex)
+                        {
+                            // Manejo de errores para facturas individuales
+                            MessageBox.Show($"Error al procesar una factura: {ex.Message}", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al cargar las facturas desde el archivo: " + ex.Message);
+            }
+        }
 
         private void GuardarFacturasEnArchivo()
         {
             try
             {
-
-                using (var fs = new FileStream(filepath, FileMode.Create, FileAccess.Write))
-                using (var bw = new BinaryWriter(fs))
+                using (FileStream fs = new FileStream(filepath, FileMode.Create, FileAccess.Write))
+                using (BinaryWriter bw = new BinaryWriter(fs))
                 {
                     foreach (var factura in facturas)
                     {
                         bw.Write(factura.Id);
                         bw.Write(factura.NumeroFactura);
                         bw.Write(factura.Referencia);
-                        bw.Write(factura.Fechapago.ToBinary());
+                        bw.Write(factura.FechaPago.ToBinary());
                         bw.Write(factura.Monto);
-                        bw.Write(factura.Duracionmembresia);
-                        bw.Write(factura.Estado);
                         bw.Write(factura.MiembroId);
                     }
                 }
             }
-            catch (IOException ex)
+            catch (Exception ex)
             {
-                throw new Exception("Error al guardar las facturas en archivo.", ex);
+                throw new Exception("Error al guardar las facturas en el archivo: " + ex.Message);
             }
-        }   
+        }
     }
 }

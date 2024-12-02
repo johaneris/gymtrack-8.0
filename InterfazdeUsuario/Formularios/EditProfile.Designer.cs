@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.lblErrorMessage = new System.Windows.Forms.Label();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
@@ -47,7 +46,6 @@
             this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_Nombre = new System.Windows.Forms.Label();
             this.lbl_Correo = new System.Windows.Forms.Label();
@@ -56,11 +54,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,26 +86,10 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(540, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(457, 526);
             this.panel1.TabIndex = 0;
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.Red;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.Red;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.Location = new System.Drawing.Point(67, 423);
-            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(39, 32);
-            this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconPictureBox2.TabIndex = 27;
-            this.iconPictureBox2.TabStop = false;
-            this.iconPictureBox2.Visible = false;
             // 
             // lblErrorMessage
             // 
@@ -131,7 +115,7 @@
             this.btn_Guardar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Guardar.ForeColor = System.Drawing.Color.Black;
             this.btn_Guardar.Location = new System.Drawing.Point(255, 460);
-            this.btn_Guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Guardar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(131, 49);
             this.btn_Guardar.TabIndex = 6;
@@ -148,7 +132,7 @@
             this.btn_Cancelar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancelar.ForeColor = System.Drawing.Color.LightGray;
             this.btn_Cancelar.Location = new System.Drawing.Point(68, 460);
-            this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(131, 49);
             this.btn_Cancelar.TabIndex = 7;
@@ -160,7 +144,7 @@
             this.cb_ShowCurrentCont.AutoSize = true;
             this.cb_ShowCurrentCont.BackColor = System.Drawing.Color.Transparent;
             this.cb_ShowCurrentCont.Location = new System.Drawing.Point(393, 396);
-            this.cb_ShowCurrentCont.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_ShowCurrentCont.Margin = new System.Windows.Forms.Padding(4);
             this.cb_ShowCurrentCont.Name = "cb_ShowCurrentCont";
             this.cb_ShowCurrentCont.Size = new System.Drawing.Size(18, 17);
             this.cb_ShowCurrentCont.TabIndex = 23;
@@ -172,7 +156,7 @@
             this.cb_ShowContConfirm.AutoSize = true;
             this.cb_ShowContConfirm.BackColor = System.Drawing.Color.Transparent;
             this.cb_ShowContConfirm.Location = new System.Drawing.Point(393, 324);
-            this.cb_ShowContConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_ShowContConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.cb_ShowContConfirm.Name = "cb_ShowContConfirm";
             this.cb_ShowContConfirm.Size = new System.Drawing.Size(18, 17);
             this.cb_ShowContConfirm.TabIndex = 22;
@@ -184,7 +168,7 @@
             this.cb_ShowCont.AutoSize = true;
             this.cb_ShowCont.BackColor = System.Drawing.Color.Transparent;
             this.cb_ShowCont.Location = new System.Drawing.Point(393, 246);
-            this.cb_ShowCont.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_ShowCont.Margin = new System.Windows.Forms.Padding(4);
             this.cb_ShowCont.Name = "cb_ShowCont";
             this.cb_ShowCont.Size = new System.Drawing.Size(18, 17);
             this.cb_ShowCont.TabIndex = 21;
@@ -198,7 +182,7 @@
             this.txt_CurrentContrasenia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CurrentContrasenia.ForeColor = System.Drawing.Color.Black;
             this.txt_CurrentContrasenia.Location = new System.Drawing.Point(55, 391);
-            this.txt_CurrentContrasenia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_CurrentContrasenia.Margin = new System.Windows.Forms.Padding(4);
             this.txt_CurrentContrasenia.Name = "txt_CurrentContrasenia";
             this.txt_CurrentContrasenia.Size = new System.Drawing.Size(360, 25);
             this.txt_CurrentContrasenia.TabIndex = 5;
@@ -223,7 +207,7 @@
             this.txt_ContraseniaConfirm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ContraseniaConfirm.ForeColor = System.Drawing.Color.Black;
             this.txt_ContraseniaConfirm.Location = new System.Drawing.Point(55, 320);
-            this.txt_ContraseniaConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_ContraseniaConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ContraseniaConfirm.Name = "txt_ContraseniaConfirm";
             this.txt_ContraseniaConfirm.Size = new System.Drawing.Size(360, 25);
             this.txt_ContraseniaConfirm.TabIndex = 4;
@@ -248,7 +232,7 @@
             this.txt_Contrasenia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Contrasenia.ForeColor = System.Drawing.Color.Black;
             this.txt_Contrasenia.Location = new System.Drawing.Point(55, 241);
-            this.txt_Contrasenia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Contrasenia.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Contrasenia.Name = "txt_Contrasenia";
             this.txt_Contrasenia.Size = new System.Drawing.Size(360, 25);
             this.txt_Contrasenia.TabIndex = 3;
@@ -273,7 +257,7 @@
             this.txt_Correo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Correo.ForeColor = System.Drawing.Color.Black;
             this.txt_Correo.Location = new System.Drawing.Point(55, 169);
-            this.txt_Correo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Correo.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Correo.Name = "txt_Correo";
             this.txt_Correo.Size = new System.Drawing.Size(360, 25);
             this.txt_Correo.TabIndex = 2;
@@ -298,7 +282,7 @@
             this.txt_Nombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Nombre.ForeColor = System.Drawing.Color.Black;
             this.txt_Nombre.Location = new System.Drawing.Point(55, 101);
-            this.txt_Nombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(360, 25);
             this.txt_Nombre.TabIndex = 1;
@@ -328,21 +312,6 @@
             this.label3.Size = new System.Drawing.Size(177, 33);
             this.label3.TabIndex = 5;
             this.label3.Text = "Editar Perfil";
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 187;
-            this.iconPictureBox1.Location = new System.Drawing.Point(60, 76);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(201, 187);
-            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconPictureBox1.TabIndex = 5;
-            this.iconPictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -448,24 +417,6 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Cargo";
             // 
-            // Btn_Salir
-            // 
-            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_Salir.FlatAppearance.BorderSize = 0;
-            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.Btn_Salir.IconColor = System.Drawing.Color.Black;
-            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_Salir.IconSize = 15;
-            this.Btn_Salir.Location = new System.Drawing.Point(4, 4);
-            this.Btn_Salir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn_Salir.Name = "Btn_Salir";
-            this.Btn_Salir.Size = new System.Drawing.Size(20, 18);
-            this.Btn_Salir.TabIndex = 17;
-            this.Btn_Salir.TabStop = false;
-            this.Btn_Salir.UseVisualStyleBackColor = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -479,7 +430,57 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Perfil";
             // 
-            // UserControl1
+            // Btn_Salir
+            // 
+            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_Salir.FlatAppearance.BorderSize = 0;
+            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.Btn_Salir.IconColor = System.Drawing.Color.Black;
+            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Salir.IconSize = 15;
+            this.Btn_Salir.Location = new System.Drawing.Point(4, 4);
+            this.Btn_Salir.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_Salir.Name = "Btn_Salir";
+            this.Btn_Salir.Size = new System.Drawing.Size(20, 18);
+            this.Btn_Salir.TabIndex = 0;
+            this.Btn_Salir.TabStop = false;
+            this.Btn_Salir.UseVisualStyleBackColor = false;
+            this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 187;
+            this.iconPictureBox1.Location = new System.Drawing.Point(60, 76);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(201, 187);
+            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconPictureBox1.TabIndex = 5;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.Red;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.Red;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.Location = new System.Drawing.Point(67, 423);
+            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(39, 32);
+            this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconPictureBox2.TabIndex = 27;
+            this.iconPictureBox2.TabStop = false;
+            this.iconPictureBox2.Visible = false;
+            // 
+            // EditProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -496,13 +497,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "UserControl1";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "EditProfile";
             this.Size = new System.Drawing.Size(997, 526);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

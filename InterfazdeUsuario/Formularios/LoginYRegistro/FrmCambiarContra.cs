@@ -16,5 +16,11 @@ namespace InterfazdeUsuario.Formularios
         {
             InitializeComponent();
         }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            FrmInitialPageUser user = new FrmInitialPageUser();
+            user.Show();
+        }
     }
 }

@@ -1,15 +1,17 @@
-﻿using InterfazdeUsuario.models;
+﻿using InterfazdeUsuario.Dao;
+using InterfazdeUsuario.models;
+using InterfazdeUsuario.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace InterfazdeUsuario.Dao
 {
     public class LoginMiembroDao
     {
-
         private List<RegistroMiembro> miembros;
 
         public LoginMiembroDao()
@@ -19,7 +21,7 @@ namespace InterfazdeUsuario.Dao
 
         public List<RegistroMiembro> GetMiembros()
         {
-            return miembros;
+            return new List<RegistroMiembro>(miembros);
         }
 
         public void AgregarMiembro(RegistroMiembro nuevoMiembro)
@@ -33,12 +35,6 @@ namespace InterfazdeUsuario.Dao
         public RegistroMiembro BuscarPorIdentificador(string identificador)
         {
             return miembros.Find(m => m.Cif == identificador || m.Cedula == identificador);
-        }
-
-        public bool AutenticarUsuario(string identificador, string password)
-        {
-            var miembro = BuscarPorIdentificador(identificador);
-            return miembro != null && miembro.Password == password;
         }
     }
 }

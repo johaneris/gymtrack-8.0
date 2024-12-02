@@ -12,25 +12,32 @@ namespace InterfazdeUsuario.models
     {
         public int Id { get; set; }
         public string NumeroFactura { get; set; }
-        public string Referencia { get; set; }  
-        public DateTime Fechapago { get; set; } //ingresa la fecha que se realiaa el pago y el sistema calculo cuandos e acab
-        public string Monto { get; set; } //si paga 15 0 3 dolares 
-        public string Duracionmembresia {  get; set; } // dependiendo del monto se puede elegir la duracion de la membresia 
-        public bool Estado { get; set; } //mmbresia activa o inactiva
+        public string Referencia { get; set; }
+        public DateTime FechaPago { get; set; }
+        public decimal Monto { get; set; } // Usamos decimal para operaciones financieras
+        public TimeSpan DuracionMembresia { get; set; } // Almacenamos duración en días
+        public bool Estado { get; set; } // True si la membresía está activa
         public int MiembroId { get; set; }
 
-        public ValidarFactura(int id, string numeroFactura, string referencia, DateTime fechapago, string monto, string duracion, bool estado, int miembroid )
+        public ValidarFactura(int id, string numeroFactura, string referencia, DateTime fechaPago, decimal monto, int miembroId)
         {
             Id = id;
-            NumeroFactura = numeroFactura;
-            Referencia = referencia;
+            NumeroFactura = numeroFactura ?? throw new ArgumentNullException(nameof(numeroFactura));
+            Referencia = referencia ?? throw new ArgumentNullException(nameof(referencia));
+            FechaPago = fechaPago;
             Monto = monto;
-            Fechapago = fechapago;
-            Duracionmembresia = duracion;
-            Estado = estado;
-            MiembroId = miembroid;
+            MiembroId = miembroId;
+            Estado = true; // Por defecto activamos la membresía al registrar factura
+            DuracionMembresia = CalcularDuracion(monto);
         }
-        
-        
+        public ValidarFactura() { }
+
+        private TimeSpan CalcularDuracion(decimal monto)
+        {
+            if (monto == 15) return TimeSpan.FromDays(30);
+            if (monto == 3) return TimeSpan.FromDays(1);
+            Estado = false; // Inactiva si el monto no corresponde a las opciones
+            return TimeSpan.Zero;
+        }
     }
 }

@@ -33,7 +33,7 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(55, 15);
+            this.reportViewer1.Location = new System.Drawing.Point(93, 33);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1003, 521);
@@ -46,7 +46,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(124)))), ((int)(((byte)(184)))));
             this.Controls.Add(this.reportViewer1);
             this.Name = "Reportes";
-            this.Size = new System.Drawing.Size(1137, 561);
+            this.Size = new System.Drawing.Size(1204, 608);
             this.ResumeLayout(false);
 
         }

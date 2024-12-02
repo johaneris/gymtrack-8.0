@@ -9,85 +9,159 @@ namespace InterfazdeUsuario.Dao
 {
     public class RegistroMiembroDao
     {
-        // Lista para almacenar los miembros registrados
         private List<RegistroMiembro> miembros;
 
-        // Constructor para inicializar la lista
         public RegistroMiembroDao()
         {
             miembros = new List<RegistroMiembro>();
         }
 
-        // Método para cargar una lista inicial de miembros (útil para persistencia futura)
         public void CargarMiembros(List<RegistroMiembro> miembrosIniciales)
         {
-            if (miembrosIniciales != null)
-            {
-                miembros = miembrosIniciales;
-            }
+            miembros = miembrosIniciales ?? new List<RegistroMiembro>();
         }
 
-        // Método para obtener la lista completa de miembros
-        public List<RegistroMiembro> ObtenerMiembros()
+        public List<RegistroMiembro> ObtenerMiembros() => new List<RegistroMiembro>(miembros);
+
+        public string AgregarMiembro(RegistroMiembro nuevoMiembro)
         {
-            return miembros;
+            if (nuevoMiembro == null) return "El miembro no puede ser nulo.";
+            if (EsMiembroDuplicado(nuevoMiembro)) return "Duplicado: CIF o cédula ya registrados.";
+
+            miembros.Add(nuevoMiembro);
+            nuevoMiembro.AgregarEventoHistorial("Miembro agregado.");
+            return "Miembro agregado exitosamente.";
         }
 
-        // Método para agregar un nuevo miembro
-        public void AgregarMiembro(RegistroMiembro nuevoMiembro)
-        {
-            if (nuevoMiembro != null)
-            {
-                miembros.Add(nuevoMiembro);
-            }
-        }
+        public RegistroMiembro BuscarPorCorreo(string email) =>
+            miembros.FirstOrDefault(m => m.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
 
-        // Método para buscar un miembro por su correo
-        public RegistroMiembro BuscarPorCorreo(string email)
-        {
-            return miembros.FirstOrDefault(m => m.Email == email);
-        }
-
-        // Método para buscar un miembro por su ID
-        public RegistroMiembro ObtenerMiembroPorId(int id)
-        {
-            return miembros.FirstOrDefault(m => m.ID == id);
-        }
-
-        // Método para buscar un miembro por su identificador (CIF o cédula)
-        public RegistroMiembro ObtenerMiembroPorIdentificador(string identificador)
-        {
-            return miembros.FirstOrDefault(m => m.Cif == identificador || m.Cedula == identificador);
-        }
-
-        // Método para eliminar un miembro por su ID
         public bool EliminarMiembro(int id)
         {
             var miembro = ObtenerMiembroPorId(id);
-            if (miembro != null)
-            {
-                miembros.Remove(miembro);
-                return true;
-            }
-            return false;
+            if (miembro == null) return false;
+            miembros.Remove(miembro);
+            return true;
         }
 
-        // Método para actualizar los datos de un miembro
-        public bool ActualizarMiembro(RegistroMiembro miembroActualizado)
-        {
-            var index = miembros.FindIndex(m => m.ID == miembroActualizado.ID);
-            if (index != -1)
-            {
-                miembros[index] = miembroActualizado;
-                return true;
-            }
-            return false;
-        }
+        private bool EsMiembroDuplicado(RegistroMiembro miembro) =>
+            miembros.Any(m => m.Cif == miembro.Cif || m.Cedula == miembro.Cedula);
 
-        // Método para autenticar un usuario por correo y contraseña
-        public bool AutenticarUsuario(string email, string password)
-        {
-            return miembros.Any(m => m.Email == email && m.Password == password);
-        }
+        private RegistroMiembro ObtenerMiembroPorId(int id) =>
+            miembros.FirstOrDefault(m => m.ID == id);
     }
+
+    //public RegistroMiembro BuscarPorCorreo(string email)
+    //    {
+    //        if (string.IsNullOrWhiteSpace(email))
+    //        {
+    //            throw new ArgumentException("El correo no puede estar vacío.");
+    //        }
+
+    //        foreach (RegistroMiembro miembro in miembros)
+    //        {
+    //            if (miembro.Email == email)
+    //            {
+    //                return miembro;
+    //            }
+    //        }
+
+    //        return null;
+    //    }
+
+    //    public RegistroMiembro ObtenerMiembroPorId(int id)
+    //    {
+    //        foreach (RegistroMiembro miembro in miembros)
+    //        {
+    //            if (miembro.ID == id)
+    //            {
+    //                return miembro;
+    //            }
+    //        }
+
+    //        return null;
+    //    }
+
+    //    public RegistroMiembro ObtenerMiembroPorIdentificador(string identificador)
+    //    {
+    //        //if (string.IsNullOrWhiteSpace(identificador))
+    //        //{
+    //        //    throw new ArgumentException("El identificador no puede estar vacío.");
+    //        //}
+
+    //        //foreach (RegistroMiembro miembro in miembros)
+    //        //{
+    //        //    if (miembro.Cif == identificador || miembro.Cedula == identificador)
+    //        //    {
+    //        //        return miembro;
+    //        //    }
+    //        //}
+    //        //}
+    //    //    return miembros.FirstOrDefault(m =>
+    //    //m.Cif == identificador || m.Cedula == identificador);
+
+    //        if (string.IsNullOrWhiteSpace(identificador))
+    //{
+    //    throw new ArgumentException("El identificador no puede estar vacío.");
+    //}
+
+    //var miembro = miembros.FirstOrDefault(m => m.Cif == identificador || m.Cedula == identificador);
+
+    //if (miembro == null)
+    //{
+    //    throw new Exception("Miembro no encontrado con ese identificador.");
+    //}
+
+    //return miembro;
+
+    //    }
+
+    //    public bool EliminarMiembro(int id)
+    //    {
+    //        RegistroMiembro miembro = ObtenerMiembroPorId(id);
+    //        if (miembro != null)
+    //        {
+    //            miembros.Remove(miembro);
+    //            return true;
+    //        }
+    //        return false;
+    //    }
+
+    //    public bool ActualizarMiembro(RegistroMiembro miembroActualizado)
+    //    {
+    //        if (miembroActualizado == null)
+    //        {
+    //            throw new ArgumentNullException("El miembro actualizado no puede ser nulo.");
+    //        }
+
+    //        for (int i = 0; i < miembros.Count; i++)
+    //        {
+    //            if (miembros[i].ID == miembroActualizado.ID)
+    //            {
+    //                miembros[i] = miembroActualizado;
+    //                return true;
+    //            }
+    //        }
+
+    //        return false;
+    //    }
+
+    //    public bool AutenticarUsuario(string email, string password)
+    //    {
+    //        if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+    //        {
+    //            throw new ArgumentException("El correo o la contraseña no pueden estar vacíos.");
+    //        }
+
+    //        foreach (RegistroMiembro miembro in miembros)
+    //        {
+    //            if (miembro.Email == email && miembro.Password == password)
+    //            {
+    //                return true;
+    //            }
+    //        }
+
+    //        return false;
+    //    }
 }
+

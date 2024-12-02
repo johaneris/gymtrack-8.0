@@ -43,5 +43,20 @@ namespace InterfazdeUsuario.Formularios
             historialMembresias.Dock = DockStyle.Fill;
             pnlContentUser.Controls.Add(historialMembresias);
         }
+
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            EditProfile profile = new EditProfile();
+            pnlContentUser.Controls.Clear();
+            profile.Dock = DockStyle.Fill;  
+            pnlContentUser.Controls.Add(profile);
+        }
+
+        private void Btn_LogOut_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal principal = new FrmPrincipal();
+            this.Close();
+            principal.Show();
+        }
     }
 }

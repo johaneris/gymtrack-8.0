@@ -33,14 +33,36 @@ namespace InterfazdeUsuario.Formularios
 
         private void btnGestionarmemresias_Click(object sender, EventArgs e)
         {
-            
+            HistorialDeMembresias membresía = new HistorialDeMembresias();
+            pnl_ContenidoAdmin.Controls.Clear();
+            membresía.Dock = DockStyle.Fill;
+
+            pnl_ContenidoAdmin.Controls.Add(membresía);
         }
 
         private void Btn_PerfilAdmin_Click(object sender, EventArgs e)
         {
             EditProfile edit = new EditProfile();
-            this.Hide();
-            edit.Show(); 
+            pnl_ContenidoAdmin.Controls.Clear();
+            edit.Dock = DockStyle.Fill;
+
+            pnl_ContenidoAdmin.Controls.Add(edit);
+        }
+
+        private void Btn_LogOut_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal principal = new FrmPrincipal();
+            this.Close();
+            principal.Show();
+        }
+
+        private void btnEntradas_Click(object sender, EventArgs e)
+        {
+            GestionarUsuario user = new GestionarUsuario();
+            pnl_ContenidoAdmin.Controls.Clear();
+            user.Dock = DockStyle.Fill;
+
+            pnl_ContenidoAdmin.Controls.Add(user);
         }
     }
 }

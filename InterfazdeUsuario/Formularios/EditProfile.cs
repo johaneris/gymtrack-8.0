@@ -16,5 +16,11 @@ namespace InterfazdeUsuario.Formularios
         {
             InitializeComponent();
         }
+
+        private void Btn_Salir_Click(object sender, EventArgs e)
+        {
+            FrmPrincipalAdmin admin = new FrmPrincipalAdmin();
+            admin.Show();
+        }
     }
 }

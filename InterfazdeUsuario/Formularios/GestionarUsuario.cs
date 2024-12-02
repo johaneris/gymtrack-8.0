@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace InterfazdeUsuario.Formularios
 {
-    public partial class UserControl1 : UserControl
+    public partial class GestionarUsuario : UserControl
     {
-        public UserControl1()
+        public GestionarUsuario()
         {
             InitializeComponent();
+        }
+
+        private void Btn_Salir_Click(object sender, EventArgs e)
+        {
+            FrmPrincipalAdmin admin = new FrmPrincipalAdmin();
+            admin.Show();
         }
     }
 }

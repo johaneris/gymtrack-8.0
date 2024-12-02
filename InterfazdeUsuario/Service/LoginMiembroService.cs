@@ -11,88 +11,70 @@ namespace InterfazdeUsuario.Service
 {
     public class LoginMiembroService
     {
+
         private string filepath = "miembros.bin";
         private LoginMiembroDao loginDao;
 
         // Variable estática para rastrear al miembro autenticado
         private static RegistroMiembro miembroAutenticado;
 
-        public LoginMiembroService(LoginMiembroDao dao)
-        {
-            this.loginDao = dao;
-        }
-
         public LoginMiembroService()
         {
-            this.loginDao = new LoginMiembroDao();
+            var miembros = new RegistroDeMiembroService().Load();
+            loginDao = new LoginMiembroDao();
+
+            if (miembros != null && miembros.Count > 0)
+            {
+                foreach (var miembro in miembros)
+                {
+                    loginDao.AgregarMiembro(miembro);
+                }
+            }
         }
 
         public bool AutenticarUsuario(string identificador, string password)
         {
             CargarDatos();
-            bool autenticado = loginDao.AutenticarUsuario(identificador, password);
+            var miembro = loginDao.BuscarPorIdentificador(identificador);
 
-            if (autenticado)
+            if (miembro != null && miembro.Password == password)
             {
-                // Establecer el miembro autenticado
-                miembroAutenticado = loginDao.BuscarPorIdentificador(identificador);
-            }
-            else
-            {
-                miembroAutenticado = null; // Limpiar si falla la autenticación
+                miembroAutenticado = miembro;
+                miembro.AgregarEventoHistorial("Inicio de sesión exitoso.");
+                new RegistroDeMiembroService().SaveFile(loginDao.GetMiembros());
+                return true;
             }
 
-            return autenticado;
+            return false;
+        }
+
+        public static RegistroMiembro ObtenerMiembroAutenticado()
+        {
+            if (miembroAutenticado == null)
+            {
+                throw new Exception("No hay ningún miembro autenticado.");
+            }
+
+            return miembroAutenticado;
         }
 
         public static int ObtenerMiembroId()
         {
-            if (miembroAutenticado != null)
-            {
-                return miembroAutenticado.ID;
-            }
-            else
-            {
-                throw new Exception("No hay ningún miembro autenticado.");
-            }
+            return ObtenerMiembroAutenticado().ID;
         }
 
-        public void CargarDatos()
+        private void CargarDatos()
         {
             if (!File.Exists(filepath)) return;
 
-            try
-            {
-                using (var fs = new FileStream(filepath, FileMode.Open, FileAccess.Read))
-                using (var br = new BinaryReader(fs))
-                {
-                    loginDao.GetMiembros().Clear();
+            var miembros = new RegistroDeMiembroService().Load();
+            loginDao.GetMiembros().Clear();
 
-                    while (fs.Position < fs.Length)
-                    {
-                        try
-                        {
-                            int id = br.ReadInt32();
-                            string name = br.ReadString();
-                            string lastname = br.ReadString();
-                            string userType = br.ReadString();
-                            string email = br.ReadString();
-                            string cif = br.ReadString();
-                            string cedula = br.ReadString();
-                            string password = br.ReadString();
-
-                            loginDao.AgregarMiembro(new RegistroMiembro(id, name, lastname, userType, email, password, cif, cedula));
-                        }
-                        catch
-                        {
-                            break;
-                        }
-                    }
-                }
-            }
-            catch (Exception)
+            foreach (var miembro in miembros)
             {
+                loginDao.AgregarMiembro(miembro);
             }
+
         }
     }
 }

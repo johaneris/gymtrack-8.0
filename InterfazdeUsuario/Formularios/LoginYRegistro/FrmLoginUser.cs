@@ -21,7 +21,7 @@ namespace InterfazdeUsuario.Formularios
         public FrmLoginUser()
         {
             InitializeComponent();
-            loginMiembroService = new LoginMiembroService(new LoginMiembroDao());
+            loginMiembroService = new LoginMiembroService();
 
         }
 

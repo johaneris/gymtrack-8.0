@@ -198,6 +198,7 @@
             this.btnEntradas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEntradas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEntradas.UseVisualStyleBackColor = true;
+            this.btnEntradas.Click += new System.EventHandler(this.btnEntradas_Click);
             // 
             // btnGestionarmemresias
             // 
@@ -269,6 +270,7 @@
             this.Btn_LogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_LogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_LogOut.UseVisualStyleBackColor = true;
+            this.Btn_LogOut.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
             // iconPictureBox1
             // 

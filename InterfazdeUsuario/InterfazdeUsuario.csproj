@@ -165,11 +165,11 @@
     <Compile Include="Formularios\EditProfile.Designer.cs">
       <DependentUpon>EditProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\UserControl1.cs">
+    <Compile Include="Formularios\GestionarUsuario.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formularios\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="Formularios\GestionarUsuario.Designer.cs">
+      <DependentUpon>GestionarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\ValidarMembresia.cs">
       <SubType>UserControl</SubType>
@@ -210,6 +210,9 @@
     <Compile Include="Service\ValidarFacturaService.cs" />
     <EmbeddedResource Include="Formularios\FrmInitialPageUser.resx">
       <DependentUpon>FrmInitialPageUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionarUsuario.resx">
+      <DependentUpon>GestionarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\HistorialDeMembresias.resx">
       <DependentUpon>HistorialDeMembresias.cs</DependentUpon>

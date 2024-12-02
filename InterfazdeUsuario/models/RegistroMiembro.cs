@@ -11,29 +11,31 @@ namespace InterfazdeUsuario.models
         public int ID { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
-        public string UserType{ get; set; }
-      
-        public string Email {  get; set; }
-        public string Cif {  get; set; }
+        public string UserType { get; set; }
+        public string Email { get; set; }
+        public string Cif { get; set; }
         public string Cedula { get; set; }
         public string Password { get; set; }
-        
+        public DateTime FechaRegistro { get; set; }
+        public string Historial { get; set; } // Almacena actividades importantes del miembro
 
-
-
-        public RegistroMiembro(int iD, string name, string lastname, string usertipe, string email, string password, string cif, string cedula)
+        public RegistroMiembro(int id, string name, string lastname, string userType, string email, string password, string cif, string cedula)
         {
-            ID = iD;
-            Name = name;
-            LastName = lastname;
-            UserType = usertipe;
-          
-            Email = email;
-            Cif = cif; 
+            ID = id;
+            Name = name ?? throw new ArgumentNullException(nameof(name));
+            LastName = lastname ?? throw new ArgumentNullException(nameof(lastname));
+            UserType = userType ?? throw new ArgumentNullException(nameof(userType));
+            Email = email ?? throw new ArgumentNullException(nameof(email));
+            Password = password.Trim() ?? throw new ArgumentNullException(nameof(password));
+            Cif = cif;
             Cedula = cedula;
-            
-            Password = password.Trim();
-            
+            FechaRegistro = DateTime.Now;
+            Historial = string.Empty; // Inicialización por defecto
+        }
+
+        public void AgregarEventoHistorial(string evento)
+        {
+            Historial += $"{DateTime.Now}: {evento}\n";
         }
     }
 }

@@ -81,7 +81,7 @@
             this.btnAbout.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbout.ForeColor = System.Drawing.Color.White;
             this.btnAbout.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
-            this.btnAbout.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(152)))), ((int)(((byte)(143)))));
+            this.btnAbout.IconColor = System.Drawing.Color.Gainsboro;
             this.btnAbout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAbout.IconSize = 50;
             this.btnAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -103,7 +103,7 @@
             this.btnAyuda.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAyuda.ForeColor = System.Drawing.Color.White;
             this.btnAyuda.IconChar = FontAwesome.Sharp.IconChar.Question;
-            this.btnAyuda.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(152)))), ((int)(((byte)(143)))));
+            this.btnAyuda.IconColor = System.Drawing.Color.Gainsboro;
             this.btnAyuda.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAyuda.IconSize = 50;
             this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -125,7 +125,7 @@
             this.btnAdmin.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.ForeColor = System.Drawing.Color.White;
             this.btnAdmin.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            this.btnAdmin.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(152)))), ((int)(((byte)(143)))));
+            this.btnAdmin.IconColor = System.Drawing.Color.Gainsboro;
             this.btnAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdmin.IconSize = 50;
             this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,7 +147,7 @@
             this.btnMiembros.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMiembros.ForeColor = System.Drawing.Color.White;
             this.btnMiembros.IconChar = FontAwesome.Sharp.IconChar.Dumbbell;
-            this.btnMiembros.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(152)))), ((int)(((byte)(143)))));
+            this.btnMiembros.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMiembros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMiembros.IconSize = 50;
             this.btnMiembros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

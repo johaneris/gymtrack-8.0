@@ -121,7 +121,7 @@
             this.tbCifPasswordLogin.SelectionStart = 0;
             this.tbCifPasswordLogin.ShortcutsEnabled = true;
             this.tbCifPasswordLogin.Size = new System.Drawing.Size(249, 28);
-            this.tbCifPasswordLogin.TabIndex = 18;
+            this.tbCifPasswordLogin.TabIndex = 1;
             this.tbCifPasswordLogin.UseSelectable = true;
             this.tbCifPasswordLogin.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbCifPasswordLogin.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -146,14 +146,14 @@
             this.tbPasswordLogin.Margin = new System.Windows.Forms.Padding(4);
             this.tbPasswordLogin.MaxLength = 32767;
             this.tbPasswordLogin.Name = "tbPasswordLogin";
-            this.tbPasswordLogin.PasswordChar = '\0';
+            this.tbPasswordLogin.PasswordChar = '*';
             this.tbPasswordLogin.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbPasswordLogin.SelectedText = "";
             this.tbPasswordLogin.SelectionLength = 0;
             this.tbPasswordLogin.SelectionStart = 0;
             this.tbPasswordLogin.ShortcutsEnabled = true;
             this.tbPasswordLogin.Size = new System.Drawing.Size(249, 28);
-            this.tbPasswordLogin.TabIndex = 17;
+            this.tbPasswordLogin.TabIndex = 2;
             this.tbPasswordLogin.UseSelectable = true;
             this.tbPasswordLogin.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbPasswordLogin.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -189,7 +189,7 @@
             this.lnkCambiarcContra2.Location = new System.Drawing.Point(311, 424);
             this.lnkCambiarcContra2.Name = "lnkCambiarcContra2";
             this.lnkCambiarcContra2.Size = new System.Drawing.Size(203, 18);
-            this.lnkCambiarcContra2.TabIndex = 20;
+            this.lnkCambiarcContra2.TabIndex = 4;
             this.lnkCambiarcContra2.TabStop = true;
             this.lnkCambiarcContra2.Text = "¿Haz olvidado la contraseña?";
             this.lnkCambiarcContra2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkCambiarcContra2_LinkClicked);
@@ -202,7 +202,7 @@
             this.btnLoginUser.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoginUser.ForeColor = System.Drawing.Color.AliceBlue;
             this.btnLoginUser.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.btnLoginUser.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(152)))), ((int)(((byte)(143)))));
+            this.btnLoginUser.IconColor = System.Drawing.Color.Gainsboro;
             this.btnLoginUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLoginUser.IconSize = 38;
             this.btnLoginUser.Location = new System.Drawing.Point(124, 318);
@@ -210,7 +210,7 @@
             this.btnLoginUser.Name = "btnLoginUser";
             this.btnLoginUser.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
             this.btnLoginUser.Size = new System.Drawing.Size(573, 63);
-            this.btnLoginUser.TabIndex = 19;
+            this.btnLoginUser.TabIndex = 3;
             this.btnLoginUser.Text = "       Iniciar Sesión";
             this.btnLoginUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLoginUser.UseVisualStyleBackColor = false;
@@ -239,7 +239,7 @@
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(75, 18);
-            this.linkLabel1.TabIndex = 8;
+            this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Registrate";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
@@ -271,7 +271,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
             this.btnCancelar.Size = new System.Drawing.Size(41, 34);
-            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.TabIndex = 0;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);

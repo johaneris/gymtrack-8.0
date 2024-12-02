@@ -83,6 +83,7 @@
             this.Btn_Salir.TabIndex = 18;
             this.Btn_Salir.TabStop = false;
             this.Btn_Salir.UseVisualStyleBackColor = false;
+            this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
             // 
             // pictureBox1
             // 
@@ -242,8 +243,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton Btn_Salir;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
@@ -254,6 +253,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaHora;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaDefinalizacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private FontAwesome.Sharp.IconButton Btn_Salir;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

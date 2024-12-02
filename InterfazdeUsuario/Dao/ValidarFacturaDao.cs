@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace InterfazdeUsuario.Dao
 {
+
     public class ValidarFacturaDao
     {
         // Lista para almacenar facturas en memoria
@@ -18,85 +19,85 @@ namespace InterfazdeUsuario.Dao
             facturas = new List<ValidarFactura>();
         }
 
+        // Método para cargar facturas desde la lista en memoria (útil para Service)
+        public List<ValidarFactura> ObtenerFacturas()
+        {
+            return new List<ValidarFactura>(facturas); // Retorna una copia para evitar modificaciones externas
+        }
+
         // Método para agregar una nueva factura
         public bool AgregarFactura(ValidarFactura nuevaFactura)
         {
-            if (nuevaFactura == null)
-            {
-                return false; // No se puede agregar una factura nula.
-            }
+            if (nuevaFactura == null) throw new ArgumentNullException(nameof(nuevaFactura));
 
-            if (BuscarPorNumeroYReferencia(nuevaFactura.NumeroFactura, nuevaFactura.Referencia) != null)
+            // Validar que no exista una factura duplicada
+            if (facturas.Any(f => f.NumeroFactura == nuevaFactura.NumeroFactura &&
+                                  f.Referencia == nuevaFactura.Referencia))
             {
-                return false; // Ya existe una factura con el mismo número y referencia.
+                return false; // Ya existe una factura con el mismo número y referencia
             }
 
             facturas.Add(nuevaFactura);
-            return true; // Factura agregada con éxito.
+            return true; // Factura agregada con éxito
         }
 
-        // Método para buscar facturas por su número de factura y referencia
+        // Método para buscar una factura por número y referencia
         public ValidarFactura BuscarPorNumeroYReferencia(string numeroFactura, string referencia)
         {
+            if (string.IsNullOrWhiteSpace(numeroFactura) || string.IsNullOrWhiteSpace(referencia))
+                throw new ArgumentException("Número de factura y referencia no pueden estar vacíos.");
+
             return facturas.FirstOrDefault(f => f.NumeroFactura == numeroFactura && f.Referencia == referencia);
         }
 
-        // Método para actualizar la información de una factura
-        public bool ActualizarFacturaPorrefencia(ValidarFactura facturaActualizada)
+        // Método para buscar una factura por su ID
+        public ValidarFactura BuscarPorId(int id)
         {
-            var facturaExistente = BuscarPorNumeroYReferencia(facturaActualizada.NumeroFactura, facturaActualizada.Referencia);
-            if (facturaExistente != null)
-            {
-                facturaExistente.Fechapago = facturaActualizada.Fechapago;
-                facturaExistente.Monto = facturaActualizada.Monto;
-                facturaExistente.Duracionmembresia = facturaActualizada.Duracionmembresia;
-                facturaExistente.Estado = facturaActualizada.Estado;
-                return true; // Actualización exitosa.
-            }
-            return false; // No se encontró la factura.
+            return facturas.FirstOrDefault(f => f.Id == id);
         }
 
+        // Método para actualizar una factura por ID
         public bool ActualizarFactura(ValidarFactura facturaActualizada)
         {
-            var facturaExistente = facturas.FirstOrDefault(f => f.Id == facturaActualizada.Id);
+            if (facturaActualizada == null) throw new ArgumentNullException(nameof(facturaActualizada));
+
+            var facturaExistente = BuscarPorId(facturaActualizada.Id);
             if (facturaExistente != null)
             {
-                // Actualizar todos los campos excepto el Id
-                facturaExistente.Fechapago = facturaActualizada.Fechapago;
-                facturaExistente.Monto = facturaActualizada.Monto;
-                facturaExistente.Duracionmembresia = facturaActualizada.Duracionmembresia;
-                facturaExistente.Estado = facturaActualizada.Estado;
                 facturaExistente.NumeroFactura = facturaActualizada.NumeroFactura;
                 facturaExistente.Referencia = facturaActualizada.Referencia;
-
-                return true;
+                facturaExistente.FechaPago = facturaActualizada.FechaPago;
+                facturaExistente.Monto = facturaActualizada.Monto;
+                facturaExistente.Estado = facturaActualizada.Estado;
+                facturaExistente.DuracionMembresia = facturaActualizada.DuracionMembresia;
+                facturaExistente.MiembroId = facturaActualizada.MiembroId;
+                return true; // Actualización exitosa
             }
-            return false; // No se encontró la factura.
-        }
-
-        // Método para obtener todas las facturas de un miembro específico
-        public List<ValidarFactura> ObtenerHistorialPorMiembroId(int miembroId)
-        {
-            return facturas.Where(f => f.MiembroId == miembroId).ToList();
-        }
-
-        // Obtener la lista completa de facturas
-        public List<ValidarFactura> ObtenerTodasLasFacturas()
-        {
-            return facturas;
+            return false; // No se encontró la factura
         }
 
         // Método para eliminar una factura por su ID
         public bool EliminarFacturaPorId(int facturaId)
         {
-            var factura = facturas.FirstOrDefault(f => f.Id == facturaId);
+            var factura = BuscarPorId(facturaId);
             if (factura != null)
             {
                 facturas.Remove(factura);
-                return true; // Eliminación exitosa.
+                return true; // Eliminación exitosa
             }
-            return false; // No se encontró la factura.
+            return false; // No se encontró la factura
         }
 
+        // Método para obtener el historial de facturas de un miembro específico
+        public List<ValidarFactura> ObtenerHistorialPorMiembroId(int miembroId)
+        {
+            return facturas.Where(f => f.MiembroId == miembroId).ToList();
+        }
+
+        // Método para obtener todas las facturas (para reportes o historial general)
+        public List<ValidarFactura> ObtenerTodasLasFacturas()
+        {
+            return new List<ValidarFactura>(facturas); // Retorna una copia segura
+        }
     }
 }

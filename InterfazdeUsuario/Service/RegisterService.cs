@@ -56,14 +56,12 @@ namespace InterfazdeUsuario.Service
             if (userType == "Miembro Externo" && miembros.Any(m => m.Cedula == cedula))
                 return "La cédula ya está registrada.";
 
-            // Generar ID único
-            int newId = miembros.Count > 0 ? miembros.Max(m => m.ID) + 1 : 1;
+            var miembro = registroService.Load();
+            if (miembros.Exists(m => m.Email == email)) return "Correo ya registrado.";
 
-            // Crear nuevo miembro
+            int newId = miembros.Count > 0 ? miembros.Max(m => m.ID) + 1 : 1;
             var nuevoMiembro = new RegistroMiembro(newId, name, lastname, userType, email, password, cif, cedula);
             miembros.Add(nuevoMiembro);
-
-            // Guardar la lista actualizada
             registroService.SaveFile(miembros);
 
             return "Registro exitoso.";
