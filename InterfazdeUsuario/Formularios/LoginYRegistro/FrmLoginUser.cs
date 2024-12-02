@@ -34,7 +34,7 @@ namespace InterfazdeUsuario.Formularios
 
         private void lnkCambiarcContra2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FrmResetPassword resetPassword = new FrmResetPassword();
+            FrmLoginAdmin resetPassword = new FrmLoginAdmin();
             this.Hide();
             resetPassword.ShowDialog();
             this.Show();

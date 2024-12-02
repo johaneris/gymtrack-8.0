@@ -70,9 +70,13 @@ namespace InterfazdeUsuario
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            FrmPrincipalAdmin admin = new FrmPrincipalAdmin();
-            this.Hide(); 
-            admin.ShowDialog();
+            //FrmPrincipalAdmin admin = new FrmPrincipalAdmin();
+            //this.Hide(); 
+            //admin.ShowDialog();
+
+           FrmLoginAdmin user = new FrmLoginAdmin();
+            this.Hide();
+            user.ShowDialog();
         }
     }
 }

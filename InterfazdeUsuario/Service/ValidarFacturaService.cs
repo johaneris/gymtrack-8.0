@@ -117,19 +117,19 @@ namespace InterfazdeUsuario.Service
             return true;
         }
 
-        public List<ValidarFactura> ObtenerHistorialDeMembresias(string identificador)
+        public List<ValidarFactura> ObtenerHistorialDeMembresias(int identificador)
         {
             List<ValidarFactura> historial = new List<ValidarFactura>();
             try
             {
-                //RegistroMiembro miembro = //miembroDao.ObtenerMiembroPorIdentificador(identificador);
-                // if (miembro == null)
+                RegistroMiembro miembro = miembroDao.ObtenerMiembroPorId( identificador);
+                if (miembro == null)
                 throw new Exception("No se encontró un miembro con el identificador proporcionado.");
 
-                //foreach (ValidarFactura factura in facturas)
+                foreach (ValidarFactura factura in facturas)
                 {
-                    //if (factura.MiembroId == miembro.ID)
-                    //historial.Add(factura);
+                    if (factura.MiembroId == miembro.ID)
+                    historial.Add(factura);
                 }
                 return historial;
             }

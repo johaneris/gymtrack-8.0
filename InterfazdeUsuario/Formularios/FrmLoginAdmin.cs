@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InterfazdeUsuario.Formularios
 {
-    public partial class FrmResetPassword : MetroFramework.Forms.MetroForm
+    public partial class FrmLoginAdmin : MetroFramework.Forms.MetroForm
     {
-        public FrmResetPassword()
+        public FrmLoginAdmin()
         {
             InitializeComponent();
         }
@@ -22,6 +22,12 @@ namespace InterfazdeUsuario.Formularios
             FrmPrincipal principal = new FrmPrincipal();
             this.Close();
             principal.Show();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            FrmPrincipalAdmin admin = new FrmPrincipalAdmin();  
+            admin.Show();   
         }
     }
 }

@@ -123,11 +123,11 @@
     <Compile Include="Formularios\FrmInitialPageUser.Designer.cs">
       <DependentUpon>FrmInitialPageUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmResetPassword.cs">
+    <Compile Include="Formularios\FrmLoginAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmResetPassword.Designer.cs">
-      <DependentUpon>FrmResetPassword.cs</DependentUpon>
+    <Compile Include="Formularios\FrmLoginAdmin.Designer.cs">
+      <DependentUpon>FrmLoginAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\HistorialDeMembresias.cs">
       <SubType>UserControl</SubType>
@@ -205,6 +205,7 @@
     <Compile Include="Service\LoginMiembroService.cs" />
     <Compile Include="Service\LoginService.cs" />
     <Compile Include="Dao\MnualDeAyuda.cs" />
+    <Compile Include="Service\MembresiaService.cs" />
     <Compile Include="Service\RegisterService.cs" />
     <Compile Include="Service\RegistroDeMiembroService.cs" />
     <Compile Include="Service\ValidarFacturaService.cs" />
@@ -229,8 +230,8 @@
     <EmbeddedResource Include="Formularios\LoginYRegistro\FrmCambiarContra.resx">
       <DependentUpon>FrmCambiarContra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmResetPassword.resx">
-      <DependentUpon>FrmResetPassword.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmLoginAdmin.resx">
+      <DependentUpon>FrmLoginAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>

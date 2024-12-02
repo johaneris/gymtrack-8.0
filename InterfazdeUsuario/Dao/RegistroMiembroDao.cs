@@ -47,8 +47,10 @@ namespace InterfazdeUsuario.Dao
         private bool EsMiembroDuplicado(RegistroMiembro miembro) =>
             miembros.Any(m => m.Cif == miembro.Cif || m.Cedula == miembro.Cedula);
 
-        private RegistroMiembro ObtenerMiembroPorId(int id) =>
+        public RegistroMiembro ObtenerMiembroPorId(int id) =>
             miembros.FirstOrDefault(m => m.ID == id);
+
+        
     }
 
     //public RegistroMiembro BuscarPorCorreo(string email)
@@ -69,18 +71,7 @@ namespace InterfazdeUsuario.Dao
     //        return null;
     //    }
 
-    //    public RegistroMiembro ObtenerMiembroPorId(int id)
-    //    {
-    //        foreach (RegistroMiembro miembro in miembros)
-    //        {
-    //            if (miembro.ID == id)
-    //            {
-    //                return miembro;
-    //            }
-    //        }
-
-    //        return null;
-    //    }
+    
 
     //    public RegistroMiembro ObtenerMiembroPorIdentificador(string identificador)
     //    {

@@ -14,15 +14,22 @@ namespace InterfazdeUsuario.Formularios
 {
     public partial class HistorialDeMembresias : UserControl
     {
-        private string Identificador;
-        LoginMiembroService loginMiembroService = new LoginMiembroService();
         
-       
+        private MembresiaService membresiaService;
+        private int miembroId;
+
+
         public HistorialDeMembresias()
         {
             InitializeComponent();
-           CargarHistorialMembresias();
+            
+            membresiaService = new MembresiaService();
+            CargarHistorialMembresias();
+        }
 
+        public HistorialDeMembresias(int miembroId) : this()
+        {
+            this.miembroId = miembroId;
         }
 
         private void HistorialDeMembresias_Load(object sender, EventArgs e)
@@ -30,52 +37,41 @@ namespace InterfazdeUsuario.Formularios
             CargarHistorialMembresias();
         }
 
-        
+
 
         private void CargarHistorialMembresias()
         {
 
-            //string identificador = loginMiembroService.ObtenerIdentificador();
-            //// Obtener el identificador del usuario autenticado
-            
+            try
+            {
+                if (membresiaService == null)
+                    throw new InvalidOperationException("El servicio de membresías no está inicializado.");
 
-            //if (string.IsNullOrEmpty(identificador))
-            //{
-            //    MessageBox.Show("No se pudo obtener el identificador del usuario.", "Error");
-            //    return;
-            //}
+                if (miembroId <= 0)
+                    throw new ArgumentException("El ID del miembro no es válido.");
 
-            //ValidarFacturaService validar = new ValidarFacturaService(new ValidarFacturaDao(), new LoginMiembroService());
-            //validar.CargarFacturasDesdeArchivo();
-            //validar.EstadoFactura();
+                var historial = membresiaService.ObtenerHistorialDeMembresias(miembroId);
 
+                if (historial == null || !historial.Any())
+                {
+                    MessageBox.Show("No hay historial de membresías para este miembro.", "Información");
+                    return;
+                }
 
-            // Filtrar las facturas por el identificador
-            //var historial = validar.ObtenerHistorialDeMembresias(identificador);
-            //ValidarFacturaService validar = new ValidarFacturaService(new ValidarFacturaDao(), new LoginMiembroService());
-            //validar.CargarFacturasDesdeArchivo();
-            //validar.EstadoFactura();
+                dgvHistorialDeMembresias.DataSource = historial.Select(f => new
+                {
+                    Nombre = f.Referencia,
+                    CIFoCedula = f.MiembroId,
+                    FechaPago = f.FechaPago.ToShortDateString(),
+                    FechaFinalizacion = f.FechaPago.Add(f.DuracionMembresia).ToShortDateString(),
+                    Activa = f.Estado ? "Sí" : "No"
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar el historial: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            //var historial = validar.ConsultarFacturas();
-            //dgvHistorialDeMembresias.Rows.Clear();
-
-            //if (historial == null || !historial.Any())
-            //{
-            //    MessageBox.Show("No se encontraron membresías registradas.", "Información");
-            //    return;
-            //}
-
-            //foreach (var factura in historial)
-            //{
-            //    dgvHistorialDeMembresias.Rows.Add(
-            //        factura.NameMembresia,
-            //        factura.CifMembresia ?? factura.CedulaMembresia, // Mostrar CIF o Cédula según aplique
-            //        factura.Fechapago.ToString("dd/MM/yyyy HH:mm"),  // Fecha y hora de pago
-            //        factura.Monto == "15" ? factura.Fechapago.AddDays(30).ToString("dd/MM/yyyy HH:mm") :
-            //                                factura.Fechapago.AddHours(4).ToString("dd/MM/yyyy HH:mm"), // Fecha final
-            //        factura.Estado ? "Activo" : "Inactivo" // Estado
-            //    );
-            //}
         }
 
         private void Btn_Salir_Click(object sender, EventArgs e)
