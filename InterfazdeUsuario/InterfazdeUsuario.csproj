@@ -125,14 +125,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsUsuarios.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DatSet\DsMembresias.cs">
-      <DependentUpon>DsMembresias.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DatSet\DsMembresias.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DsMembresias.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FrmInitialPageUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +276,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\MiembrosReportes.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteUsuario.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteMembresias.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -298,17 +291,6 @@
     </None>
     <None Include="DatSet\DsUsuarios.xss">
       <DependentUpon>DsUsuarios.xsd</DependentUpon>
-    </None>
-    <None Include="DatSet\DsMembresias.xsc">
-      <DependentUpon>DsMembresias.xsd</DependentUpon>
-    </None>
-    <None Include="DatSet\DsMembresias.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DsMembresias.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DatSet\DsMembresias.xss">
-      <DependentUpon>DsMembresias.xsd</DependentUpon>
     </None>
     <None Include="InterfazdeUsuario_TemporaryKey.pfx" />
     <None Include="packages.config" />

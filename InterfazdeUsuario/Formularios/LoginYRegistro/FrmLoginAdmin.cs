@@ -34,7 +34,7 @@ namespace InterfazdeUsuario.Formularios
 
             string user = tbUser.Text;
             string password = TbPassword.Text;
-            //this.Close();
+            this.Close();
 
             string autenticar = loginService.Authenticate(user, password);
 
