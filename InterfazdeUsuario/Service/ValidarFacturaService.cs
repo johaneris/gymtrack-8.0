@@ -7,6 +7,7 @@ using InterfazdeUsuario.Dao;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;
 
 namespace InterfazdeUsuario.Service
 {
@@ -21,8 +22,8 @@ namespace InterfazdeUsuario.Service
 
         public ValidarFacturaService(RegistroMiembroDao miembroDao)
         {
-            if(miembroDao == null)
-        throw new ArgumentNullException("El DAO de miembros no puede ser nulo.");
+            if (miembroDao == null)
+                throw new ArgumentNullException("El DAO de miembros no puede ser nulo.");
 
             this.miembroDao = miembroDao;
             this.miembroService = new RegistroDeMiembroService(); // Inicialización correcta
@@ -31,7 +32,15 @@ namespace InterfazdeUsuario.Service
             //miembroService.Load(); // Ahora no debería causar una excepción
             miembroDao.CargarMiembros(miembroService.Load());
 
-            CargarFacturasDesdeArchivo();
+            //CargarFacturasDesdeArchivo();
+            Load();
+            Save(facturas);
+        }
+
+        public ValidarFacturaService()
+        {
+            Load();
+            
         }
 
         public string AgregarFactura(ValidarFactura nuevaFactura)
@@ -57,12 +66,13 @@ namespace InterfazdeUsuario.Service
 
                 if (FacturaDuplicada(nuevaFactura, out string mensajeError))
                     return mensajeError;
-                if(nuevaFactura.FechaPago >= DateTime.MaxValue || nuevaFactura.FechaPago <= DateTime.MinValue)
+                if (nuevaFactura.FechaPago >= DateTime.MaxValue || nuevaFactura.FechaPago <= DateTime.MinValue)
                     return "La fecha de pago no es válida.";
 
 
                 facturas.Add(nuevaFactura);
-                GuardarFacturasEnArchivo();
+                //GuardarFacturasEnArchivo();
+                Save(facturas);
 
                 return "Factura registrada exitosamente.";
             }
@@ -134,7 +144,7 @@ namespace InterfazdeUsuario.Service
                 foreach (ValidarFactura factura in facturas)
                 {
                     if (factura.MiembroId == identificador)
-                    historial.Add(factura);
+                        historial.Add(factura);
                 }
                 return historial;
             }
@@ -210,5 +220,81 @@ namespace InterfazdeUsuario.Service
                 throw new Exception("Error al guardar las facturas en el archivo: " + ex.Message);
             }
         }
+
+        public void Save(List<ValidarFactura> facturas, [CallerMemberName] string callerName = "")
+        {
+            try
+            {
+                using (var fs = new FileStream(filepath, FileMode.Create, FileAccess.Write))
+                using (var bw = new BinaryWriter(fs))
+                {
+                    foreach (var factura in facturas)
+                    {
+                        bw.Write(factura.Id);
+                        bw.Write(factura.NumeroFactura);
+                        bw.Write(factura.Referencia);
+                        bw.Write(factura.FechaPago.ToBinary());
+                        bw.Write(factura.Monto);
+                        bw.Write(factura.MiembroId);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al guardar las facturas en el archivo: " + ex.Message);
+            }
+        }
+
+
+        public List<ValidarFactura> Load([CallerMemberName] string callerName = "")
+        {
+            var facturas = new List<ValidarFactura>();
+            if (!File.Exists(filepath)) return facturas;
+            try
+            {
+                using (var fs = new FileStream(filepath, FileMode.Open, FileAccess.Read))
+                using (var br = new BinaryReader(fs))
+                {
+                    while (fs.Position < fs.Length)
+                    {
+
+                        try
+                        {
+                            int id = br.ReadInt32();
+                            string numeroFactura = br.ReadString();
+                            string referencia = br.ReadString();
+                            Int64 fechaTicks = br.ReadInt64();
+
+                            // Validar que la fecha sea válida
+                            /*if (fechaTicks < DateTime.MinValue.Ticks || fechaTicks > DateTime.MaxValue.Ticks)
+                                throw new InvalidDataException($"Fecha inválida en el archivo: {fechaTicks}");*/
+
+                            DateTime fechaPago = DateTime.FromBinary(fechaTicks);
+                            decimal monto = br.ReadDecimal();
+                            int miembroId = br.ReadInt32();
+
+                            var factura = new ValidarFactura(id, numeroFactura, referencia, fechaPago, monto, miembroId);
+                            facturas.Add(factura);
+
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
+
+
+
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            return facturas;
+        }
     }
 }
+    
+
+

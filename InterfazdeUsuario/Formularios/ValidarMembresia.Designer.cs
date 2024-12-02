@@ -205,7 +205,7 @@
             this.btnRegistarMembresia.IconColor = System.Drawing.Color.Gainsboro;
             this.btnRegistarMembresia.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistarMembresia.IconSize = 30;
-            this.btnRegistarMembresia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistarMembresia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistarMembresia.Location = new System.Drawing.Point(231, 406);
             this.btnRegistarMembresia.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistarMembresia.Name = "btnRegistarMembresia";

@@ -38,6 +38,8 @@
             this.TbPassword = new MetroFramework.Controls.MetroTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnRegresar = new FontAwesome.Sharp.IconButton();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -48,6 +50,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
             this.panel1.BackgroundImage = global::InterfazdeUsuario.Properties.Resources.Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__2_;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Controls.Add(this.btnRegresar);
             this.panel1.Location = new System.Drawing.Point(4, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(244, 579);
@@ -91,7 +94,7 @@
             this.tbUser.SelectionStart = 0;
             this.tbUser.ShortcutsEnabled = true;
             this.tbUser.Size = new System.Drawing.Size(287, 23);
-            this.tbUser.TabIndex = 3;
+            this.tbUser.TabIndex = 1;
             this.tbUser.UseSelectable = true;
             this.tbUser.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbUser.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -176,7 +179,7 @@
             this.TbPassword.SelectionStart = 0;
             this.TbPassword.ShortcutsEnabled = true;
             this.TbPassword.Size = new System.Drawing.Size(287, 23);
-            this.TbPassword.TabIndex = 4;
+            this.TbPassword.TabIndex = 2;
             this.TbPassword.UseSelectable = true;
             this.TbPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TbPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -201,7 +204,27 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Log In";
             // 
-            // FrmResetPassword
+            // btnRegresar
+            // 
+            this.btnRegresar.FlatAppearance.BorderSize = 0;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnRegresar.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleLeft;
+            this.btnRegresar.IconColor = System.Drawing.Color.White;
+            this.btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegresar.IconSize = 38;
+            this.btnRegresar.Location = new System.Drawing.Point(0, 3);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.btnRegresar.Size = new System.Drawing.Size(46, 34);
+            this.btnRegresar.TabIndex = 0;
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // FrmLoginAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,11 +238,12 @@
             this.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmResetPassword";
+            this.Name = "FrmLoginAdmin";
             this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
             this.Text = "AdminForm";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -241,5 +265,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
+        private FontAwesome.Sharp.IconButton btnRegresar;
     }
 }

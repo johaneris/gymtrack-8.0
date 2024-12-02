@@ -129,6 +129,12 @@
     <Compile Include="Formularios\FrmLoginAdmin.Designer.cs">
       <DependentUpon>FrmLoginAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\GestionDemembresias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionDemembresias.Designer.cs">
+      <DependentUpon>GestionDemembresias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\HistorialDeMembresias.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionarUsuario.resx">
       <DependentUpon>GestionarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionDemembresias.resx">
+      <DependentUpon>GestionDemembresias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\HistorialDeMembresias.resx">
       <DependentUpon>HistorialDeMembresias.cs</DependentUpon>

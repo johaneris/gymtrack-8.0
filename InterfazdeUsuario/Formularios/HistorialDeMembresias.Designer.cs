@@ -34,7 +34,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
@@ -53,11 +52,11 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Controls.Add(this.Btn_Salir);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(247, 554);
+            this.panel1.Size = new System.Drawing.Size(329, 682);
             this.panel1.TabIndex = 3;
             // 
             // Btn_Salir
@@ -70,9 +69,10 @@
             this.Btn_Salir.IconColor = System.Drawing.Color.Black;
             this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btn_Salir.IconSize = 15;
-            this.Btn_Salir.Location = new System.Drawing.Point(3, 3);
+            this.Btn_Salir.Location = new System.Drawing.Point(4, 4);
+            this.Btn_Salir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Btn_Salir.Name = "Btn_Salir";
-            this.Btn_Salir.Size = new System.Drawing.Size(15, 15);
+            this.Btn_Salir.Size = new System.Drawing.Size(20, 18);
             this.Btn_Salir.TabIndex = 18;
             this.Btn_Salir.TabStop = false;
             this.Btn_Salir.UseVisualStyleBackColor = false;
@@ -81,40 +81,31 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 41);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(47, 60);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 28);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "DentalCare";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(124)))), ((int)(((byte)(184)))));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(247, 0);
+            this.panel2.Location = new System.Drawing.Point(329, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(633, 60);
+            this.panel2.Size = new System.Drawing.Size(844, 74);
             this.panel2.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(3, 15);
+            this.label1.Location = new System.Drawing.Point(4, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(631, 28);
+            this.label1.Size = new System.Drawing.Size(841, 34);
             this.label1.TabIndex = 3;
             this.label1.Text = "Historial de Membresias";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -123,10 +114,10 @@
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(124)))), ((int)(((byte)(184)))));
             this.panelMain.Controls.Add(this.dgvHistorialDeMembresias);
-            this.panelMain.Location = new System.Drawing.Point(247, 60);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMain.Location = new System.Drawing.Point(329, 74);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(635, 498);
+            this.panelMain.Size = new System.Drawing.Size(847, 613);
             this.panelMain.TabIndex = 5;
             // 
             // dgvHistorialDeMembresias
@@ -149,7 +140,8 @@
             this.dgvHistorialDeMembresias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvHistorialDeMembresias.EnableHeadersVisualStyles = false;
             this.dgvHistorialDeMembresias.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvHistorialDeMembresias.Location = new System.Drawing.Point(15, 62);
+            this.dgvHistorialDeMembresias.Location = new System.Drawing.Point(20, 76);
+            this.dgvHistorialDeMembresias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvHistorialDeMembresias.Name = "dgvHistorialDeMembresias";
             this.dgvHistorialDeMembresias.ReadOnly = true;
             this.dgvHistorialDeMembresias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -161,28 +153,28 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvHistorialDeMembresias.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvHistorialDeMembresias.RowHeadersWidth = 51;
+            this.dgvHistorialDeMembresias.RowHeadersWidth = 100;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(126)))), ((int)(((byte)(133)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PowderBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgvHistorialDeMembresias.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvHistorialDeMembresias.Size = new System.Drawing.Size(603, 332);
+            this.dgvHistorialDeMembresias.Size = new System.Drawing.Size(804, 409);
             this.dgvHistorialDeMembresias.TabIndex = 5;
             this.dgvHistorialDeMembresias.TabStop = false;
             // 
             // HistorialDeMembresias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HistorialDeMembresias";
-            this.Size = new System.Drawing.Size(880, 554);
+            this.Size = new System.Drawing.Size(1173, 682);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
@@ -194,7 +186,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelMain;

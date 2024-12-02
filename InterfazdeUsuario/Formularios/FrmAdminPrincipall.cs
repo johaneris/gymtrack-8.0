@@ -33,11 +33,11 @@ namespace InterfazdeUsuario.Formularios
 
         private void btnGestionarmemresias_Click(object sender, EventArgs e)
         {
-            HistorialDeMembresias membresía = new HistorialDeMembresias();
+            GestionDemembresias membresias = new GestionDemembresias();
             pnl_ContenidoAdmin.Controls.Clear();
-            membresía.Dock = DockStyle.Fill;
+            membresias.Dock = DockStyle.Fill;
 
-            pnl_ContenidoAdmin.Controls.Add(membresía);
+            pnl_ContenidoAdmin.Controls.Add(membresias);
         }
 
         private void Btn_PerfilAdmin_Click(object sender, EventArgs e)

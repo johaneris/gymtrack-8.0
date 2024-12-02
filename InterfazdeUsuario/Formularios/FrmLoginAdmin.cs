@@ -1,4 +1,7 @@
-﻿using System;
+﻿using InterfazdeUsuario.models;
+using InterfazdeUsuario.Service;
+using MetroFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,8 @@ namespace InterfazdeUsuario.Formularios
 {
     public partial class FrmLoginAdmin : MetroFramework.Forms.MetroForm
     {
+        LoginService loginService = new LoginService();
+        Admin admin;
         public FrmLoginAdmin()
         {
             InitializeComponent();
@@ -26,8 +31,31 @@ namespace InterfazdeUsuario.Formularios
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            FrmPrincipalAdmin admin = new FrmPrincipalAdmin();  
-            admin.Show();   
+
+            string user = tbUser.Text;
+            string password = TbPassword.Text;
+            //this.Close();
+
+            string autenticar = loginService.Authenticate(user, password);
+
+            if (autenticar == "ok")
+            {
+                FrmPrincipalAdmin admin = new FrmPrincipalAdmin();
+                this.Close();
+                admin.Show();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, autenticar, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+              
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal admin = new FrmPrincipal();
+            this.Close();
+            admin.Show();
         }
     }
 }
