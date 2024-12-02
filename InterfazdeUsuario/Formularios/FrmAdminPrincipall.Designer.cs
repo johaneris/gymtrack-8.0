@@ -34,7 +34,6 @@
             this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnReportes = new FontAwesome.Sharp.IconButton();
             this.btnEntradas = new FontAwesome.Sharp.IconButton();
             this.btnGestionarmemresias = new FontAwesome.Sharp.IconButton();
             this.Btn_PerfilAdmin = new FontAwesome.Sharp.IconButton();
@@ -115,7 +114,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel2.Controls.Add(this.btnReportes);
             this.panel2.Controls.Add(this.btnEntradas);
             this.panel2.Controls.Add(this.btnGestionarmemresias);
             this.panel2.Controls.Add(this.Btn_PerfilAdmin);
@@ -127,30 +125,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 715);
             this.panel2.TabIndex = 1;
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Consolas", 12F);
-            this.btnReportes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReportes.IconChar = FontAwesome.Sharp.IconChar.BookMedical;
-            this.btnReportes.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnReportes.IconSize = 30;
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 356);
-            this.btnReportes.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnReportes.Size = new System.Drawing.Size(267, 91);
-            this.btnReportes.TabIndex = 6;
-            this.btnReportes.Text = "Generar Reportes";
-            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReportes.UseVisualStyleBackColor = true;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnEntradas
             // 
@@ -368,6 +342,5 @@
         private FontAwesome.Sharp.IconButton btnGestionarmemresias;
         private System.Windows.Forms.Panel pnl_ContenidoAdmin;
         private FontAwesome.Sharp.IconButton btnEntradas;
-        private FontAwesome.Sharp.IconButton btnReportes;
     }
 }
