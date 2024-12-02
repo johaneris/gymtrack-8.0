@@ -55,10 +55,10 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.lnkCambiarcContra2);
             this.panel2.Controls.Add(this.btnLoginUser);
-            this.panel2.Location = new System.Drawing.Point(333, 6);
+            this.panel2.Location = new System.Drawing.Point(250, 5);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(807, 560);
+            this.panel2.Size = new System.Drawing.Size(700, 506);
             this.panel2.TabIndex = 1;
             // 
             // panel4
@@ -75,7 +75,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(341, 23);
+            this.label1.Location = new System.Drawing.Point(307, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 36);
             this.label1.TabIndex = 22;
@@ -88,7 +88,7 @@
             this.panel3.Controls.Add(this.tbPasswordLogin);
             this.panel3.Controls.Add(this.lbCif);
             this.panel3.Controls.Add(this.lbPassword);
-            this.panel3.Location = new System.Drawing.Point(147, 167);
+            this.panel3.Location = new System.Drawing.Point(95, 152);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(523, 122);
@@ -186,7 +186,7 @@
             this.lnkCambiarcContra2.AutoSize = true;
             this.lnkCambiarcContra2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkCambiarcContra2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lnkCambiarcContra2.Location = new System.Drawing.Point(311, 424);
+            this.lnkCambiarcContra2.Location = new System.Drawing.Point(259, 409);
             this.lnkCambiarcContra2.Name = "lnkCambiarcContra2";
             this.lnkCambiarcContra2.Size = new System.Drawing.Size(203, 18);
             this.lnkCambiarcContra2.TabIndex = 4;
@@ -205,11 +205,11 @@
             this.btnLoginUser.IconColor = System.Drawing.Color.Gainsboro;
             this.btnLoginUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLoginUser.IconSize = 38;
-            this.btnLoginUser.Location = new System.Drawing.Point(124, 318);
+            this.btnLoginUser.Location = new System.Drawing.Point(95, 303);
             this.btnLoginUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLoginUser.Name = "btnLoginUser";
             this.btnLoginUser.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.btnLoginUser.Size = new System.Drawing.Size(573, 63);
+            this.btnLoginUser.Size = new System.Drawing.Size(523, 63);
             this.btnLoginUser.TabIndex = 3;
             this.btnLoginUser.Text = "       Iniciar Sesión";
             this.btnLoginUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -224,10 +224,10 @@
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Location = new System.Drawing.Point(0, 6);
+            this.panel1.Location = new System.Drawing.Point(0, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(335, 560);
+            this.panel1.Size = new System.Drawing.Size(252, 504);
             this.panel1.TabIndex = 0;
             // 
             // linkLabel1
@@ -235,7 +235,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(202, 475);
+            this.linkLabel1.Location = new System.Drawing.Point(168, 442);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(75, 18);
@@ -249,7 +249,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(31, 475);
+            this.label2.Location = new System.Drawing.Point(4, 442);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(163, 18);
@@ -266,12 +266,12 @@
             this.btnCancelar.IconColor = System.Drawing.Color.White;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 38;
-            this.btnCancelar.Location = new System.Drawing.Point(3, 0);
+            this.btnCancelar.Location = new System.Drawing.Point(3, 2);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
             this.btnCancelar.Size = new System.Drawing.Size(41, 34);
-            this.btnCancelar.TabIndex = 0;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -280,7 +280,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1143, 567);
+            this.ClientSize = new System.Drawing.Size(950, 510);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);

@@ -17,5 +17,6 @@ namespace InterfazdeUsuario.DatSet
 
     partial class DataSet1
     {
+        
     }
 }

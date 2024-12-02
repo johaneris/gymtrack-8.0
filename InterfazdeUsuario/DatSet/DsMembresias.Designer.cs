@@ -285,19 +285,21 @@ namespace InterfazdeUsuario.DatSet {
             
             private global::System.Data.DataColumn columnApellido;
             
-            private global::System.Data.DataColumn columnTipo_de_usuario;
+            private global::System.Data.DataColumn columnTipoUsuario;
             
             private global::System.Data.DataColumn columnEmail;
             
-            private global::System.Data.DataColumn columnCif;
+            private global::System.Data.DataColumn columnCIF;
             
             private global::System.Data.DataColumn columnCedula;
             
-            private global::System.Data.DataColumn columnFecha_Registro;
+            private global::System.Data.DataColumn columnFechaRegistro;
             
-            private global::System.Data.DataColumn _columnN__Factura;
+            private global::System.Data.DataColumn columnNumeroFactura;
             
             private global::System.Data.DataColumn columnReferencia;
+            
+            private global::System.Data.DataColumn columnMonto;
             
             private global::System.Data.DataColumn columnEstado;
             
@@ -360,9 +362,9 @@ namespace InterfazdeUsuario.DatSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Tipo_de_usuarioColumn {
+            public global::System.Data.DataColumn TipoUsuarioColumn {
                 get {
-                    return this.columnTipo_de_usuario;
+                    return this.columnTipoUsuario;
                 }
             }
             
@@ -376,9 +378,9 @@ namespace InterfazdeUsuario.DatSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CifColumn {
+            public global::System.Data.DataColumn CIFColumn {
                 get {
-                    return this.columnCif;
+                    return this.columnCIF;
                 }
             }
             
@@ -392,17 +394,17 @@ namespace InterfazdeUsuario.DatSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Fecha_RegistroColumn {
+            public global::System.Data.DataColumn FechaRegistroColumn {
                 get {
-                    return this.columnFecha_Registro;
+                    return this.columnFechaRegistro;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn _N__FacturaColumn {
+            public global::System.Data.DataColumn NumeroFacturaColumn {
                 get {
-                    return this._columnN__Factura;
+                    return this.columnNumeroFactura;
                 }
             }
             
@@ -411,6 +413,14 @@ namespace InterfazdeUsuario.DatSet {
             public global::System.Data.DataColumn ReferenciaColumn {
                 get {
                     return this.columnReferencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MontoColumn {
+                get {
+                    return this.columnMonto;
                 }
             }
             
@@ -459,19 +469,20 @@ namespace InterfazdeUsuario.DatSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MembresiasDTRow AddMembresiasDTRow(string ID, string Nombre, string Apellido, string Tipo_de_usuario, string Email, string Cif, string Cedula, string Fecha_Registro, string _N__Factura, string Referencia, string Estado) {
+            public MembresiasDTRow AddMembresiasDTRow(string ID, string Nombre, string Apellido, string TipoUsuario, string Email, string CIF, string Cedula, string FechaRegistro, string NumeroFactura, string Referencia, string Monto, string Estado) {
                 MembresiasDTRow rowMembresiasDTRow = ((MembresiasDTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         Nombre,
                         Apellido,
-                        Tipo_de_usuario,
+                        TipoUsuario,
                         Email,
-                        Cif,
+                        CIF,
                         Cedula,
-                        Fecha_Registro,
-                        _N__Factura,
+                        FechaRegistro,
+                        NumeroFactura,
                         Referencia,
+                        Monto,
                         Estado};
                 rowMembresiasDTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMembresiasDTRow);
@@ -498,13 +509,14 @@ namespace InterfazdeUsuario.DatSet {
                 this.columnID = base.Columns["ID"];
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnApellido = base.Columns["Apellido"];
-                this.columnTipo_de_usuario = base.Columns["Tipo de usuario"];
+                this.columnTipoUsuario = base.Columns["TipoUsuario"];
                 this.columnEmail = base.Columns["Email"];
-                this.columnCif = base.Columns["Cif"];
+                this.columnCIF = base.Columns["CIF"];
                 this.columnCedula = base.Columns["Cedula"];
-                this.columnFecha_Registro = base.Columns["Fecha Registro"];
-                this._columnN__Factura = base.Columns["N° Factura"];
+                this.columnFechaRegistro = base.Columns["FechaRegistro"];
+                this.columnNumeroFactura = base.Columns["NumeroFactura"];
                 this.columnReferencia = base.Columns["Referencia"];
+                this.columnMonto = base.Columns["Monto"];
                 this.columnEstado = base.Columns["Estado"];
             }
             
@@ -517,22 +529,22 @@ namespace InterfazdeUsuario.DatSet {
                 base.Columns.Add(this.columnNombre);
                 this.columnApellido = new global::System.Data.DataColumn("Apellido", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApellido);
-                this.columnTipo_de_usuario = new global::System.Data.DataColumn("Tipo de usuario", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTipo_de_usuario);
+                this.columnTipoUsuario = new global::System.Data.DataColumn("TipoUsuario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipoUsuario);
                 this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmail);
-                this.columnCif = new global::System.Data.DataColumn("Cif", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCif);
+                this.columnCIF = new global::System.Data.DataColumn("CIF", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCIF);
                 this.columnCedula = new global::System.Data.DataColumn("Cedula", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCedula);
-                this.columnFecha_Registro = new global::System.Data.DataColumn("Fecha Registro", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha_Registro);
-                this._columnN__Factura = new global::System.Data.DataColumn("N° Factura", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columnN__Factura.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnN__Factura");
-                this._columnN__Factura.ExtendedProperties.Add("Generator_UserColumnName", "N° Factura");
-                base.Columns.Add(this._columnN__Factura);
+                this.columnFechaRegistro = new global::System.Data.DataColumn("FechaRegistro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaRegistro);
+                this.columnNumeroFactura = new global::System.Data.DataColumn("NumeroFactura", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeroFactura);
                 this.columnReferencia = new global::System.Data.DataColumn("Referencia", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReferencia);
+                this.columnMonto = new global::System.Data.DataColumn("Monto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMonto);
                 this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstado);
             }
@@ -725,17 +737,17 @@ namespace InterfazdeUsuario.DatSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Tipo_de_usuario {
+            public string TipoUsuario {
                 get {
                     try {
-                        return ((string)(this[this.tableMembresiasDT.Tipo_de_usuarioColumn]));
+                        return ((string)(this[this.tableMembresiasDT.TipoUsuarioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Tipo de usuario\' in table \'MembresiasDT\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TipoUsuario\' in table \'MembresiasDT\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMembresiasDT.Tipo_de_usuarioColumn] = value;
+                    this[this.tableMembresiasDT.TipoUsuarioColumn] = value;
                 }
             }
             
@@ -757,17 +769,17 @@ namespace InterfazdeUsuario.DatSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Cif {
+            public string CIF {
                 get {
                     try {
-                        return ((string)(this[this.tableMembresiasDT.CifColumn]));
+                        return ((string)(this[this.tableMembresiasDT.CIFColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Cif\' in table \'MembresiasDT\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CIF\' in table \'MembresiasDT\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMembresiasDT.CifColumn] = value;
+                    this[this.tableMembresiasDT.CIFColumn] = value;
                 }
             }
             
@@ -789,33 +801,33 @@ namespace InterfazdeUsuario.DatSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Fecha_Registro {
+            public string FechaRegistro {
                 get {
                     try {
-                        return ((string)(this[this.tableMembresiasDT.Fecha_RegistroColumn]));
+                        return ((string)(this[this.tableMembresiasDT.FechaRegistroColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Fecha Registro\' in table \'MembresiasDT\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FechaRegistro\' in table \'MembresiasDT\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMembresiasDT.Fecha_RegistroColumn] = value;
+                    this[this.tableMembresiasDT.FechaRegistroColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string _N__Factura {
+            public string NumeroFactura {
                 get {
                     try {
-                        return ((string)(this[this.tableMembresiasDT._N__FacturaColumn]));
+                        return ((string)(this[this.tableMembresiasDT.NumeroFacturaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'N° Factura\' in table \'MembresiasDT\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumeroFactura\' in table \'MembresiasDT\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMembresiasDT._N__FacturaColumn] = value;
+                    this[this.tableMembresiasDT.NumeroFacturaColumn] = value;
                 }
             }
             
@@ -832,6 +844,22 @@ namespace InterfazdeUsuario.DatSet {
                 }
                 set {
                     this[this.tableMembresiasDT.ReferenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Monto {
+                get {
+                    try {
+                        return ((string)(this[this.tableMembresiasDT.MontoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Monto\' in table \'MembresiasDT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMembresiasDT.MontoColumn] = value;
                 }
             }
             
@@ -889,14 +917,14 @@ namespace InterfazdeUsuario.DatSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTipo_de_usuarioNull() {
-                return this.IsNull(this.tableMembresiasDT.Tipo_de_usuarioColumn);
+            public bool IsTipoUsuarioNull() {
+                return this.IsNull(this.tableMembresiasDT.TipoUsuarioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTipo_de_usuarioNull() {
-                this[this.tableMembresiasDT.Tipo_de_usuarioColumn] = global::System.Convert.DBNull;
+            public void SetTipoUsuarioNull() {
+                this[this.tableMembresiasDT.TipoUsuarioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -913,14 +941,14 @@ namespace InterfazdeUsuario.DatSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCifNull() {
-                return this.IsNull(this.tableMembresiasDT.CifColumn);
+            public bool IsCIFNull() {
+                return this.IsNull(this.tableMembresiasDT.CIFColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCifNull() {
-                this[this.tableMembresiasDT.CifColumn] = global::System.Convert.DBNull;
+            public void SetCIFNull() {
+                this[this.tableMembresiasDT.CIFColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -937,26 +965,26 @@ namespace InterfazdeUsuario.DatSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsFecha_RegistroNull() {
-                return this.IsNull(this.tableMembresiasDT.Fecha_RegistroColumn);
+            public bool IsFechaRegistroNull() {
+                return this.IsNull(this.tableMembresiasDT.FechaRegistroColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetFecha_RegistroNull() {
-                this[this.tableMembresiasDT.Fecha_RegistroColumn] = global::System.Convert.DBNull;
+            public void SetFechaRegistroNull() {
+                this[this.tableMembresiasDT.FechaRegistroColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Is_N__FacturaNull() {
-                return this.IsNull(this.tableMembresiasDT._N__FacturaColumn);
+            public bool IsNumeroFacturaNull() {
+                return this.IsNull(this.tableMembresiasDT.NumeroFacturaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Set_N__FacturaNull() {
-                this[this.tableMembresiasDT._N__FacturaColumn] = global::System.Convert.DBNull;
+            public void SetNumeroFacturaNull() {
+                this[this.tableMembresiasDT.NumeroFacturaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -969,6 +997,18 @@ namespace InterfazdeUsuario.DatSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetReferenciaNull() {
                 this[this.tableMembresiasDT.ReferenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMontoNull() {
+                return this.IsNull(this.tableMembresiasDT.MontoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMontoNull() {
+                this[this.tableMembresiasDT.MontoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

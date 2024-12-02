@@ -26,7 +26,7 @@ namespace InterfazdeUsuario.Formularios
         {
             FrmPrincipal principal = new FrmPrincipal();
             this.Close();
-            principal.Show();
+            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace InterfazdeUsuario.Formularios
         {
             FrmPrincipal admin = new FrmPrincipal();
             this.Close();
-            admin.Show();
+        
         }
     }
 }

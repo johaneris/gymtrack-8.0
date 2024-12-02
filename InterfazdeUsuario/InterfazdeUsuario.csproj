@@ -139,10 +139,10 @@
     <Compile Include="Formularios\FrmInitialPageUser.Designer.cs">
       <DependentUpon>FrmInitialPageUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmLoginAdmin.cs">
+    <Compile Include="Formularios\LoginYRegistro\FrmLoginAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmLoginAdmin.Designer.cs">
+    <Compile Include="Formularios\LoginYRegistro\FrmLoginAdmin.Designer.cs">
       <DependentUpon>FrmLoginAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\GestionDemembresias.cs">
@@ -256,7 +256,7 @@
     <EmbeddedResource Include="Formularios\LoginYRegistro\FrmCambiarContra.resx">
       <DependentUpon>FrmCambiarContra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmLoginAdmin.resx">
+    <EmbeddedResource Include="Formularios\LoginYRegistro\FrmLoginAdmin.resx">
       <DependentUpon>FrmLoginAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes.resx">
@@ -284,8 +284,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reportes\Report1.rdlc" />
-    <EmbeddedResource Include="Reportes\ReporteMembresias.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteUsuario.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteMembresias.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="DatSet\DsUsuarios.xsc">
       <DependentUpon>DsUsuarios.xsd</DependentUpon>
     </None>
