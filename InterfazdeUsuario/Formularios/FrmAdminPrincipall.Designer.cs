@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipalAdmin));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_minisize = new FontAwesome.Sharp.IconButton();
+            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblCorreo = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblAdmin = new System.Windows.Forms.Label();
-            this.pnl_ContenidoAdmin = new System.Windows.Forms.Panel();
             this.btnReportes = new FontAwesome.Sharp.IconButton();
             this.btnEntradas = new FontAwesome.Sharp.IconButton();
             this.btnGestionarmemresias = new FontAwesome.Sharp.IconButton();
             this.Btn_PerfilAdmin = new FontAwesome.Sharp.IconButton();
             this.Btn_LogOut = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblAdmin = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.btn_minisize = new FontAwesome.Sharp.IconButton();
-            this.Btn_Salir = new FontAwesome.Sharp.IconButton();
+            this.pnl_ContenidoAdmin = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -63,12 +64,48 @@
             this.panel1.Size = new System.Drawing.Size(1533, 42);
             this.panel1.TabIndex = 0;
             // 
+            // btn_minisize
+            // 
+            this.btn_minisize.BackColor = System.Drawing.Color.Transparent;
+            this.btn_minisize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_minisize.FlatAppearance.BorderSize = 0;
+            this.btn_minisize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minisize.IconChar = FontAwesome.Sharp.IconChar.Compress;
+            this.btn_minisize.IconColor = System.Drawing.Color.Gainsboro;
+            this.btn_minisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_minisize.IconSize = 20;
+            this.btn_minisize.Location = new System.Drawing.Point(1616, 4);
+            this.btn_minisize.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_minisize.Name = "btn_minisize";
+            this.btn_minisize.Size = new System.Drawing.Size(20, 18);
+            this.btn_minisize.TabIndex = 18;
+            this.btn_minisize.TabStop = false;
+            this.btn_minisize.UseVisualStyleBackColor = false;
+            // 
+            // Btn_Salir
+            // 
+            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_Salir.FlatAppearance.BorderSize = 0;
+            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_Salir.IconSize = 15;
+            this.Btn_Salir.Location = new System.Drawing.Point(1644, 4);
+            this.Btn_Salir.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_Salir.Name = "Btn_Salir";
+            this.Btn_Salir.Size = new System.Drawing.Size(20, 18);
+            this.Btn_Salir.TabIndex = 17;
+            this.Btn_Salir.TabStop = false;
+            this.Btn_Salir.UseVisualStyleBackColor = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 12F);
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(5, 9);
+            this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(351, 23);
@@ -90,67 +127,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 715);
             this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel3.Controls.Add(this.lblCorreo);
-            this.panel3.Controls.Add(this.lblNombre);
-            this.panel3.Controls.Add(this.lblAdmin);
-            this.panel3.Controls.Add(this.iconPictureBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(267, 92);
-            this.panel3.TabIndex = 0;
-            // 
-            // lblCorreo
-            // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Font = new System.Drawing.Font("Consolas", 8F);
-            this.lblCorreo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblCorreo.Location = new System.Drawing.Point(63, 58);
-            this.lblCorreo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(56, 17);
-            this.lblCorreo.TabIndex = 6;
-            this.lblCorreo.Text = "Correo";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Consolas", 8F);
-            this.lblNombre.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblNombre.Location = new System.Drawing.Point(63, 39);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(40, 17);
-            this.lblNombre.TabIndex = 5;
-            this.lblNombre.Text = "Name";
-            // 
-            // lblAdmin
-            // 
-            this.lblAdmin.AutoSize = true;
-            this.lblAdmin.Font = new System.Drawing.Font("Consolas", 8F);
-            this.lblAdmin.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblAdmin.Location = new System.Drawing.Point(63, 21);
-            this.lblAdmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAdmin.Name = "lblAdmin";
-            this.lblAdmin.Size = new System.Drawing.Size(112, 17);
-            this.lblAdmin.TabIndex = 4;
-            this.lblAdmin.Text = "Administrador";
-            // 
-            // pnl_ContenidoAdmin
-            // 
-            this.pnl_ContenidoAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(124)))), ((int)(((byte)(184)))));
-            this.pnl_ContenidoAdmin.BackgroundImage = global::InterfazdeUsuario.Properties.Resources.Red_and_Blue_Vintage_Modern_minimal_Gym_and_Fitness_Logo__1_;
-            this.pnl_ContenidoAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_ContenidoAdmin.Location = new System.Drawing.Point(266, 42);
-            this.pnl_ContenidoAdmin.Margin = new System.Windows.Forms.Padding(4);
-            this.pnl_ContenidoAdmin.Name = "pnl_ContenidoAdmin";
-            this.pnl_ContenidoAdmin.Size = new System.Drawing.Size(1266, 715);
-            this.pnl_ContenidoAdmin.TabIndex = 2;
             // 
             // btnReportes
             // 
@@ -272,6 +248,56 @@
             this.Btn_LogOut.UseVisualStyleBackColor = true;
             this.Btn_LogOut.Click += new System.EventHandler(this.Btn_LogOut_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel3.Controls.Add(this.lblCorreo);
+            this.panel3.Controls.Add(this.lblNombre);
+            this.panel3.Controls.Add(this.lblAdmin);
+            this.panel3.Controls.Add(this.iconPictureBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(267, 92);
+            this.panel3.TabIndex = 0;
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Font = new System.Drawing.Font("Consolas", 8F);
+            this.lblCorreo.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblCorreo.Location = new System.Drawing.Point(63, 58);
+            this.lblCorreo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(56, 17);
+            this.lblCorreo.TabIndex = 6;
+            this.lblCorreo.Text = "Correo";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Consolas", 8F);
+            this.lblNombre.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblNombre.Location = new System.Drawing.Point(63, 39);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(40, 17);
+            this.lblNombre.TabIndex = 5;
+            this.lblNombre.Text = "Name";
+            // 
+            // lblAdmin
+            // 
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.Font = new System.Drawing.Font("Consolas", 8F);
+            this.lblAdmin.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblAdmin.Location = new System.Drawing.Point(63, 21);
+            this.lblAdmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(112, 17);
+            this.lblAdmin.TabIndex = 4;
+            this.lblAdmin.Text = "Administrador";
+            // 
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
@@ -289,41 +315,16 @@
             this.iconPictureBox1.TabIndex = 0;
             this.iconPictureBox1.TabStop = false;
             // 
-            // btn_minisize
+            // pnl_ContenidoAdmin
             // 
-            this.btn_minisize.BackColor = System.Drawing.Color.Transparent;
-            this.btn_minisize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_minisize.FlatAppearance.BorderSize = 0;
-            this.btn_minisize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minisize.IconChar = FontAwesome.Sharp.IconChar.Compress;
-            this.btn_minisize.IconColor = System.Drawing.Color.Gainsboro;
-            this.btn_minisize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_minisize.IconSize = 20;
-            this.btn_minisize.Location = new System.Drawing.Point(1616, 4);
-            this.btn_minisize.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_minisize.Name = "btn_minisize";
-            this.btn_minisize.Size = new System.Drawing.Size(20, 18);
-            this.btn_minisize.TabIndex = 18;
-            this.btn_minisize.TabStop = false;
-            this.btn_minisize.UseVisualStyleBackColor = false;
-            // 
-            // Btn_Salir
-            // 
-            this.Btn_Salir.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Btn_Salir.FlatAppearance.BorderSize = 0;
-            this.Btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Salir.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.Btn_Salir.IconColor = System.Drawing.Color.Gainsboro;
-            this.Btn_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_Salir.IconSize = 15;
-            this.Btn_Salir.Location = new System.Drawing.Point(1644, 4);
-            this.Btn_Salir.Margin = new System.Windows.Forms.Padding(4);
-            this.Btn_Salir.Name = "Btn_Salir";
-            this.Btn_Salir.Size = new System.Drawing.Size(20, 18);
-            this.Btn_Salir.TabIndex = 17;
-            this.Btn_Salir.TabStop = false;
-            this.Btn_Salir.UseVisualStyleBackColor = false;
+            this.pnl_ContenidoAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(124)))), ((int)(((byte)(184)))));
+            this.pnl_ContenidoAdmin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_ContenidoAdmin.BackgroundImage")));
+            this.pnl_ContenidoAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnl_ContenidoAdmin.Location = new System.Drawing.Point(266, 42);
+            this.pnl_ContenidoAdmin.Margin = new System.Windows.Forms.Padding(4);
+            this.pnl_ContenidoAdmin.Name = "pnl_ContenidoAdmin";
+            this.pnl_ContenidoAdmin.Size = new System.Drawing.Size(1266, 715);
+            this.pnl_ContenidoAdmin.TabIndex = 2;
             // 
             // FrmPrincipalAdmin
             // 

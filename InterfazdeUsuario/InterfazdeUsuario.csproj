@@ -117,6 +117,14 @@
     <Compile Include="Dao\LoginMiembroDao.cs" />
     <Compile Include="Dao\RegistroMiembroDao.cs" />
     <Compile Include="Dao\ValidarFacturaDao.cs" />
+    <Compile Include="DatSet\DsUsuarios.cs">
+      <DependentUpon>DsUsuarios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatSet\DsUsuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsUsuarios.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatSet\DsMembresias.cs">
       <DependentUpon>DsMembresias.xsd</DependentUpon>
     </Compile>
@@ -276,7 +284,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteMembresias.rdlc" />
+    <None Include="DatSet\DsUsuarios.xsc">
+      <DependentUpon>DsUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="DatSet\DsUsuarios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsUsuarios.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatSet\DsUsuarios.xss">
+      <DependentUpon>DsUsuarios.xsd</DependentUpon>
+    </None>
     <None Include="DatSet\DsMembresias.xsc">
       <DependentUpon>DsMembresias.xsd</DependentUpon>
     </None>
