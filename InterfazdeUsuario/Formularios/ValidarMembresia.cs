@@ -111,10 +111,7 @@ namespace InterfazdeUsuario.Formularios
         private bool ValidarCampos()
         {
             // Validación de campos vacíos
-            if (string.IsNullOrWhiteSpace(tbFactura.Text) ||
-                string.IsNullOrWhiteSpace(tbReferencia.Text) ||
-                cmbMonto.SelectedItem == null ||
-                cmbDuracion.SelectedItem == null)
+            if (string.IsNullOrWhiteSpace(tbFactura.Text) || string.IsNullOrWhiteSpace(tbReferencia.Text) ||cmbMonto.SelectedItem == null |cmbDuracion.SelectedItem == null)
             {
                 MessageBox.Show("Por favor, completa todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;

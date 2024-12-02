@@ -117,6 +117,14 @@
     <Compile Include="Dao\LoginMiembroDao.cs" />
     <Compile Include="Dao\RegistroMiembroDao.cs" />
     <Compile Include="Dao\ValidarFacturaDao.cs" />
+    <Compile Include="DatSet\DsMembresias.cs">
+      <DependentUpon>DsMembresias.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatSet\DsMembresias.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsMembresias.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmInitialPageUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +276,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\ReporteMembresias.rdlc" />
+    <None Include="DatSet\DsMembresias.xsc">
+      <DependentUpon>DsMembresias.xsd</DependentUpon>
+    </None>
+    <None Include="DatSet\DsMembresias.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsMembresias.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatSet\DsMembresias.xss">
+      <DependentUpon>DsMembresias.xsd</DependentUpon>
+    </None>
     <None Include="InterfazdeUsuario_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -382,6 +402,7 @@
   <ItemGroup>
     <None Include="Resources\Red and Blue Vintage Modern minimal Gym and Fitness Logo %282%29.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

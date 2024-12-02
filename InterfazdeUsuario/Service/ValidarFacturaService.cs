@@ -115,9 +115,6 @@ namespace InterfazdeUsuario.Service
             return false;
         }
 
-
-
-
         private bool EsNumeroValido(string valor, int longitud)
         {
             if (string.IsNullOrWhiteSpace(valor) || valor.Length != longitud)
