@@ -36,13 +36,17 @@ namespace InterfazdeUsuario.Formularios
             string password = TbPassword.Text;
             this.Close();
 
-            string autenticar = loginService.Authenticate(user, password);
+            string autenticar = loginService.Authenticate(user, password); 
 
             if (autenticar == "ok")
             {
                 FrmPrincipalAdmin admin = new FrmPrincipalAdmin();
-                this.Close();
+                
                 admin.Show();
+                //FrmInitialPageUser initialPage = new FrmInitialPageUser();
+                //this.Hide();
+                //initialPage.ShowDialog();
+                //this.Close(); // Cerrar la ventana de login.
             }
             else
             {
@@ -55,6 +59,7 @@ namespace InterfazdeUsuario.Formularios
         {
             FrmPrincipal admin = new FrmPrincipal();
             this.Close();
+            
         
         }
     }

@@ -77,7 +77,7 @@ namespace InterfazdeUsuario
            FrmLoginAdmin user = new FrmLoginAdmin();
             this.Hide();
 
-            user.FormClosing += delegate { this.Show(); };
+            //user.FormClosing += delegate { this.Show(); };
             user.ShowDialog();
         }
     }

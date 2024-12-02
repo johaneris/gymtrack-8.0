@@ -40,6 +40,7 @@ namespace InterfazdeUsuario.Formularios
 
         public void Cerrar()
         {
+            LimpiarHistorial();
             ((Form)this.Parent).Close();
         }
 
@@ -102,8 +103,14 @@ namespace InterfazdeUsuario.Formularios
 
         }
 
+        private void LimpiarHistorial()
+        {
+            dgvHistorialDeMembresias.DataSource = null;
+        }
+
         private void Btn_Salir_Click(object sender, EventArgs e)
         {
+            LimpiarHistorial();
             FrmPrincipalAdmin admin = new FrmPrincipalAdmin();
             admin.Show();
 

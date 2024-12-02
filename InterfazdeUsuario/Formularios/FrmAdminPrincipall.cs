@@ -53,7 +53,7 @@ namespace InterfazdeUsuario.Formularios
         {
             FrmPrincipal principal = new FrmPrincipal();
             this.Close();
-            principal.Show();
+            
         }
 
         private void btnEntradas_Click(object sender, EventArgs e)
