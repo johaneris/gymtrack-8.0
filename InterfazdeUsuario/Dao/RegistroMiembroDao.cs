@@ -47,6 +47,11 @@ namespace InterfazdeUsuario.Dao
         private bool EsMiembroDuplicado(RegistroMiembro miembro) =>
             miembros.Any(m => m.Cif == miembro.Cif || m.Cedula == miembro.Cedula);
 
+        public bool ExisteMiembro(int id)
+        {
+            return miembros.Any(m => m.ID == id);
+        }
+
         public RegistroMiembro ObtenerMiembroPorId(int id) =>
             miembros.FirstOrDefault(m => m.ID == id);
 

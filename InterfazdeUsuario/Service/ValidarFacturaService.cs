@@ -28,7 +28,8 @@ namespace InterfazdeUsuario.Service
             this.miembroService = new RegistroDeMiembroService(); // Inicialización correcta
             this.facturas = new List<ValidarFactura>();
 
-            miembroService.Load(); // Ahora no debería causar una excepción
+            //miembroService.Load(); // Ahora no debería causar una excepción
+            miembroDao.CargarMiembros(miembroService.Load());
 
             CargarFacturasDesdeArchivo();
         }
@@ -56,7 +57,8 @@ namespace InterfazdeUsuario.Service
 
                 if (FacturaDuplicada(nuevaFactura, out string mensajeError))
                     return mensajeError;
-
+                if(nuevaFactura.FechaPago >= DateTime.MaxValue || nuevaFactura.FechaPago <= DateTime.MinValue)
+                    return "La fecha de pago no es válida.";
 
 
                 facturas.Add(nuevaFactura);
@@ -122,13 +124,16 @@ namespace InterfazdeUsuario.Service
             List<ValidarFactura> historial = new List<ValidarFactura>();
             try
             {
-                RegistroMiembro miembro = miembroDao.ObtenerMiembroPorId( identificador);
-                if (miembro == null)
-                throw new Exception("No se encontró un miembro con el identificador proporcionado.");
+                var miembros = new RegistroDeMiembroService().Load();
+                //RegistroMiembro miembro = miembroDao.ObtenerMiembroPorId( identificador);
+                if (!miembros.Any(m => (m.ID == identificador)))
+                {
+                    throw new Exception("No se encontró un miembro con el identificador proporcionado.");
+                }
 
                 foreach (ValidarFactura factura in facturas)
                 {
-                    if (factura.MiembroId == miembro.ID)
+                    if (factura.MiembroId == identificador)
                     historial.Add(factura);
                 }
                 return historial;
@@ -155,11 +160,11 @@ namespace InterfazdeUsuario.Service
                             int id = br.ReadInt32();
                             string numeroFactura = br.ReadString();
                             string referencia = br.ReadString();
-                            long fechaTicks = br.ReadInt64();
+                            Int64 fechaTicks = br.ReadInt64();
 
                             // Validar que la fecha sea válida
-                            if (fechaTicks < DateTime.MinValue.Ticks || fechaTicks > DateTime.MaxValue.Ticks)
-                                throw new InvalidDataException($"Fecha inválida en el archivo: {fechaTicks}");
+                            /*if (fechaTicks < DateTime.MinValue.Ticks || fechaTicks > DateTime.MaxValue.Ticks)
+                                throw new InvalidDataException($"Fecha inválida en el archivo: {fechaTicks}");*/
 
                             DateTime fechaPago = DateTime.FromBinary(fechaTicks);
                             decimal monto = br.ReadDecimal();

@@ -14,6 +14,9 @@ namespace InterfazdeUsuario.Service
         ValidarFacturaService validarFacturaService;
         public MembresiaService()
         {
+            RegistroMiembroDao rmd = new RegistroMiembroDao();
+            validarFacturaService = new ValidarFacturaService(rmd);
+
             facturaDao = new ValidarFacturaDao();
         }
 

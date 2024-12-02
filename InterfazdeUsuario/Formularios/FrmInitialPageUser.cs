@@ -48,7 +48,7 @@ namespace InterfazdeUsuario.Formularios
         {
             EditProfile profile = new EditProfile();
             pnlContentUser.Controls.Clear();
-            profile.Dock = DockStyle.Fill;  
+            profile.Dock = DockStyle.Fill;
             pnlContentUser.Controls.Add(profile);
         }
 

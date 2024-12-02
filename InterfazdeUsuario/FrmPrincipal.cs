@@ -45,8 +45,6 @@ namespace InterfazdeUsuario
         {
             MnualDeAyuda ayuda = new MnualDeAyuda();
             ayuda.ManualDeAyuda();
-
-
         }
 
         private void btnAbout_Click_1(object sender, EventArgs e)
@@ -65,6 +63,8 @@ namespace InterfazdeUsuario
         {
             FrmLoginUser user = new FrmLoginUser();
             this.Hide();
+
+            user.FormClosing += delegate { this.Show(); };
             user.ShowDialog();
         }
 
@@ -76,6 +76,8 @@ namespace InterfazdeUsuario
 
            FrmLoginAdmin user = new FrmLoginAdmin();
             this.Hide();
+
+            user.FormClosing += delegate { this.Show(); };
             user.ShowDialog();
         }
     }

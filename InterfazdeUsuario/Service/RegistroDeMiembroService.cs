@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using InterfazdeUsuario.models;
 
 namespace InterfazdeUsuario.Service
@@ -12,7 +14,7 @@ namespace InterfazdeUsuario.Service
     {
         private string filepath = "miembros.bin";
 
-        public void SaveFile(List<RegistroMiembro> miembros)
+        public void SaveFile(List<RegistroMiembro> miembros, [CallerMemberName] string callerName = "")
         {
             using (var fs = new FileStream(filepath, FileMode.Create, FileAccess.Write))
             using (var bw = new BinaryWriter(fs))
@@ -33,7 +35,7 @@ namespace InterfazdeUsuario.Service
             }
         }
 
-        public List<RegistroMiembro> Load()
+        public List<RegistroMiembro> Load([CallerMemberName] string callerName = "")
         {
             var miembros = new List<RegistroMiembro>();
             if (!File.Exists(filepath)) return miembros;
@@ -59,6 +61,7 @@ namespace InterfazdeUsuario.Service
                         FechaRegistro = fechaRegistro,
                         Historial = historial
                     };
+
                     miembros.Add(miembro);
                 }
             }

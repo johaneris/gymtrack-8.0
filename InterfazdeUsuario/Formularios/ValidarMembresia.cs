@@ -152,7 +152,7 @@ namespace InterfazdeUsuario.Formularios
             try
             {
                 int idMiembro = LoginMiembroService.ObtenerMiembroId(); // Supuesta autenticación
-                if (idMiembro > 0)
+                if (idMiembro >= 0)
                 {
                     return idMiembro;
                 }

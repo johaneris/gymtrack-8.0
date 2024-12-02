@@ -1,4 +1,5 @@
 ﻿using InterfazdeUsuario.Dao;
+using InterfazdeUsuario.models;
 using InterfazdeUsuario.Service;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,10 @@ namespace InterfazdeUsuario.Formularios
             CargarHistorialMembresias();
         }
 
-
+        public void Cerrar()
+        {
+            ((Form)this.Parent).Close();
+        }
 
         private void CargarHistorialMembresias()
         {
@@ -46,9 +50,28 @@ namespace InterfazdeUsuario.Formularios
             {
                 if (membresiaService == null)
                     throw new InvalidOperationException("El servicio de membresías no está inicializado.");
-
-                if (miembroId <= 0)
+                if (miembroId < 0)
                     throw new ArgumentException("El ID del miembro no es válido.");
+
+                var miembros = new RegistroDeMiembroService().Load();
+
+                bool miembroEncontrado = false;
+                RegistroMiembro miembroHistorial;
+                foreach (RegistroMiembro m in miembros)
+                {
+                    if (m.ID == miembroId)
+                    {
+                        miembroEncontrado = true;
+                        miembroHistorial = m;
+                        break;
+                    }
+                }
+
+                if (!miembroEncontrado)
+                {
+                    MessageBox.Show("No se encontró el miembro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
                 var historial = membresiaService.ObtenerHistorialDeMembresias(miembroId);
 
@@ -58,14 +81,19 @@ namespace InterfazdeUsuario.Formularios
                     return;
                 }
 
-                dgvHistorialDeMembresias.DataSource = historial.Select(f => new
+                dgvHistorialDeMembresias.DataSource = null;
+
+                DataTable dt = new DataTable();
+                dt.Columns.AddRange(new DataColumn[] { new DataColumn("# de Factura"), new DataColumn("# de Referncia"),
+                    new DataColumn("Fecha Pago"), new DataColumn("FechaFinalización"), new DataColumn("Activa") });
+
+                foreach (ValidarFactura f in historial)
                 {
-                    Nombre = f.Referencia,
-                    CIFoCedula = f.MiembroId,
-                    FechaPago = f.FechaPago.ToShortDateString(),
-                    FechaFinalizacion = f.FechaPago.Add(f.DuracionMembresia).ToShortDateString(),
-                    Activa = f.Estado ? "Sí" : "No"
-                }).ToList();
+                    dt.Rows.Add(new object[] {f.NumeroFactura, f.Referencia, f.FechaPago.ToShortDateString(),
+                    f.FechaPago.Add(f.DuracionMembresia).ToShortDateString(), f.Estado ? "Sí" : "No"});
+                }
+
+                dgvHistorialDeMembresias.DataSource = dt;
             }
             catch (Exception ex)
             {
@@ -78,6 +106,8 @@ namespace InterfazdeUsuario.Formularios
         {
             FrmPrincipalAdmin admin = new FrmPrincipalAdmin();
             admin.Show();
+
+            Cerrar();
         }
     }
 

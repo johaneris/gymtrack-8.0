@@ -41,7 +41,6 @@ namespace InterfazdeUsuario.Service
             {
                 miembroAutenticado = miembro;
                 miembro.AgregarEventoHistorial("Inicio de sesión exitoso.");
-                new RegistroDeMiembroService().SaveFile(loginDao.GetMiembros());
                 return true;
             }
 
