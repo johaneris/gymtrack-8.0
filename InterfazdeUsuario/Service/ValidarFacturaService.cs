@@ -23,24 +23,25 @@ namespace InterfazdeUsuario.Service
         public ValidarFacturaService(RegistroMiembroDao miembroDao)
         {
             if (miembroDao == null)
-                throw new ArgumentNullException("El DAO de miembros no puede ser nulo.");
+                throw new ArgumentNullException(nameof(miembroDao), "El DAO de miembros no puede ser nulo.");
 
             this.miembroDao = miembroDao;
-            this.miembroService = new RegistroDeMiembroService(); // Inicialización correcta
-            this.facturas = new List<ValidarFactura>();
+            this.miembroService = new RegistroDeMiembroService();
+            this.facturas = Load(); // Cargar las facturas desde el archivo
+
+            // Cargar los miembros desde el DAO
 
             //miembroService.Load(); // Ahora no debería causar una excepción
             miembroDao.CargarMiembros(miembroService.Load());
 
             //CargarFacturasDesdeArchivo();
-            Load();
-            Save(facturas);
+            
         }
 
         public ValidarFacturaService()
         {
-            Load();
-            
+            this.facturas = Load();
+
         }
 
         public string AgregarFactura(ValidarFactura nuevaFactura)
@@ -295,6 +296,6 @@ namespace InterfazdeUsuario.Service
         }
     }
 }
-    
+
 
 

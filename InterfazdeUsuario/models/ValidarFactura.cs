@@ -39,5 +39,11 @@ namespace InterfazdeUsuario.models
             Estado = false; // Inactiva si el monto no corresponde a las opciones
             return TimeSpan.Zero;
         }
+
+        public bool ValidarEstado()
+        {
+            return DuracionMembresia.TotalDays > 0 && Estado;
+        }
+
     }
 }

@@ -41,7 +41,6 @@ namespace InterfazdeUsuario.Formularios
         new DataColumn("N° de Factura"),
         new DataColumn("Referencia"),
         new DataColumn("Monto"),
-        new DataColumn("Duración"),
         new DataColumn("Estado"),
     });
 
@@ -54,10 +53,16 @@ namespace InterfazdeUsuario.Formularios
 
                 // Buscar factura asociada
                 var factura = facturas.FirstOrDefault(f => f.MiembroId == miembro.ID);
+                var monto = factura?.Monto ?? 0;
+
+                // Validar monto (3 o 15) y determinar estado
+                var estado = factura != null &&
+                             (monto == 3 || monto == 15) &&
+                             factura.Estado ? "Activo" : "Inactivo";
 
                 // Agregar fila al DataTable
                 dt.Rows.Add(new object[] {
-            miembro.ID,
+           miembro.ID,
             miembro.Name,
             miembro.LastName,
             miembro.UserType,
@@ -67,14 +72,16 @@ namespace InterfazdeUsuario.Formularios
             miembro.FechaRegistro.ToShortDateString(),
             factura?.NumeroFactura ?? "Sin factura",
             factura?.Referencia ?? "Sin referencia",
-            factura?.Monto ?? 0,
-            factura != null ? "Activo" : "Inactivo"
+            monto,
+            estado
         });
             }
 
             // Asignar DataTable al DataGridView
             dgvMembresiasGestion.DataSource = dt;
-
+            // Ajuste visual para columnas
+    dgvMembresiasGestion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMembresiasGestion.Columns["Monto"].DefaultCellStyle.Format = "C2"; // Formato de moneda
 
 
         }
